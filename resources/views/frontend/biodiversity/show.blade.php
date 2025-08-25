@@ -3,6 +3,7 @@
 @section('title', $biodiversity->name)
 
 @section('content')
+
     <!-- Page Header -->
     <div class="page-header">
         <div class="container">
@@ -33,8 +34,26 @@
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <div class="species-image-container">
-                                    @if($biodiversity->image_path)
-                                        <img src="{{ $biodiversity->getImageUrl() }}" alt="{{ $biodiversity->name }}" class="species-main-image" style="cursor: pointer;" onclick="showImageModal('{{ $biodiversity->getImageUrl() }}', '{{ $biodiversity->name }}')">
+                                    @php
+                                        $allImages = $biodiversity->getAllImageUrls();
+                                    @endphp
+                                    
+                                    @if(count($allImages) > 0)
+                                        <!-- Imagen principal -->
+                                        <div class="main-image-wrapper">
+                                            <img src="{{ $allImages[0] }}" alt="{{ $biodiversity->name }}" class="species-main-image" id="mainImage" style="cursor: pointer; width: 300px !important; height: 200px !important; object-fit: cover; border-radius: 8px;" onclick="showImageModal('{{ $allImages[0] }}', '{{ $biodiversity->name }}')" title="Haz clic para ampliar">
+                                        </div>
+                                        
+                                        <!-- Galería de miniaturas horizontal -->
+                                        @if(count($allImages) > 1)
+                                            <div class="image-gallery-thumbnails mt-3" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start;">
+                                                @foreach($allImages as $index => $imageUrl)
+                                                    <div class="thumbnail-wrapper {{ $index === 0 ? 'active' : '' }}" onclick="changeMainImage('{{ $imageUrl }}', {{ $index }})" style="cursor: pointer; border: 2px solid {{ $index === 0 ? '#007bff' : 'transparent' }}; border-radius: 8px; transition: all 0.3s ease;">
+                                                        <img src="{{ $imageUrl }}" alt="{{ $biodiversity->name }} - Imagen {{ $index + 1 }}" class="thumbnail-image" style="width: 80px; height: 60px; object-fit: cover; border-radius: 6px; display: block;">
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        @endif
                                     @else
                                         <div class="no-image-placeholder">
                                             <i class="fas fa-leaf"></i>
@@ -258,12 +277,12 @@
                                     <div class="similar-species-item">
                                         <div class="species-thumbnail">
                                             @if($similar->image_path)
-                                    <img src="{{ $similar->getImageUrl() }}" alt="{{ $similar->name }}" class="species-thumb-img" style="cursor: pointer;" onclick="showImageModal('{{ $similar->getImageUrl() }}', '{{ $similar->name }}')">
+                                    <img src="{{ $similar->getImageUrl() }}" alt="{{ $similar->name }}" class="species-thumb-img" style="cursor: pointer; width: 100px !important; height: 100px !important; border-radius: 50% !important; object-fit: cover !important;" onclick="showImageModal('{{ $similar->getImageUrl() }}', '{{ $similar->name }}')">
                                     <div class="image-overlay-small">
                                         <small class="text-white">Click para ampliar</small>
                                     </div>
                                             @else
-                                                <div class="species-thumb-placeholder">
+                                                <div class="species-thumb-placeholder" style="width: 100px !important; height: 100px !important; font-size: 40px !important; border-radius: 50% !important;">
                                                     <i class="fas fa-leaf"></i>
                                                 </div>
                                             @endif
@@ -300,8 +319,68 @@
     </div>
 @stop
 
-@section('js')
+@push('scripts')
 <script>
+    window.showImageModal = function(imageUrl, speciesName) {
+        // Verificar directamente si los elementos existen
+        const modalImage = document.getElementById('showModalImage');
+        const modalLabel = document.getElementById('showImageModalLabel');
+        const modalElement = document.getElementById('showImageModal');
+        
+        console.log('Modal elements found:', {
+            modalImage: !!modalImage,
+            modalLabel: !!modalLabel,
+            modalElement: !!modalElement
+        });
+        
+        if (!modalImage || !modalLabel || !modalElement) {
+            console.error('Elementos del modal no encontrados:', {
+                modalImage: !!modalImage,
+                modalLabel: !!modalLabel,
+                modalElement: !!modalElement
+            });
+            return;
+        }
+        
+        try {
+                
+                if (typeof bootstrap === 'undefined') {
+                    console.error('Bootstrap no está disponible');
+                    return;
+                }
+                
+            modalImage.src = imageUrl;
+            modalLabel.textContent = speciesName;
+            new bootstrap.Modal(modalElement).show();
+            
+        } catch (error) {
+            console.error('Error al mostrar modal:', error);
+        }
+    };
+    
+    window.changeMainImage = function(imageUrl, index) {
+        try {
+            const mainImage = document.getElementById('mainImage');
+            if (mainImage) {
+                mainImage.src = imageUrl;
+                mainImage.onclick = function() { showImageModal(imageUrl, '{{ $biodiversity->name }}'); };
+            }
+            
+            const thumbnails = document.querySelectorAll('.thumbnail-wrapper');
+            thumbnails.forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('active');
+                    thumb.style.border = '2px solid #007bff';
+                } else {
+                    thumb.classList.remove('active');
+                    thumb.style.border = '2px solid transparent';
+                }
+            });
+        } catch (error) {
+            console.error('Error al cambiar imagen:', error);
+        }
+    };
+
     document.addEventListener('DOMContentLoaded', function() {
         // Initialize AOS (Animate On Scroll)
         if (typeof AOS !== 'undefined') {
@@ -458,7 +537,7 @@
         }
     });
 </script>
-@endsection
+@endpush
 
 @section('css')
 <style>
@@ -531,10 +610,9 @@
     }
     
     .species-image-container {
-        position: relative;
-        height: 300px;
-        overflow: hidden;
-        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .species-main-image {
@@ -888,21 +966,22 @@
     }
     
     .species-thumb-img {
-        width: 50px;
-        height: 50px;
+        width: 15px !important;
+        height: 15px !important;
         border-radius: 50%;
         object-fit: cover;
     }
     
     .species-thumb-placeholder {
-        width: 50px;
-        height: 50px;
+        width: 15px;
+        height: 15px;
         border-radius: 50%;
         background: #dee2e6;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #6c757d;
+        font-size: 8px;
     }
     
     .species-info {
@@ -971,14 +1050,30 @@
             flex-direction: column;
             text-align: center;
         }
-    }
-    
-    .species-image-container {
-        position: relative;
-    }
-    
-    .species-image-container:hover .species-main-image {
-        transform: scale(1.02);
+        
+        .species-image-container {
+            max-width: 100%;
+        }
+        
+        .thumbnail-wrapper {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .species-thumb-img {
+            width: 15px !important;
+            height: 15px !important;
+        }
+        
+        .species-thumb-placeholder {
+            width: 15px !important;
+            height: 15px !important;
+            font-size: 8px !important;
+        }
+        
+        .image-gallery-thumbnails {
+            gap: 8px;
+        }
     }
     
     .species-main-image {
@@ -1004,30 +1099,67 @@
     .species-thumbnail:hover .image-overlay-small {
         opacity: 1;
     }
+    
+    /* Estilos para galería de múltiples imágenes */
+    .image-gallery-thumbnails {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .thumbnail-wrapper {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .thumbnail-wrapper:hover {
+        border-color: #007bff;
+        transform: scale(1.05);
+    }
+    
+    .thumbnail-wrapper.active {
+        border-color: #28a745;
+        box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+    }
+    
+    .thumbnail-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .thumbnail-wrapper:hover .thumbnail-image {
+        transform: scale(1.1);
+    }
+    
+    .main-image-wrapper {
+        position: relative;
+    }
 </style>
 
 <!-- Modal para mostrar imagen en tamaño completo -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+<div class="modal fade" id="showImageModal" tabindex="-1" aria-labelledby="showImageModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content bg-transparent border-0">
             <div class="modal-header border-0 pb-0">
-                <h5 class="modal-title text-white" id="imageModalLabel"></h5>
+                <h5 class="modal-title text-white" id="showImageModalLabel"></h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center p-0">
-                <img id="modalImage" src="" alt="" class="img-fluid rounded" style="max-height: 80vh; object-fit: contain;">
+                <img id="showModalImage" src="" alt="" class="img-fluid rounded" style="max-height: 80vh; object-fit: contain;">
             </div>
         </div>
     </div>
 </div>
 
-<script>
-    // Función para mostrar imagen en modal
-    function showImageModal(imageUrl, speciesName) {
-        document.getElementById('modalImage').src = imageUrl;
-        document.getElementById('imageModalLabel').textContent = speciesName;
-        new bootstrap.Modal(document.getElementById('imageModal')).show();
-    }
-</script>
+
 
 @stop

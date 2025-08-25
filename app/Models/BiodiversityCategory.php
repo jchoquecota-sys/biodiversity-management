@@ -26,6 +26,9 @@ class BiodiversityCategory extends Model implements HasMedia
         'idclase',
         'idorden',
         'image_path',
+        'image_path_2',
+        'image_path_3',
+        'image_path_4',
     ];
 
     /**
@@ -104,6 +107,56 @@ class BiodiversityCategory extends Model implements HasMedia
         }
         
         return null;
+    }
+    
+    /**
+     * Get all image URLs for the category.
+     *
+     * @return array
+     */
+    public function getAllImageUrls()
+    {
+        $images = [];
+        
+        $imagePaths = [
+            $this->image_path,
+            $this->image_path_2,
+            $this->image_path_3,
+            $this->image_path_4,
+        ];
+        
+        foreach ($imagePaths as $path) {
+            if ($path) {
+                $images[] = \Storage::disk('public')->url($path);
+            }
+        }
+        
+        return $images;
+    }
+    
+    /**
+     * Get the count of available images.
+     *
+     * @return int
+     */
+    public function getImageCount()
+    {
+        return count(array_filter([
+            $this->image_path,
+            $this->image_path_2,
+            $this->image_path_3,
+            $this->image_path_4,
+        ]));
+    }
+    
+    /**
+     * Check if the category has multiple images.
+     *
+     * @return bool
+     */
+    public function hasMultipleImages()
+    {
+        return $this->getImageCount() > 1;
     }
     
     /**

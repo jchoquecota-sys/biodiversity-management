@@ -85,8 +85,12 @@
                             @foreach($publication->biodiversityCategories as $biodiversity)
                                 <div class="species-card" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                                     <div class="species-image">
-                                        @if($biodiversity->getFirstMedia('images'))
-                                            <img src="{{ $biodiversity->getFirstMediaUrl('images') }}" alt="{{ $biodiversity->name }}">
+                                        @php
+                                            $allImages = $biodiversity->getAllImageUrls();
+                                        @endphp
+                                        
+                                        @if(count($allImages) > 0)
+                                            <img src="{{ $allImages[0] }}" alt="{{ $biodiversity->name }}" style="cursor: pointer; width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" onclick="showImageModal('{{ $allImages[0] }}', '{{ $biodiversity->name }}')"> 
                                         @else
                                             <div class="no-image">
                                                 <i class="fas fa-leaf"></i>
@@ -695,4 +699,58 @@
         }
     }
 </style>
-@stop
+
+@push('scripts')
+<script>
+    // Función para mostrar modal de imagen
+    window.showImageModal = function(imageUrl, title) {
+        try {
+            // Verificar que Bootstrap esté disponible
+            if (typeof bootstrap === 'undefined') {
+                console.error('Bootstrap no está disponible');
+                return;
+            }
+            
+            // Crear modal dinámicamente
+            const modal = document.createElement('div');
+            modal.className = 'modal fade';
+            modal.id = 'imageModal';
+            modal.innerHTML = `
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">${title}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="${imageUrl}" class="img-fluid" alt="${title}" style="max-height: 70vh; object-fit: contain;">
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Remover modal existente si existe
+            const existingModal = document.getElementById('imageModal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Agregar modal al DOM
+            document.body.appendChild(modal);
+            
+            // Mostrar modal
+            const bsModal = new bootstrap.Modal(modal);
+            bsModal.show();
+            
+            // Limpiar modal cuando se cierre
+            modal.addEventListener('hidden.bs.modal', function() {
+                modal.remove();
+            });
+        } catch (error) {
+            console.error('Error al mostrar modal de imagen:', error);
+        }
+    };
+</script>
+@endpush
+
+@endsection

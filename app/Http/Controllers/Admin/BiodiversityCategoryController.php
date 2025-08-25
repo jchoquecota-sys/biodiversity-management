@@ -270,4 +270,173 @@ class BiodiversityCategoryController extends Controller
         $familias = \App\Models\Familia::where('idorden', $ordenId)->orderBy('nombre')->get();
         return response()->json($familias);
     }
+
+    /**
+     * Mostrar formulario de carga masiva de imágenes
+     */
+    public function bulkImageUpload()
+    {
+        $speciesWithoutImages = BiodiversityCategory::whereNull('image_path')
+            ->orWhere('image_path', '')
+            ->orderBy('name')
+            ->get();
+            
+        return view('admin.biodiversity.bulk-image-upload', compact('speciesWithoutImages'));
+    }
+
+    /**
+     * Procesar carga masiva de imágenes
+     */
+    public function processBulkImageUpload(Request $request)
+    {
+        $request->validate([
+            'images' => 'required|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:5120', // 5MB max
+            'species_ids' => 'required|array',
+            'species_ids.*' => 'exists:biodiversity_categories,id',
+        ]);
+
+        $uploaded = 0;
+        $errors = [];
+
+        foreach ($request->file('images') as $key => $image) {
+            if (!isset($request->species_ids[$key])) {
+                continue;
+            }
+
+            try {
+                $speciesId = $request->species_ids[$key];
+                $species = BiodiversityCategory::findOrFail($speciesId);
+
+                // Eliminar imagen anterior si existe
+                if ($species->image_path && \Storage::disk('public')->exists($species->image_path)) {
+                    \Storage::disk('public')->delete($species->image_path);
+                }
+
+                // Guardar nueva imagen
+                $imageName = time() . '_' . $speciesId . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('biodiversity/especies', $imageName, 'public');
+                $species->update(['image_path' => 'biodiversity/especies/' . $imageName]);
+
+                $uploaded++;
+            } catch (\Exception $e) {
+                $errors[] = "Error procesando imagen para especie ID {$speciesId}: " . $e->getMessage();
+            }
+        }
+
+        $message = "Se subieron {$uploaded} imágenes exitosamente.";
+        if (!empty($errors)) {
+            $message .= " Errores: " . implode(', ', $errors);
+        }
+
+        return redirect()->route('admin.biodiversity.bulk-image-upload')
+            ->with('success', $message);
+    }
+
+    /**
+     * Importar imágenes desde URLs (AJAX)
+     */
+    public function importFromUrl(Request $request)
+    {
+        $request->validate([
+            'species_id' => 'required|exists:biodiversity_categories,id',
+            'image_url' => 'required|url',
+        ]);
+
+        try {
+            $species = BiodiversityCategory::findOrFail($request->species_id);
+            
+            // Descargar imagen desde URL
+            $response = \Http::timeout(30)->get($request->image_url);
+            
+            if (!$response->successful()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Error al descargar la imagen desde la URL'
+                ]);
+            }
+
+            // Verificar que sea una imagen válida
+            $imageInfo = getimagesizefromstring($response->body());
+            if (!$imageInfo) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'El archivo descargado no es una imagen válida'
+                ]);
+            }
+
+            // Generar nombre único
+            $extension = $this->getExtensionFromMimeType($imageInfo['mime']) ?: 'jpg';
+            $filename = \Str::slug($species->scientific_name) . '_' . time() . '.' . $extension;
+            $path = 'biodiversity/especies/' . $filename;
+
+            // Eliminar imagen anterior si existe
+            if ($species->image_path && \Storage::disk('public')->exists($species->image_path)) {
+                \Storage::disk('public')->delete($species->image_path);
+            }
+
+            // Guardar imagen
+            \Storage::disk('public')->put($path, $response->body());
+            $species->update(['image_path' => $path]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Imagen importada exitosamente',
+                'image_url' => $species->getImageUrl()
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error: ' . $e->getMessage()
+            ]);
+        }
+    }
+
+    /**
+     * Eliminar imagen de una especie
+     */
+    public function removeImage(Request $request)
+    {
+        $request->validate([
+            'species_id' => 'required|exists:biodiversity_categories,id',
+        ]);
+
+        try {
+            $species = BiodiversityCategory::findOrFail($request->species_id);
+            
+            if ($species->image_path && \Storage::disk('public')->exists($species->image_path)) {
+                \Storage::disk('public')->delete($species->image_path);
+            }
+            
+            $species->update(['image_path' => null]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Imagen eliminada exitosamente'
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error: ' . $e->getMessage()
+            ]);
+        }
+    }
+
+    /**
+     * Obtener extensión desde MIME type
+     */
+    private function getExtensionFromMimeType($mimeType)
+    {
+        $mimeToExt = [
+            'image/jpeg' => 'jpg',
+            'image/jpg' => 'jpg',
+            'image/png' => 'png',
+            'image/gif' => 'gif',
+            'image/webp' => 'webp',
+        ];
+        
+        return $mimeToExt[$mimeType] ?? 'jpg';
+    }
 }
