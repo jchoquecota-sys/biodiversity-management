@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Test Form for Category Fields</h1>
+    
+    <form id="testForm" method="POST" action="/admin/publications">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        
+        <div>
+            <label>Title:</label>
+            <input type="text" name="title" value="Test Publication" required>
+        </div>
+        
+        <div>
+            <label>Abstract:</label>
+            <textarea name="abstract" required>Test abstract</textarea>
+        </div>
+        
+        <div>
+            <label>Publication Year:</label>
+            <input type="number" name="publication_year" value="2024" required>
+        </div>
+        
+        <div>
+            <label>Author:</label>
+            <input type="text" name="author" value="Test Author" required>
+        </div>
+        
+        <div>
+            <label>Categories:</label>
+            <select name="biodiversity_categories[]" multiple>
+                <option value="1" selected>Category 1</option>
+                <option value="2" selected>Category 2</option>
+            </select>
+        </div>
+        
+        <div>
+            <label>Relevant Excerpts:</label>
+            <textarea name="relevant_excerpts[0]">Excerpt for category 1</textarea>
+            <textarea name="relevant_excerpts[1]">Excerpt for category 2</textarea>
+        </div>
+        
+        <div>
+            <label>Page References:</label>
+            <input type="text" name="page_references[0]" value="p. 10-15">
+            <input type="text" name="page_references[1]" value="p. 20-25">
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        $('#testForm').on('submit', function(e) {
+            e.preventDefault();
+            console.log('Form data:', $(this).serialize());
+            
+            // Show all form data
+            var formData = new FormData(this);
+            for (var pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+        });
+    </script>
+</body>
+</html>

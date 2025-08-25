@@ -1,0 +1,157 @@
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
+
+@section('content')
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>{{ $totalBiodiversity }}</h3>
+                    <p>Especies Registradas</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <a href="{{ route('admin.biodiversity.index') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>{{ $totalPublications }}</h3>
+                    <p>Publicaciones Científicas</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <a href="{{ route('admin.publications.index') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Distribución por Reino</h3>
+                </div>
+                <div class="card-body">
+                    <canvas id="kingdomChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Estado de Conservación</h3>
+                </div>
+                <div class="card-body">
+                    <canvas id="conservationChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Últimas Publicaciones</h3>
+                </div>
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-hover text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Autor</th>
+                                <th>Año</th>
+                                <th>Revista</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($latestPublications as $publication)
+                                <tr>
+                                    <td>{{ $publication->title }}</td>
+                                    <td>{{ $publication->author }}</td>
+                                    <td>{{ $publication->publication_year }}</td>
+                                    <td>{{ $publication->journal }}</td>
+                                    <td>
+                                        <a href="{{ route('admin.publications.show', $publication->id) }}" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gráfico de distribución por reino
+            const kingdomCtx = document.getElementById('kingdomChart').getContext('2d');
+            const kingdomData = {
+                labels: {!! json_encode($biodiversityByKingdom->pluck('kingdom')) !!},
+                datasets: [{
+                    data: {!! json_encode($biodiversityByKingdom->pluck('total')) !!},
+                    backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
+                }]
+            };
+            new Chart(kingdomCtx, {
+                type: 'pie',
+                data: kingdomData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        }
+                    }
+                }
+            });
+
+            // Gráfico de estado de conservación
+            const conservationCtx = document.getElementById('conservationChart').getContext('2d');
+            const conservationData = {
+                labels: {!! json_encode($biodiversityByConservationStatus->pluck('conservation_status')) !!},
+                datasets: [{
+                    label: 'Especies',
+                    data: {!! json_encode($biodiversityByConservationStatus->pluck('total')) !!},
+                    backgroundColor: '#00a65a',
+                    borderColor: '#00a65a',
+                    borderWidth: 1
+                }]
+            };
+            new Chart(conservationCtx, {
+                type: 'bar',
+                data: conservationData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+@stop
