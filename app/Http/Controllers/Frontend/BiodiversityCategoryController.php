@@ -16,7 +16,7 @@ class BiodiversityCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $query = BiodiversityCategory::query();
+        $query = BiodiversityCategory::with('conservationStatus');
 
         // Aplicar filtros si existen
         if ($request->has('kingdom') && $request->kingdom) {
@@ -47,7 +47,11 @@ class BiodiversityCategoryController extends Controller
         $conservationStatuses = BiodiversityCategory::select('conservation_status')->distinct()->pluck('conservation_status');
         $habitats = BiodiversityCategory::select('habitat')->distinct()->pluck('habitat');
         $totalBiodiversity = BiodiversityCategory::count();
-        return view('frontend.biodiversity.index', compact('biodiversityCategories', 'kingdoms', 'conservationStatuses', 'habitats', 'totalBiodiversity'));
+        
+        // Obtener estados de conservación desde la base de datos
+        $conservationStatusesFromDB = \App\Models\ConservationStatus::all()->keyBy('code');
+        
+        return view('frontend.biodiversity.index', compact('biodiversityCategories', 'kingdoms', 'conservationStatuses', 'habitats', 'totalBiodiversity', 'conservationStatusesFromDB'));
     }
 
     /**
@@ -89,23 +93,14 @@ class BiodiversityCategoryController extends Controller
             'Archaea' => 'Archaea'
         ];
 
-        $conservationStatuses = [
-            'EX' => 'Extinto',
-            'EW' => 'Extinto en Estado Silvestre',
-            'CR' => 'En Peligro Crítico',
-            'EN' => 'En Peligro',
-            'VU' => 'Vulnerable',
-            'NT' => 'Casi Amenazado',
-            'LC' => 'Preocupación Menor',
-            'DD' => 'Datos Insuficientes',
-            'NE' => 'No Evaluado'
-        ];
+        // Obtener estados de conservación desde la base de datos
+        $conservationStatusesFromDB = \App\Models\ConservationStatus::all()->keyBy('code');
 
         return view('frontend.biodiversity.show', [
             'biodiversity' => $biodiversityCategory,
             'similarBiodiversity' => $similarBiodiversity,
             'kingdoms' => $kingdoms,
-            'conservationStatuses' => $conservationStatuses
+            'conservationStatusesFromDB' => $conservationStatusesFromDB
         ]);
     }
 }

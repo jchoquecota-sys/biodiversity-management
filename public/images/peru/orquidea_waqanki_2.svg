@@ -1,0 +1,32 @@
+
+<svg width='400' height='300' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <linearGradient id='bgGrad2' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' style='stop-color:#FFEAA7;stop-opacity:1' />
+      <stop offset='100%' style='stop-color:#96CEB4;stop-opacity:1' />
+    </linearGradient>
+    <radialGradient id='mainGrad2' cx='50%' cy='50%' r='50%'>
+      <stop offset='0%' style='stop-color:#DDA0DD;stop-opacity:1' />
+      <stop offset='100%' style='stop-color:#96CEB4;stop-opacity:1' />
+    </radialGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width='400' height='300' fill='url(#bgGrad2)'/>
+  
+  <!-- Forma principal -->
+  <ellipse cx='200' cy='150' rx='80' ry='50' fill='url(#mainGrad2)' transform='rotate(15 200 150)'/>
+  
+  <!-- Detalles decorativos -->
+  <circle cx='100' cy='80' r='20' fill='#DDA0DD' opacity='0.6'/>
+  <circle cx='320' cy='100' r='15' fill='#FFEAA7' opacity='0.8'/>
+  <circle cx='80' cy='220' r='25' fill='#96CEB4' opacity='0.4'/>
+  
+  <!-- Marco decorativo -->
+  <rect x='10' y='10' width='380' height='280' fill='none' stroke='#DDA0DD' stroke-width='3' rx='15'/>
+  
+  <!-- Texto -->
+  <rect x='20' y='250' width='360' height='40' fill='rgba(0,0,0,0.7)' rx='5'/>
+  <text x='200' y='270' font-family='Arial, sans-serif' font-size='14' font-weight='bold' text-anchor='middle' fill='#FFF'>Orquídea Waqanki</text>
+  <text x='200' y='285' font-family='Arial, sans-serif' font-size='10' text-anchor='middle' fill='#DDD' font-style='italic'>Masdevallia veitchiana</text>
+</svg>

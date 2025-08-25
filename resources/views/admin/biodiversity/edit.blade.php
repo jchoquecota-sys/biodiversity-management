@@ -4,6 +4,22 @@
 
 @section('content_header')
     <h1>Editar Categoría de Biodiversidad</h1>
+<!-- Modal para visualizar imagen en tamaño completo -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Imagen de Biodiversidad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" alt="" class="img-fluid" style="max-height: 500px;">
+            </div>
+        </div>
+    </div>
+</div>
 @stop
 
 @section('content')
@@ -167,23 +183,84 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-6">
+                </div>
+                
+                <!-- Sección de Imágenes -->
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="form-group">
-                            <label for="image">Imagen</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" name="image" id="image" class="custom-file-input @error('image') is-invalid @enderror" accept="image/*">
-                                    <label class="custom-file-label" for="image">Seleccionar archivo</label>
+                            <label class="mb-3">
+                                <i class="fas fa-images text-primary"></i> Gestión de Imágenes
+                                @if($biodiversity->getImageCount() > 1)
+                                    <span class="badge badge-info ml-2">{{ $biodiversity->getImageCount() }} imágenes</span>
+                                @endif
+                            </label>
+                            
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!-- Imagen Principal -->
+                                        <div class="col-md-6 mb-4">
+                                            <div class="border rounded p-3">
+                                                <h6 class="text-primary mb-3">
+                                                    <i class="fas fa-star"></i> Imagen Principal
+                                                </h6>
+                                                <div class="input-group mb-2">
+                                                    <div class="custom-file">
+                                                        <input type="file" name="image" id="image" class="custom-file-input @error('image') is-invalid @enderror" accept="image/*">
+                                                        <label class="custom-file-label" for="image">Seleccionar archivo</label>
+                                                    </div>
+                                                </div>
+                                                @error('image')
+                                                    <span class="text-danger small">{{ $message }}</span>
+                                                @enderror
+                                                @if($biodiversity->image_path)
+                                                    <div class="text-center mt-2">
+                                                        <img src="{{ $biodiversity->getImageUrl() }}" alt="{{ $biodiversity->name }}" class="img-thumbnail cursor-pointer" style="max-height: 120px; max-width: 100%;" onclick="showImageModal('{{ $biodiversity->getImageUrl() }}', '{{ addslashes($biodiversity->name) }} - Imagen Principal')">
+                                                        <small class="text-muted d-block mt-1">Imagen Principal Actual</small>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Imágenes Adicionales -->
+                                        <div class="col-md-6">
+                                            <h6 class="text-info mb-3">
+                                                <i class="fas fa-images"></i> Imágenes Adicionales
+                                            </h6>
+                                            <div class="row">
+                                                @for($i = 2; $i <= 4; $i++)
+                                                    <div class="col-md-12 mb-3">
+                                                        <div class="border rounded p-2">
+                                                            <label for="image_{{ $i }}" class="small text-muted mb-1">Imagen {{ $i }}</label>
+                                                            <div class="input-group input-group-sm">
+                                                                <div class="custom-file">
+                                                                    <input type="file" name="image_{{ $i }}" id="image_{{ $i }}" class="custom-file-input" accept="image/*">
+                                                                    <label class="custom-file-label" for="image_{{ $i }}">Seleccionar</label>
+                                                                </div>
+                                                            </div>
+                                                            @php
+                                                                $imageField = 'image_path_' . $i;
+                                                                $imageUrl = $biodiversity->$imageField ? (str_starts_with($biodiversity->$imageField, 'images/') ? asset($biodiversity->$imageField) : Storage::disk('public')->url($biodiversity->$imageField)) : null;
+                                                            @endphp
+                                                            @if($imageUrl)
+                                                                <div class="text-center mt-2">
+                                                                    <img src="{{ $imageUrl }}" alt="{{ $biodiversity->name }} - Imagen {{ $i }}" class="img-thumbnail cursor-pointer" style="max-height: 50px;" onclick="showImageModal('{{ $imageUrl }}', '{{ addslashes($biodiversity->name) }} - Imagen {{ $i }}')">
+                                                                </div>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="alert alert-info mt-3 mb-0">
+                                        <i class="fas fa-info-circle"></i> 
+                                        <strong>Información:</strong> Puede subir hasta 4 imágenes por especie. La imagen principal se mostrará como imagen destacada en las listas.
+                                    </div>
                                 </div>
                             </div>
-                            @error('image')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                            @if($biodiversity->image_path)
-                                <div class="mt-2">
-                                    <img src="{{ Storage::disk('public')->url($biodiversity->image_path) }}" alt="{{ $biodiversity->name }}" class="img-thumbnail" style="max-height: 100px;">
-                                </div>
-                            @endif
                         </div>
                     </div>
                 </div>
@@ -399,6 +476,17 @@
                     loadFamilias(ordenId, ordenId == currentOrden ? currentFamilia : null);
                 }
             });
+
+            // Función para mostrar el modal de imagen
+            function showImageModal(imageUrl, imageName) {
+                $('#modalImage').attr('src', imageUrl);
+                $('#modalImage').attr('alt', imageName);
+                $('#imageModalLabel').text('Imagen de ' + imageName);
+                $('#imageModal').modal('show');
+            }
+
+            // Hacer la función global
+            window.showImageModal = showImageModal;
         });
     </script>
 @stop

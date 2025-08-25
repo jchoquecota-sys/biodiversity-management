@@ -103,6 +103,11 @@ class BiodiversityCategory extends Model implements HasMedia
     public function getImageUrl()
     {
         if ($this->image_path) {
+            // Si la ruta empieza con 'images/', usar asset() directamente
+            if (str_starts_with($this->image_path, 'images/')) {
+                return asset($this->image_path);
+            }
+            // Para otras rutas, usar Storage como antes
             return \Storage::disk('public')->url($this->image_path);
         }
         
@@ -127,7 +132,13 @@ class BiodiversityCategory extends Model implements HasMedia
         
         foreach ($imagePaths as $path) {
             if ($path) {
-                $images[] = \Storage::disk('public')->url($path);
+                // Si la ruta empieza con 'images/', usar asset() directamente
+                if (str_starts_with($path, 'images/')) {
+                    $images[] = asset($path);
+                } else {
+                    // Para otras rutas, usar Storage como antes
+                    $images[] = \Storage::disk('public')->url($path);
+                }
             }
         }
         

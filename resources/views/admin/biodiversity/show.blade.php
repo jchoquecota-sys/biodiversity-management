@@ -65,21 +65,12 @@
                             <th>Estado de Conservación</th>
                             <td>
                                 @php
-                                    $statusColors = [
-                                        'EX' => 'danger',
-                                        'EW' => 'danger',
-                                        'CR' => 'danger',
-                                        'EN' => 'warning',
-                                        'VU' => 'warning',
-                                        'NT' => 'info',
-                                        'LC' => 'success',
-                                        'DD' => 'secondary',
-                                        'NE' => 'secondary',
-                                    ];
-                                    $statusColor = $statusColors[$biodiversity->conservation_status] ?? 'secondary';
+                                    $conservationStatusObj = $conservationStatusesFromDB->get($biodiversity->conservation_status);
+                                    $statusColor = $conservationStatusObj ? $conservationStatusObj->color : 'secondary';
+                                    $statusName = $conservationStatusObj ? $conservationStatusObj->name : $biodiversity->conservation_status;
                                 @endphp
-                                <span class="badge badge-{{ $statusColor }}">
-                                    {{ $conservationStatuses[$biodiversity->conservation_status] ?? $biodiversity->conservation_status }}
+                                <span class="badge bg-{{ $statusColor }}">
+                                    {{ $statusName }}
                                 </span>
                             </td>
                         </tr>
@@ -104,14 +95,30 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header bg-primary text-white">
-                            <h5 class="card-title mb-0">Imagen</h5>
+                            <h5 class="card-title mb-0">
+                                Imágenes 
+                                @if($biodiversity->getImageCount() > 1)
+                                    <span class="badge badge-light">{{ $biodiversity->getImageCount() }}</span>
+                                @endif
+                            </h5>
                         </div>
-                        <div class="card-body text-center">
-                            @if($biodiversity->image_path)
-                                <img src="{{ Storage::disk('public')->url($biodiversity->image_path) }}" alt="{{ $biodiversity->name }}" class="img-fluid rounded">
+                        <div class="card-body">
+                            @php
+                                $allImages = $biodiversity->getAllImageUrls();
+                            @endphp
+                            @if(!empty($allImages))
+                                <div class="image-gallery-detail">
+                                    @foreach($allImages as $index => $imageUrl)
+                                        <div class="mb-3">
+                                            <img src="{{ $imageUrl }}" alt="{{ $biodiversity->name }} - Imagen {{ $index + 1 }}" class="img-fluid rounded cursor-pointer" onclick="showImageModal('{{ $imageUrl }}', '{{ addslashes($biodiversity->name) }} - Imagen {{ $index + 1 }}')"> 
+                                            <small class="text-muted d-block mt-1 text-center">Imagen {{ $index + 1 }}</small>
+                                        </div>
+                                    @endforeach
+                                </div>
                             @else
-                                <div class="alert alert-info">
-                                    No hay imagen disponible
+                                <div class="alert alert-info text-center">
+                                    <i class="fas fa-image fa-2x text-muted mb-2"></i><br>
+                                    No hay imágenes disponibles
                                 </div>
                             @endif
                         </div>
@@ -193,6 +200,23 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal para visualizar imagen en tamaño completo -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Imagen de Biodiversidad</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="" class="img-fluid" style="max-height: 500px;">
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
 
 @section('css')
@@ -200,5 +224,25 @@
         .table th {
             background-color: #f8f9fa;
         }
+        .cursor-pointer {
+            cursor: pointer;
+        }
+        .image-gallery-detail img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+        }
     </style>
+@stop
+
+@section('js')
+    <script>
+        // Función para mostrar el modal de imagen
+        function showImageModal(imageUrl, imageName) {
+            $('#modalImage').attr('src', imageUrl);
+            $('#modalImage').attr('alt', imageName);
+            $('#imageModalLabel').text('Imagen de ' + imageName);
+            $('#imageModal').modal('show');
+        }
+    </script>
 @stop

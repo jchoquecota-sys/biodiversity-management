@@ -1,0 +1,115 @@
+name: Code Quality
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+  push:
+    branches: [ develop ]
+
+jobs:
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, iconv, json, mbstring, pdo
+        coverage: none
+
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    - name: Install PHP CS Fixer
+      run: composer require --dev friendsofphp/php-cs-fixer
+
+    - name: Run PHP CS Fixer
+      run: vendor/bin/php-cs-fixer fix --dry-run --diff --verbose
+
+  phpstan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, iconv, json, mbstring, pdo
+        coverage: none
+
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    - name: Install PHPStan
+      run: composer require --dev phpstan/phpstan larastan/larastan
+
+    - name: Create PHPStan config
+      run: |
+        cat > phpstan.neon << EOF
+        includes:
+            - ./vendor/larastan/larastan/extension.neon
+        
+        parameters:
+            paths:
+                - app/
+            level: 5
+            ignoreErrors:
+                - '#Call to an undefined method Illuminate\\Database\\Eloquent\\Builder#'
+        EOF
+
+    - name: Run PHPStan
+      run: vendor/bin/phpstan analyse --memory-limit=2G
+
+  psalm:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, iconv, json, mbstring, pdo
+        coverage: none
+
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    - name: Install Psalm
+      run: composer require --dev psalm/plugin-laravel vimeo/psalm
+
+    - name: Create Psalm config
+      run: |
+        cat > psalm.xml << EOF
+        <?xml version="1.0"?>
+        <psalm
+            errorLevel="4"
+            resolveFromConfigFile="true"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="https://getpsalm.org/schema/config"
+            xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+        >
+            <projectFiles>
+                <directory name="app" />
+                <ignoreFiles>
+                    <directory name="vendor" />
+                </ignoreFiles>
+            </projectFiles>
+            <plugins>
+                <pluginClass class="Psalm\\LaravelPlugin\\Plugin"/>
+            </plugins>
+        </psalm>
+        EOF
+
+    - name: Run Psalm
+      run: vendor/bin/psalm --show-info=true
+      continue-on-error: true

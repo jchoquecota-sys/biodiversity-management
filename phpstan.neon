@@ -1,0 +1,44 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+    
+    # Level of rule strictness (0-9)
+    level: 5
+    
+    # Ignore common Laravel patterns
+    ignoreErrors:
+        - '#Call to an undefined method Illuminate\\Database\\Eloquent\\Builder#'
+        - '#Call to an undefined method Illuminate\\Database\\Query\\Builder#'
+        - '#Access to an undefined property App\\Models\\[a-zA-Z]+::\$[a-zA-Z]+#'
+        - '#Unsafe usage of new static\(\)#'
+        - '#PHPDoc tag @var#'
+        - '#Method .* has no return type specified#'
+        - '#Property .* has no type specified#'
+        - '#Parameter .* has no type specified#'
+    
+    # Exclude certain directories
+    excludePaths:
+        - bootstrap/cache/*
+        - storage/*
+        - vendor/*
+        - node_modules/*
+    
+    # Check for missing return types
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    
+    # Laravel specific configurations
+    earlyTerminatingMethodCalls:
+        Illuminate\Http\RedirectResponse:
+            - withInput
+        Illuminate\Http\Response:
+            - throwResponse
+    
+    # Treat PHP built-in classes as final
+    treatPhpDocTypesAsCertain: false
+    
+    # Report unmatched ignored errors
+    reportUnmatchedIgnoredErrors: false

@@ -62,8 +62,19 @@
                                     @endif
                                     
                                     @if($biodiversity->conservationStatus)
+                                        @php
+                                            $colorMap = [
+                                                'danger' => '#dc3545',
+                                                'warning' => '#ffc107',
+                                                'success' => '#28a745',
+                                                'info' => '#17a2b8',
+                                                'secondary' => '#6c757d',
+                                                'primary' => '#007bff'
+                                            ];
+                                            $bgColor = $colorMap[$biodiversity->conservationStatus->color] ?? '#6c757d';
+                                        @endphp
                                         <div class="conservation-overlay">
-                                            <span class="badge" style="background-color: {{ $biodiversity->conservationStatus->color }}; color: white; border: 2px solid {{ $biodiversity->conservationStatus->color }}; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-weight: bold;">
+                                            <span class="badge" style="background-color: {{ $bgColor }}; color: white; border: 2px solid {{ $bgColor }}; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-weight: bold;">
                                                 {{ $biodiversity->conservationStatus->code }} - {{ $biodiversity->conservationStatus->name }}
                                             </span>
                                         </div>
@@ -100,10 +111,21 @@
                                         @endif
                                         
                                         @if($biodiversity->conservationStatus)
+                                            @php
+                                                $colorMap = [
+                                                    'danger' => '#dc3545',
+                                                    'warning' => '#ffc107',
+                                                    'success' => '#28a745',
+                                                    'info' => '#17a2b8',
+                                                    'secondary' => '#6c757d',
+                                                    'primary' => '#007bff'
+                                                ];
+                                                $bgColor = $colorMap[$biodiversity->conservationStatus->color] ?? '#6c757d';
+                                            @endphp
                                             <div class="meta-item">
                                                 <div class="meta-label"><i class="fas fa-shield-alt me-2"></i>Estado de Conservación</div>
                                                 <div class="meta-value">
-                                                    <span class="badge" style="background-color: {{ $biodiversity->conservationStatus->color }}; color: white; border: 2px solid {{ $biodiversity->conservationStatus->color }}; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-weight: bold;">
+                                                    <span class="badge" style="background-color: {{ $bgColor }}; color: white; border: 2px solid {{ $bgColor }}; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-weight: bold;">
                                                         {{ $biodiversity->conservationStatus->code }} - {{ $biodiversity->conservationStatus->name }}
                                                     </span>
                                                 </div>
@@ -213,8 +235,19 @@
                     </div>
                     <div class="sidebar-content">
                         @if($biodiversity->conservationStatus)
+                             @php
+                                 $colorMap = [
+                                     'danger' => '#dc3545',
+                                     'warning' => '#ffc107',
+                                     'success' => '#28a745',
+                                     'info' => '#17a2b8',
+                                     'secondary' => '#6c757d',
+                                     'primary' => '#007bff'
+                                 ];
+                                 $bgColor = $colorMap[$biodiversity->conservationStatus->color] ?? '#6c757d';
+                             @endphp
                              <div class="conservation-status-card">
-                                 <div class="status-badge" style="background-color: {{ $biodiversity->conservationStatus->color }}; color: white; border: 2px solid {{ $biodiversity->conservationStatus->color }}; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-weight: bold; padding: 10px 15px; border-radius: 8px;">
+                                 <div class="status-badge" style="background-color: {{ $bgColor }}; color: white; border: 2px solid {{ $bgColor }}; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-weight: bold; padding: 10px 15px; border-radius: 8px;">
                                      <i class="fas fa-shield-alt me-2"></i>
                                      {{ $biodiversity->conservationStatus->code }} - {{ $biodiversity->conservationStatus->name }}
                                  </div>
@@ -293,7 +326,18 @@
                                             <div class="species-badges">
                                                 <span class="badge badge-outline-primary">{{ $kingdoms[$similar->kingdom] ?? $similar->kingdom }}</span>
                                                 @if($similar->conservationStatus)
-                                                     <span class="badge" style="background-color: {{ $similar->conservationStatus->color }}; color: white; border: 2px solid {{ $similar->conservationStatus->color }}; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-weight: bold;">
+                                                     @php
+                                                         $colorMap = [
+                                                             'danger' => '#dc3545',
+                                                             'warning' => '#ffc107',
+                                                             'success' => '#28a745',
+                                                             'info' => '#17a2b8',
+                                                             'secondary' => '#6c757d',
+                                                             'primary' => '#007bff'
+                                                         ];
+                                                         $bgColor = $colorMap[$similar->conservationStatus->color] ?? '#6c757d';
+                                                     @endphp
+                                                     <span class="badge" style="background-color: {{ $bgColor }}; color: white; border: 2px solid {{ $bgColor }}; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-weight: bold;">
                                                          {{ $similar->conservationStatus->code }}
                                                      </span>
                                                  @else

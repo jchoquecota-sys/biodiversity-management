@@ -220,34 +220,15 @@
                                 @else
                                     <i class="fas fa-leaf text-white" style="font-size: 4rem;"></i>
                                 @endif
-                                @php
-                                    $statusColors = [
-                                        'EX' => 'danger',
-                                        'EW' => 'danger',
-                                        'CR' => 'danger',
-                                        'EN' => 'warning',
-                                        'VU' => 'warning',
-                                        'NT' => 'info',
-                                        'LC' => 'success',
-                                        'DD' => 'secondary',
-                                        'NE' => 'secondary',
-                                    ];
-                                    $statusColor = $statusColors[$item->conservation_status] ?? 'secondary';
-                                    $conservationStatuses = [
-                                        'EX' => 'Extinta',
-                                        'EW' => 'Extinta en Estado Silvestre',
-                                        'CR' => 'En Peligro Crítico',
-                                        'EN' => 'En Peligro',
-                                        'VU' => 'Vulnerable',
-                                        'NT' => 'Casi Amenazada',
-                                        'LC' => 'Preocupación Menor',
-                                        'DD' => 'Datos Insuficientes',
-                                        'NE' => 'No Evaluada',
-                                    ];
-                                @endphp
-                                <span class="conservation-badge bg-{{ $statusColor }} text-white">
-                                    {{ $conservationStatuses[$item->conservation_status] ?? $item->conservation_status }}
-                                </span>
+                                @if($item->conservationStatus)
+                                    <span class="conservation-badge bg-{{ $item->conservationStatus->color }} text-white">
+                                        {{ $item->conservationStatus->name }}
+                                    </span>
+                                @else
+                                    <span class="conservation-badge bg-secondary text-white">
+                                        No Evaluado
+                                    </span>
+                                @endif
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">{{ $item->name }}</h5>

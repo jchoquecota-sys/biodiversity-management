@@ -70,6 +70,69 @@
         #biodiversity-table td {
             vertical-align: middle;
         }
+        .image-gallery {
+            max-width: 150px;
+        }
+        .image-gallery img {
+            margin: 2px;
+        }
+        .image-gallery img:hover {
+            z-index: 999;
+            position: relative;
+        }
+        
+        /* Mejoras de alineación para la tabla */
+        #biodiversity-table {
+            table-layout: fixed;
+        }
+        
+        #biodiversity-table th,
+        #biodiversity-table td {
+            vertical-align: middle;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        #biodiversity-table th:nth-child(1),
+        #biodiversity-table td:nth-child(1) {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        #biodiversity-table th:nth-child(2),
+        #biodiversity-table td:nth-child(2) {
+            text-align: center;
+        }
+        
+        #biodiversity-table th:nth-child(6),
+        #biodiversity-table td:nth-child(6),
+        #biodiversity-table th:nth-child(7),
+        #biodiversity-table td:nth-child(7),
+        #biodiversity-table th:nth-child(8),
+        #biodiversity-table td:nth-child(8) {
+            text-align: center;
+        }
+        
+        /* Estilos para nombres científicos */
+        .scientific-name {
+            font-style: italic;
+            color: #6c757d;
+        }
+        
+        /* Estilos para jerarquía taxonómica */
+        .taxonomic-hierarchy {
+            font-size: 0.85em;
+            line-height: 1.2;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #biodiversity-table th,
+            #biodiversity-table td {
+                font-size: 0.85em;
+                padding: 0.5rem 0.25rem;
+            }
+        }
     </style>
 @stop
 
@@ -90,15 +153,27 @@
                 processing: true,
                 serverSide: true,
                 ajax: '{{ route("admin.biodiversity.index") }}',
+                responsive: true,
+                autoWidth: false,
+                columnDefs: [
+                    { targets: 0, width: '5%', className: 'text-center' },
+                    { targets: 1, width: '12%', className: 'text-center', orderable: false, searchable: false },
+                    { targets: 2, width: '18%' },
+                    { targets: 3, width: '18%' },
+                    { targets: 4, width: '20%', orderable: false },
+                    { targets: 5, width: '8%', className: 'text-center' },
+                    { targets: 6, width: '10%', className: 'text-center' },
+                    { targets: 7, width: '9%', className: 'text-center', orderable: false, searchable: false }
+                ],
                 columns: [
-                    { data: 'id', name: 'id', width: '5%' },
-                    { data: 'image', name: 'image', orderable: false, searchable: false, width: '10%' },
-                    { data: 'name', name: 'name', width: '15%' },
-                    { data: 'scientific_name', name: 'scientific_name', width: '15%' },
-                    { data: 'taxonomic_hierarchy', name: 'taxonomic_hierarchy', orderable: false, width: '20%' },
-                    { data: 'kingdom', name: 'kingdom', width: '10%' },
-                    { data: 'conservation_status', name: 'conservation_status', width: '10%' },
-                    { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
+                    { data: 'id', name: 'id' },
+                    { data: 'image', name: 'image' },
+                    { data: 'name', name: 'name' },
+                    { data: 'scientific_name', name: 'scientific_name' },
+                    { data: 'taxonomic_hierarchy', name: 'taxonomic_hierarchy' },
+                    { data: 'kingdom', name: 'kingdom' },
+                    { data: 'conservation_status', name: 'conservation_status' },
+                    { data: 'action', name: 'action' }
                 ],
                 language: {
                     "decimal": "",

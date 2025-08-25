@@ -22,11 +22,43 @@ class BiodiversityCategoryController extends Controller
 
             return DataTables::of($query)
                 ->addColumn('image', function ($row) {
-                    $imageUrl = $row->getImageUrl();
-                    if ($imageUrl) {
-                        return '<img src="' . $imageUrl . '" alt="' . $row->name . '" class="img-thumbnail cursor-pointer" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px; transition: transform 0.2s;" onclick="showImageModal(\'' . $imageUrl . '\', \'' . addslashes($row->name) . '\')"> <br><small class="text-muted"></small>';
+                    $allImages = $row->getAllImageUrls();
+                    $imageCount = $row->getImageCount();
+                    
+                    if (!empty($allImages)) {
+                        $html = '<div class="image-gallery" style="display: flex; flex-wrap: wrap; gap: 2px; justify-content: center;">';
+                        
+                        // Mostrar hasta 3 imágenes en la vista de lista
+                        $displayImages = array_slice($allImages, 0, 3);
+                        
+                        foreach ($displayImages as $index => $imageUrl) {
+                            $html .= '<img src="' . $imageUrl . '" alt="' . $row->name . ' - Imagen ' . ($index + 1) . '" class="img-thumbnail cursor-pointer" style="width: 35px; height: 35px; object-fit: cover; border-radius: 4px; transition: transform 0.2s;" onclick="showImageModal(\'' . $imageUrl . '\', \'' . addslashes($row->name) . ' - Imagen ' . ($index + 1) . '\')">';
+                        }
+                        
+                        $html .= '</div>';
+                        
+                        // Mostrar contador de imágenes
+                        if ($imageCount > 1) {
+                            $html .= '<small class="text-muted d-block mt-1 text-center"><i class="fas fa-images"></i> ' . $imageCount . ' imágenes</small>';
+                        }
+                        
+                        return $html;
                     }
                     return '<div class="text-center"><i class="fas fa-image text-muted" style="font-size: 24px;"></i><br><small class="text-muted">Sin imagen</small></div>';
+                })
+                ->editColumn('scientific_name', function ($row) {
+                    return '<span class="scientific-name">' . $row->scientific_name . '</span>';
+                })
+                ->editColumn('conservation_status', function ($row) {
+                    $conservationStatus = ConservationStatus::where('code', $row->conservation_status)->first();
+                    if ($conservationStatus) {
+                        $statusClass = 'badge bg-' . $conservationStatus->color;
+                        $statusName = $conservationStatus->name;
+                    } else {
+                        $statusClass = 'badge bg-secondary';
+                        $statusName = $row->conservation_status;
+                    }
+                    return '<span class="' . $statusClass . '">' . $statusName . '</span>';
                 })
                 ->addColumn('taxonomic_hierarchy', function ($row) {
                     if ($row->familia) {
@@ -53,7 +85,7 @@ class BiodiversityCategoryController extends Controller
                     $actions .= '</div>';
                     return $actions;
                 })
-                ->rawColumns(['image', 'taxonomic_hierarchy', 'action'])
+                ->rawColumns(['image', 'scientific_name', 'conservation_status', 'taxonomic_hierarchy', 'action'])
                 ->make(true);
         }
 
@@ -88,6 +120,9 @@ class BiodiversityCategoryController extends Controller
             'idreino' => 'nullable|exists:reinos,id',
             'idfamilia' => 'nullable|exists:familias,idfamilia',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_3' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_4' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'habitat' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'publications' => 'nullable|array',
@@ -96,13 +131,27 @@ class BiodiversityCategoryController extends Controller
             'page_references' => 'nullable|array',
         ]);
 
-        $biodiversityData = $request->except(['image', 'publications', 'relevant_excerpts', 'page_references']);
+        $biodiversityData = $request->except(['image', 'image_2', 'image_3', 'image_4', 'publications', 'relevant_excerpts', 'page_references']);
 
+        // Manejar imagen principal
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('admin/biodiversity', $imageName, 'public');
             $biodiversityData['image_path'] = 'admin/biodiversity/' . $imageName;
+        }
+
+        // Manejar imágenes adicionales
+        for ($i = 2; $i <= 4; $i++) {
+            $imageField = 'image_' . $i;
+            $imagePathField = 'image_path_' . $i;
+            
+            if ($request->hasFile($imageField)) {
+                $image = $request->file($imageField);
+                $imageName = time() . '_' . $i . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('admin/biodiversity', $imageName, 'public');
+                $biodiversityData[$imagePathField] = 'admin/biodiversity/' . $imageName;
+            }
         }
 
         $biodiversity = BiodiversityCategory::create($biodiversityData);
@@ -128,7 +177,22 @@ class BiodiversityCategoryController extends Controller
     public function show(BiodiversityCategory $biodiversity)
     {
         $biodiversity->load('publications');
-        return view('admin.biodiversity.show', compact('biodiversity'));
+        
+        // Obtener los estados de conservación desde la base de datos
+        $conservationStatusesFromDB = ConservationStatus::all()->keyBy('code');
+        $conservationStatuses = $conservationStatusesFromDB->pluck('name', 'code')->toArray();
+        
+        // Definir los reinos para mostrar en la vista
+        $kingdoms = [
+            'animal' => 'Animal',
+            'plant' => 'Vegetal',
+            'fungi' => 'Fungi',
+            'protist' => 'Protista',
+            'bacteria' => 'Bacteria',
+            'archaea' => 'Archaea'
+        ];
+        
+        return view('admin.biodiversity.show', compact('biodiversity', 'conservationStatuses', 'kingdoms', 'conservationStatusesFromDB'));
     }
 
     /**
@@ -160,6 +224,9 @@ class BiodiversityCategoryController extends Controller
             'idreino' => 'nullable|exists:reinos,id',
             'idfamilia' => 'nullable|exists:familias,idfamilia',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_3' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_4' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'habitat' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'publications' => 'nullable|array',
@@ -168,8 +235,9 @@ class BiodiversityCategoryController extends Controller
             'page_references' => 'nullable|array',
         ]);
 
-        $biodiversityData = $request->except(['image', 'publications', 'relevant_excerpts', 'page_references']);
+        $biodiversityData = $request->except(['image', 'image_2', 'image_3', 'image_4', 'publications', 'relevant_excerpts', 'page_references']);
 
+        // Manejar imagen principal
         if ($request->hasFile('image')) {
             // Eliminar imagen anterior si existe
             if ($biodiversity->image_path && \Storage::disk('public')->exists($biodiversity->image_path)) {
@@ -180,6 +248,24 @@ class BiodiversityCategoryController extends Controller
             $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('admin/biodiversity', $imageName, 'public');
             $biodiversityData['image_path'] = 'admin/biodiversity/' . $imageName;
+        }
+
+        // Manejar imágenes adicionales
+        for ($i = 2; $i <= 4; $i++) {
+            $imageField = 'image_' . $i;
+            $imagePathField = 'image_path_' . $i;
+            
+            if ($request->hasFile($imageField)) {
+                // Eliminar imagen anterior si existe
+                if ($biodiversity->$imagePathField && \Storage::disk('public')->exists($biodiversity->$imagePathField)) {
+                    \Storage::disk('public')->delete($biodiversity->$imagePathField);
+                }
+                
+                $image = $request->file($imageField);
+                $imageName = time() . '_' . $i . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('admin/biodiversity', $imageName, 'public');
+                $biodiversityData[$imagePathField] = 'admin/biodiversity/' . $imageName;
+            }
         }
 
         $biodiversity->update($biodiversityData);
