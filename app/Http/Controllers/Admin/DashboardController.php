@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\VisitCounterHelper;
 use App\Http\Controllers\Controller;
 use App\Models\BiodiversityCategory;
+use App\Models\PageVisit;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -31,13 +33,27 @@ class DashboardController extends Controller
         // Total de especies y publicaciones
         $totalBiodiversity = BiodiversityCategory::count();
         $totalPublications = Publication::count();
+        
+        // Estadísticas de visitas
+        $visitStats = VisitCounterHelper::getSiteStats();
+        $topPages = VisitCounterHelper::getTopPages(10);
+        
+        // Visitas por día en los últimos 30 días
+        $dailyVisits = PageVisit::selectRaw('DATE(created_at) as date, COUNT(*) as visits')
+            ->where('created_at', '>=', now()->subDays(30))
+            ->groupBy('date')
+            ->orderBy('date')
+            ->get();
 
         return view('admin.dashboard', compact(
             'biodiversityByKingdom',
             'biodiversityByConservationStatus',
             'latestPublications',
             'totalBiodiversity',
-            'totalPublications'
+            'totalPublications',
+            'visitStats',
+            'topPages',
+            'dailyVisits'
         ));
     }
 }
