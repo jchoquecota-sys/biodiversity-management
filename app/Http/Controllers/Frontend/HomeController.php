@@ -7,6 +7,7 @@ use App\Models\BiodiversityCategory;
 use App\Models\Publication;
 use App\Models\HomeContent;
 use App\Models\HeroSliderImage;
+use App\Models\ConservationStatus;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -55,8 +56,29 @@ class HomeController extends Controller
         // Statistics for dashboard
         $totalBiodiversity = BiodiversityCategory::count();
         $totalPublications = Publication::count();
+        
+        // Obtener estadísticas dinámicas de estados de conservación
+        $conservationStats = ConservationStatus::with(['biodiversityCategories'])
+            ->where('is_active', true)
+            ->get()
+            ->map(function ($status) {
+                return [
+                    'code' => $status->code,
+                    'name' => $status->name,
+                    'color' => $status->color,
+                    'priority' => $status->priority,
+                    'count' => $status->biodiversityCategories()->count()
+                ];
+            })
+            ->sortByDesc('priority');
+        
+        // Obtener conteos específicos para especies en peligro
         $endangeredCount = BiodiversityCategory::where('conservation_status', 'EN')->count();
         $criticallyEndangeredCount = BiodiversityCategory::where('conservation_status', 'CR')->count();
+        
+        // Obtener estadísticas adicionales por prioridad
+        $highPriorityStatuses = $conservationStats->where('priority', '>=', 6); // CR, EN, VU
+        $totalThreatenedCount = $highPriorityStatuses->sum('count');
         
         // Featured biodiversity (latest 6)
         $featuredBiodiversity = BiodiversityCategory::latest()->take(6)->get();
@@ -101,7 +123,9 @@ class HomeController extends Controller
             'useImageSlider',
             'sliderAutoplay',
             'sliderInterval',
-            'enableIcons'
+            'enableIcons',
+            'conservationStats',
+            'totalThreatenedCount'
         ));
     }
 

@@ -156,6 +156,7 @@
         <div class="container">
             <h2 class="section-title">{{ $statsContent['title']->value ?? 'Nuestra Biodiversidad en Números' }}</h2>
             <div class="row g-4">
+                <!-- Estadística de Biodiversidad Total -->
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-card">
                         <div class="stats-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
@@ -166,6 +167,8 @@
                         <p class="text-muted">{{ $statsContent['categories_description']->value ?? 'Diferentes grupos taxonómicos registrados' }}</p>
                     </div>
                 </div>
+                
+                <!-- Estadística de Publicaciones -->
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-card">
                         <div class="stats-icon" style="background: linear-gradient(135deg, #27ae60, #229954);">
@@ -176,26 +179,45 @@
                         <p class="text-muted">{{ $statsContent['publications_description']->value ?? 'Investigaciones y estudios disponibles' }}</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-card">
-                        <div class="stats-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
-                            <i class="fas fa-exclamation-triangle"></i>
+                
+                <!-- Estadísticas dinámicas de estados de conservación -->
+                @php
+                    // Filtrar solo estados con especies (count > 0) y prioridad >= 5 (CR, EN, VU)
+                    $priorityStats = $conservationStats->where('count', '>', 0)->where('priority', '>=', 5)->take(2);
+                    $statIndex = 0;
+                    $iconColors = [
+                        ['background' => 'linear-gradient(135deg, #e74c3c, #c0392b)', 'icon' => 'fas fa-skull-crossbones'],
+                        ['background' => 'linear-gradient(135deg, #f39c12, #e67e22)', 'icon' => 'fas fa-exclamation-triangle']
+                    ];
+                @endphp
+                
+                @foreach($priorityStats as $stat)
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-card">
+                            <div class="stats-icon" style="background: {{ $iconColors[$statIndex]['background'] ?? 'linear-gradient(135deg, #6c757d, #495057)' }};">
+                                <i class="{{ $iconColors[$statIndex]['icon'] ?? 'fas fa-exclamation-circle' }}"></i>
+                            </div>
+                            <div class="stats-number">{{ $stat['count'] }}</div>
+                            <h5>{{ $stat['name'] }}</h5>
+                            <p class="text-muted">Código: {{ $stat['code'] }} - Prioridad {{ $stat['priority'] }}</p>
                         </div>
-                        <div class="stats-number">{{ $endangeredCount }}</div>
-                        <h5>{{ $statsContent['endangered_title']->value ?? 'Especies en Peligro' }}</h5>
-                        <p class="text-muted">{{ $statsContent['endangered_description']->value ?? 'Requieren protección especial' }}</p>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-card">
-                        <div class="stats-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
-                            <i class="fas fa-skull-crossbones"></i>
+                    @php $statIndex++; @endphp
+                @endforeach
+                
+                <!-- Si no hay suficientes estadísticas de alta prioridad, mostrar el total amenazado -->
+                @if($priorityStats->count() < 2)
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-card">
+                            <div class="stats-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="stats-number">{{ $totalThreatenedCount }}</div>
+                            <h5>Especies Amenazadas</h5>
+                            <p class="text-muted">Total de especies en categorías de riesgo</p>
                         </div>
-                        <div class="stats-number">{{ $criticallyEndangeredCount }}</div>
-                        <h5>{{ $statsContent['critical_title']->value ?? 'En Peligro Crítico' }}</h5>
-                        <p class="text-muted">{{ $statsContent['critical_description']->value ?? 'Situación de conservación crítica' }}</p>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </section>
