@@ -84,11 +84,11 @@
                         </tr>
                         <tr>
                             <th>Fecha de Creación</th>
-                            <td>{{ $biodiversity->created_at->format('d/m/Y H:i') }}</td>
+                            <td>{{ $biodiversity->created_at ? $biodiversity->created_at->format('d/m/Y H:i') : 'N/A' }}</td>
                         </tr>
                         <tr>
                             <th>Última Actualización</th>
-                            <td>{{ $biodiversity->updated_at->format('d/m/Y H:i') }}</td>
+                            <td>{{ $biodiversity->updated_at ? $biodiversity->updated_at->format('d/m/Y H:i') : 'N/A' }}</td>
                         </tr>
                     </table>
                 </div>

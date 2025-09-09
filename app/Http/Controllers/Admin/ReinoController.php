@@ -138,7 +138,7 @@ class ReinoController extends Controller
                     $reino->nombre,
                     $reino->definicion,
                     $reino->clases_count,
-                    $reino->created_at->format('d/m/Y H:i:s')
+                    $reino->created_at ? \Carbon\Carbon::parse($reino->created_at)->format('d/m/Y H:i:s') : 'N/A'
                 ]);
             }
             

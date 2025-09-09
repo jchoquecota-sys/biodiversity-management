@@ -28,15 +28,15 @@ class FixImageUrls
                 
                 // Replace all localhost URLs with the correct APP_URL
                  $correctedContent = str_replace(
-                     ['http://localhost/storage', 'http://localhost:8000/storage'],
-                     [config('app.url') . '/storage', config('app.url') . '/storage'],
+                     ['http://localhost/storage', 'http://localhost:8000/storage', 'http://127.0.0.1:8000/storage'],
+                     [config('app.url') . '/storage', config('app.url') . '/storage', config('app.url') . '/storage'],
                      $content
                  );
                  
                  // Also replace any remaining localhost references
                  $correctedContent = str_replace(
-                     'http://localhost',
-                     config('app.url'),
+                     ['http://localhost', 'http://127.0.0.1:8000'],
+                     [config('app.url'), config('app.url')],
                      $correctedContent
                  );
                 

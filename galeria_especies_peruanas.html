@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Galería de Especies Peruanas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .species-card { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .species-card h3 { color: #2c5530; margin-top: 0; }
+        .scientific-name { font-style: italic; color: #666; margin-bottom: 10px; }
+        .main-image { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+        .thumbnail-gallery { display: flex; gap: 5px; margin-top: 10px; }
+        .thumbnail { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; }
+        .thumbnail:hover { border-color: #2c5530; }
+        .status-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .status-VU { background-color: #ffeaa7; color: #d63031; }
+        .status-LC { background-color: #a8e6cf; color: #00b894; }
+        .status-NT { background-color: #fdcb6e; color: #e17055; }
+        .status-EN { background-color: #fab1a0; color: #e17055; }
+        .status-CR { background-color: #ff7675; color: #d63031; }
+        .image-source { font-size: 11px; color: #999; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🦋 Galería de Especies Peruanas</h1>
+    <p>Especies nativas del Perú con fotografías de alta calidad de Wikimedia Commons</p>
+    <div class='gallery'>
+        <div class='species-card'>
+            <h3>Jaguar</h3>
+            <div class='scientific-name'>Panthera onca</div>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Standing_jaguar.jpg/800px-Standing_jaguar.jpg' alt='Jaguar' class='main-image' id='main-487'>
+            <div>
+                <span class='status-badge status-NT'>NT</span>
+                <span style='margin-left: 10px; color: #666;'>Reino: Animal</span>
+            </div>
+            <div class='thumbnail-gallery'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Standing_jaguar.jpg/800px-Standing_jaguar.jpg' alt='Foto 1' class='thumbnail' onclick="document.getElementById('main-487').src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Standing_jaguar.jpg/800px-Standing_jaguar.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Jaguar_%28Panthera_onca%29_male_Three_Brothers_River.jpg/800px-Jaguar_%28Panthera_onca%29_male_Three_Brothers_River.jpg' alt='Foto 2' class='thumbnail' onclick="document.getElementById('main-487').src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Jaguar_%28Panthera_onca%29_male_Three_Brothers_River.jpg/800px-Jaguar_%28Panthera_onca%29_male_Three_Brothers_River.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jaguar_head_shot.jpg/600px-Jaguar_head_shot.jpg' alt='Foto 3' class='thumbnail' onclick="document.getElementById('main-487').src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jaguar_head_shot.jpg/600px-Jaguar_head_shot.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Jaguar_%28Panthera_onca%29_swimming.jpg/800px-Jaguar_%28Panthera_onca%29_swimming.jpg' alt='Foto 4' class='thumbnail' onclick="document.getElementById('main-487').src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Jaguar_%28Panthera_onca%29_swimming.jpg/800px-Jaguar_%28Panthera_onca%29_swimming.jpg'">
+            </div>
+            <div class='image-source'>📸 Fuente: Wikimedia Commons (Creative Commons)</div>
+        </div>
+        <div class='species-card'>
+            <h3>Vicuña</h3>
+            <div class='scientific-name'>Vicugna vicugna</div>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Vicugna_vicugna_1_fcm.jpg/800px-Vicugna_vicugna_1_fcm.jpg' alt='Vicuña' class='main-image' id='main-486'>
+            <div>
+                <span class='status-badge status-LC'>LC</span>
+                <span style='margin-left: 10px; color: #666;'>Reino: Animal</span>
+            </div>
+            <div class='thumbnail-gallery'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Vicugna_vicugna_1_fcm.jpg/800px-Vicugna_vicugna_1_fcm.jpg' alt='Foto 1' class='thumbnail' onclick="document.getElementById('main-486').src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Vicugna_vicugna_1_fcm.jpg/800px-Vicugna_vicugna_1_fcm.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vicuna_Vicugna_vicugna.jpg/600px-Vicuna_Vicugna_vicugna.jpg' alt='Foto 2' class='thumbnail' onclick="document.getElementById('main-486').src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vicuna_Vicugna_vicugna.jpg/600px-Vicuna_Vicugna_vicugna.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Vicugna_vicugna_2_fcm.jpg/800px-Vicugna_vicugna_2_fcm.jpg' alt='Foto 3' class='thumbnail' onclick="document.getElementById('main-486').src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Vicugna_vicugna_2_fcm.jpg/800px-Vicugna_vicugna_2_fcm.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Vicuna_herd.jpg/800px-Vicuna_herd.jpg' alt='Foto 4' class='thumbnail' onclick="document.getElementById('main-486').src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Vicuna_herd.jpg/800px-Vicuna_herd.jpg'">
+            </div>
+            <div class='image-source'>📸 Fuente: Wikimedia Commons (Creative Commons)</div>
+        </div>
+        <div class='species-card'>
+            <h3>Cóndor Andino</h3>
+            <div class='scientific-name'>Vultur gryphus</div>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Andean_Condor.jpg/800px-Andean_Condor.jpg' alt='Cóndor Andino' class='main-image' id='main-485'>
+            <div>
+                <span class='status-badge status-VU'>VU</span>
+                <span style='margin-left: 10px; color: #666;'>Reino: Animal</span>
+            </div>
+            <div class='thumbnail-gallery'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Andean_Condor.jpg/800px-Andean_Condor.jpg' alt='Foto 1' class='thumbnail' onclick="document.getElementById('main-485').src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Andean_Condor.jpg/800px-Andean_Condor.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vultur_gryphus_-flying-8a.jpg/800px-Vultur_gryphus_-flying-8a.jpg' alt='Foto 2' class='thumbnail' onclick="document.getElementById('main-485').src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vultur_gryphus_-flying-8a.jpg/800px-Vultur_gryphus_-flying-8a.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Condor_des_Andes_m%C3%A2le.jpg/600px-Condor_des_Andes_m%C3%A2le.jpg' alt='Foto 3' class='thumbnail' onclick="document.getElementById('main-485').src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Condor_des_Andes_m%C3%A2le.jpg/600px-Condor_des_Andes_m%C3%A2le.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Vultur_gryphus_-Colca_Canyon%2C_Peru-8.jpg/800px-Vultur_gryphus_-Colca_Canyon%2C_Peru-8.jpg' alt='Foto 4' class='thumbnail' onclick="document.getElementById('main-485').src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Vultur_gryphus_-Colca_Canyon%2C_Peru-8.jpg/800px-Vultur_gryphus_-Colca_Canyon%2C_Peru-8.jpg'">
+            </div>
+            <div class='image-source'>📸 Fuente: Wikimedia Commons (Creative Commons)</div>
+        </div>
+        <div class='species-card'>
+            <h3>Gallito de las Rocas Peruano</h3>
+            <div class='scientific-name'>Rupicola peruvianus</div>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rupicola_peruvianus_-Bronx_Zoo-8a.jpg/800px-Rupicola_peruvianus_-Bronx_Zoo-8a.jpg' alt='Gallito de las Rocas Peruano' class='main-image' id='main-484'>
+            <div>
+                <span class='status-badge status-LC'>LC</span>
+                <span style='margin-left: 10px; color: #666;'>Reino: Animal</span>
+            </div>
+            <div class='thumbnail-gallery'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rupicola_peruvianus_-Bronx_Zoo-8a.jpg/800px-Rupicola_peruvianus_-Bronx_Zoo-8a.jpg' alt='Foto 1' class='thumbnail' onclick="document.getElementById('main-484').src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rupicola_peruvianus_-Bronx_Zoo-8a.jpg/800px-Rupicola_peruvianus_-Bronx_Zoo-8a.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Rupicola_peruvianus_qtl1.jpg/600px-Rupicola_peruvianus_qtl1.jpg' alt='Foto 2' class='thumbnail' onclick="document.getElementById('main-484').src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Rupicola_peruvianus_qtl1.jpg/600px-Rupicola_peruvianus_qtl1.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Cock-of-the-rock_lek.jpg/800px-Cock-of-the-rock_lek.jpg' alt='Foto 3' class='thumbnail' onclick="document.getElementById('main-484').src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Cock-of-the-rock_lek.jpg/800px-Cock-of-the-rock_lek.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Rupicola_peruvianus_male.jpg/600px-Rupicola_peruvianus_male.jpg' alt='Foto 4' class='thumbnail' onclick="document.getElementById('main-484').src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Rupicola_peruvianus_male.jpg/600px-Rupicola_peruvianus_male.jpg'">
+            </div>
+            <div class='image-source'>📸 Fuente: Wikimedia Commons (Creative Commons)</div>
+        </div>
+        <div class='species-card'>
+            <h3>Oso de Anteojos</h3>
+            <div class='scientific-name'>Tremarctos ornatus</div>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Spectacled_Bear_-_Houston_Zoo.jpg/800px-Spectacled_Bear_-_Houston_Zoo.jpg' alt='Oso de Anteojos' class='main-image' id='main-483'>
+            <div>
+                <span class='status-badge status-VU'>VU</span>
+                <span style='margin-left: 10px; color: #666;'>Reino: Animal</span>
+            </div>
+            <div class='thumbnail-gallery'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Spectacled_Bear_-_Houston_Zoo.jpg/800px-Spectacled_Bear_-_Houston_Zoo.jpg' alt='Foto 1' class='thumbnail' onclick="document.getElementById('main-483').src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Spectacled_Bear_-_Houston_Zoo.jpg/800px-Spectacled_Bear_-_Houston_Zoo.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Tremarctos_ornatus_face.jpg/600px-Tremarctos_ornatus_face.jpg' alt='Foto 2' class='thumbnail' onclick="document.getElementById('main-483').src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Tremarctos_ornatus_face.jpg/600px-Tremarctos_ornatus_face.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Spectacled_bear_%28Tremarctos_ornatus%29.jpg/800px-Spectacled_bear_%28Tremarctos_ornatus%29.jpg' alt='Foto 3' class='thumbnail' onclick="document.getElementById('main-483').src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Spectacled_bear_%28Tremarctos_ornatus%29.jpg/800px-Spectacled_bear_%28Tremarctos_ornatus%29.jpg'">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Tremarctos_ornatus_qtl1.jpg/600px-Tremarctos_ornatus_qtl1.jpg' alt='Foto 4' class='thumbnail' onclick="document.getElementById('main-483').src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Tremarctos_ornatus_qtl1.jpg/600px-Tremarctos_ornatus_qtl1.jpg'">
+            </div>
+            <div class='image-source'>📸 Fuente: Wikimedia Commons (Creative Commons)</div>
+        </div>
+    </div>
+    <script>
+        // Funcionalidad adicional para la galería
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Galería de especies peruanas cargada exitosamente');
+        });
+    </script>
+</body>
+</html>

@@ -54,8 +54,8 @@
                         </div>
                         
                         <div class="publication-actions">
-                            @if($publication->pdf_path && Storage::disk('public')->exists($publication->pdf_path))
-                    <a href="{{ Storage::disk('public')->url($publication->pdf_path) }}" class="btn btn-primary" target="_blank">
+                            @if($publication->hasPdfFile())
+                    <a href="{{ $publication->getPdfUrl() }}" class="btn btn-primary" target="_blank">
                         <i class="fas fa-file-pdf me-2"></i>Descargar PDF
                     </a>
                 @endif
@@ -204,11 +204,11 @@
                                 <div class="info-value">{{ $publication->biodiversityCategories->count() }} especies</div>
                             </div>
                             
-                            @if($publication->pdf_path && Storage::disk('public')->exists($publication->pdf_path))
+                            @if($publication->hasPdfFile())
                             <div class="info-item">
                                 <div class="info-label"><i class="fas fa-file-pdf me-2"></i>Documento</div>
                                 <div class="info-value">
-                                    <a href="{{ Storage::disk('public')->url($publication->pdf_path) }}" class="download-link" target="_blank">
+                                    <a href="{{ $publication->getPdfUrl() }}" class="download-link" target="_blank">
                                         Disponible en PDF
                                     </a>
                                 </div>

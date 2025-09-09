@@ -196,8 +196,8 @@
                                         <a href="/publications/{{ $publication->id }}" class="btn btn-outline-primary btn-sm rounded-pill">
                                             <i class="fas fa-eye me-1"></i>Ver Detalles
                                         </a>
-                                        @if($publication->pdf_path && Storage::disk('public')->exists($publication->pdf_path))
-                                    <a href="{{ Storage::disk('public')->url($publication->pdf_path) }}" class="btn btn-outline-danger" target="_blank">
+                                        @if($publication->hasPdfFile())
+                                    <a href="{{ $publication->getPdfUrl() }}" class="btn btn-outline-danger" target="_blank">
                                         <i class="fas fa-file-pdf me-2"></i>Descargar PDF
                                     </a>
                                 @endif

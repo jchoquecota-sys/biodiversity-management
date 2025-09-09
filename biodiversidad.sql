@@ -14,118 +14,1015 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Volcando datos para la tabla biodiversity_management.biodiversity_categories: ~18 rows (aproximadamente)
-INSERT INTO `biodiversity_categories` (`id`, `name`, `scientific_name`, `common_name`, `description`, `conservation_status`, `kingdom`, `family`, `habitat`, `image_path`, `deleted_at`, `created_at`, `updated_at`) VALUES
-	(53, 'Quetzal Resplandeciente', 'Pharomachrus mocinno', 'Quetzal', 'Ave sagrada maya conocida por su plumaje iridiscente verde-dorado. El macho posee plumas coberteras que pueden alcanzar hasta 1 metro de longitud.', 'EN', 'Animalia', 'Trogonidae', 'Bosque nuboso', NULL, NULL, '2025-07-30 21:51:04', '2025-07-30 21:51:04'),
-	(54, 'Quetzal Resplandeciente', 'Pharomachrus mocinno', 'Quetzal', 'Ave sagrada maya conocida por su plumaje iridiscente verde-dorado y largas plumas caudales. Habita en bosques nubosos de altura en Mesoamérica.', 'NE', 'Animalia', 'Trogonidae', 'Bosque nuboso tropical', NULL, NULL, '2025-07-30 21:53:52', '2025-07-30 21:53:52'),
-	(55, 'Jaguar', 'Panthera onca', 'Jaguar', 'El felino más grande de América, reconocido por su pelaje dorado con rosetas negras. Depredador apex crucial para el equilibrio ecosistémico.', 'NT', 'Animalia', 'Felidae', 'Selvas tropicales y subtropicales', NULL, NULL, '2025-07-30 21:53:59', '2025-07-30 21:53:59'),
-	(56, 'Vaquita Marina', 'Phocoena sinus', 'Vaquita', 'La marsopa más pequeña y en mayor peligro del mundo, endémica del Golfo de California. Se caracteriza por sus distintivos anillos oscuros alrededor de los ojos.', 'CR', 'Animalia', 'Phocoenidae', 'Aguas costeras del Golfo de California', NULL, NULL, '2025-07-30 21:54:17', '2025-07-30 21:54:17'),
-	(57, 'Ajolote Mexicano', 'Ambystoma mexicanum', 'Ajolote', 'Salamandra endémica de Xochimilco, México, conocida por su extraordinaria capacidad de regeneración y por mantener características juveniles en su edad adulta.', 'CR', 'Animalia', 'Ambystomatidae', 'Canales de agua dulce de Xochimilco', NULL, NULL, '2025-07-30 21:54:33', '2025-07-30 21:54:33'),
-	(58, 'Guacamaya Roja', 'Ara macao', 'Guacamaya Escarlata', 'Ave tropical de gran tamaño conocida por su brillante plumaje rojo, amarillo y azul. Juega un papel crucial en la dispersión de semillas en la selva tropical.', 'VU', 'Animalia', 'Psittacidae', 'Selvas tropicales y subtropicales', NULL, NULL, '2025-07-30 21:54:49', '2025-07-30 21:54:49'),
-	(59, 'Tortuga Lora', 'Lepidochelys kempii', 'Tortuga Lora', 'La especie más pequeña de tortuga marina, conocida por su caparazón casi circular y color gris verdoso. Realiza arribadas masivas para anidar en las costas del Golfo de México.', 'CR', 'Animalia', 'Cheloniidae', 'Aguas costeras del Golfo de México', NULL, NULL, '2025-07-30 21:55:04', '2025-07-30 21:55:04'),
-	(60, 'Lobo Mexicano', 'Canis lupus baileyi', 'Lobo Gris Mexicano', 'Subespecie más pequeña del lobo gris, endémica de México y el suroeste de Estados Unidos. Cazador social que desempeña un papel vital en el control de poblaciones de herbívoros.', 'CR', 'Animalia', 'Canidae', 'Bosques de pino-encino y pastizales', NULL, NULL, '2025-07-30 21:55:18', '2025-07-30 21:55:18'),
-	(61, 'Águila Real', 'Aquila chrysaetos', 'Águila Real', 'Rapaz majestuosa y emblemática de México, reconocida por su gran envergadura y capacidad de caza. Importante depredador que ayuda a mantener el equilibrio en ecosistemas de montaña.', 'NE', 'Animalia', 'Accipitridae', 'Zonas montañosas y semidesérticas', NULL, NULL, '2025-07-30 21:55:43', '2025-07-30 21:55:43'),
-	(62, 'Tapir Centroamericano', 'Tapirus bairdii', 'Tapir, Danta', 'El mamífero terrestre más grande de la región mesoamericana. Herbívoro que cumple un papel crucial en la dispersión de semillas y el mantenimiento de la estructura del bosque tropical.', 'EN', 'Animalia', 'Tapiridae', 'Selvas tropicales y bosques de montaña', NULL, NULL, '2025-07-30 21:56:00', '2025-07-30 21:56:00'),
-	(63, 'Manatí del Caribe', 'Trichechus manatus', 'Manatí Antillano', 'Mamífero acuático herbívoro que habita en aguas costeras y ríos. Conocido como vaca marina, juega un papel importante en el control de la vegetación acuática y el ciclo de nutrientes.', 'EN', 'Animalia', 'Trichechidae', 'Aguas costeras, estuarios y ríos', NULL, NULL, '2025-07-30 21:56:47', '2025-07-30 21:56:47'),
-	(64, 'Mono Araña', 'Ateles geoffroyi', 'Mono Araña Centroamericano', 'Primate arborícola con extremidades largas y cola prensil. Importante dispersor de semillas en las selvas tropicales y considerado una especie paraguas para la conservación del ecosistema.', 'EN', 'Animalia', 'Atelidae', 'Selvas tropicales perennifolias y subperennifolias', NULL, NULL, '2025-07-30 21:57:03', '2025-07-30 21:57:03'),
-	(65, 'Mariposa Monarca', 'Danaus plexippus', 'Mariposa Monarca', 'Lepidóptero famoso por su extraordinaria migración anual. Sus colonias invernales en los bosques de oyamel de México son uno de los fenómenos más impresionantes de la naturaleza.', 'EN', 'Animalia', 'Nymphalidae', 'Bosques de oyamel y áreas con presencia de plantas asclepias', NULL, NULL, '2025-07-30 21:57:25', '2025-07-30 21:57:25'),
-	(66, 'Ahuehuete', 'Taxodium mucronatum', 'Sabino, Ciprés Mexicano', 'Árbol nacional de México, puede vivir más de 2000 años. Es una especie longeva que puede alcanzar alturas de hasta 40 metros. Sus ramas forman una copa amplia y sus hojas son pequeñas y lineales.', 'LC', 'Plantae', 'Cupressaceae', 'Riberas de ríos y arroyos', NULL, NULL, NULL, NULL),
-	(67, 'Pino Azul', 'Pinus maximartinezii', NULL, 'Especie endémica de México, conocida por sus grandes piñones comestibles y su coloración azul-verdosa distintiva. Se encuentra en peligro de extinción debido a su distribución limitada y la sobreexplotación.', 'NE', 'Plantae', 'Pinaceae', 'Bosques de pino-encino en la Sierra Madre Occidental, específicamente en Zacatecas', NULL, NULL, '2025-07-30 22:10:40', '2025-07-30 22:10:40'),
-	(68, 'Orquídea Tigre', 'Tigridia pavonia', NULL, 'Planta herbácea perenne conocida por sus flores espectaculares que duran solo un día. Es una especie endémica de México con gran valor ornamental y cultural, utilizada tradicionalmente por culturas prehispánicas.', 'LC', 'Plantae', 'Iridaceae', 'Pastizales y bosques de pino-encino en regiones templadas de México', NULL, NULL, '2025-07-30 22:10:56', '2025-07-30 22:10:56'),
-	(69, 'Cacao', 'Theobroma cacao', NULL, 'Árbol perennifolio tropical, fuente del chocolate. Originario de las selvas tropicales de América Central y del Sur. De gran importancia económica y cultural en México desde tiempos prehispánicos.', 'LC', 'Plantae', 'Malvaceae', 'Selvas tropicales húmedas y subhúmedas de México', NULL, NULL, '2025-07-30 22:11:16', '2025-07-30 22:11:16'),
-	(70, 'Vainilla', 'Vanilla planifolia', NULL, 'Orquídea trepadora originaria de México, productora de uno de los saborizantes más importantes del mundo. Es la única orquídea de importancia agrícola y fue domesticada por los totonacas en Veracruz.', 'VU', 'Plantae', 'Orchidaceae', 'Selvas tropicales húmedas y subhúmedas, principalmente en Veracruz y Oaxaca', NULL, NULL, '2025-07-30 22:11:33', '2025-07-30 22:11:33');
 
--- Volcando datos para la tabla biodiversity_management.biodiversity_category_publication: ~17 rows (aproximadamente)
-INSERT INTO `biodiversity_category_publication` (`id`, `biodiversity_category_id`, `publication_id`, `relevant_excerpt`, `page_reference`, `created_at`, `updated_at`) VALUES
-	(2, 54, 20, 'Análisis del Quetzal', 'pp. 23-45', NULL, NULL),
-	(3, 55, 21, 'Estudio del Jaguar', 'pp. 15-32', NULL, NULL),
-	(4, 56, 22, 'Investigación de la Vaquita Marina', 'pp. 45-67', NULL, NULL),
-	(5, 57, 23, 'Estudio del Ajolote', 'pp. 78-92', NULL, NULL),
-	(6, 58, 24, 'Investigación de la Guacamaya', 'pp. 112-128', NULL, NULL),
-	(7, 59, 25, 'Análisis de la Tortuga Lora', 'pp. 55-70', NULL, NULL),
-	(8, 60, 26, 'Estudio del Lobo Mexicano', 'pp. 145-160', NULL, NULL),
-	(9, 61, 27, 'Investigación del Águila Real', 'pp. 89-104', NULL, NULL),
-	(10, 62, 28, 'Análisis del Tapir', 'pp. 167-182', NULL, NULL),
-	(11, 63, 29, 'Estudio del Manatí', 'pp. 201-218', NULL, NULL),
-	(12, 64, 30, 'Investigación del Mono Araña', 'pp. 134-152', NULL, NULL),
-	(13, 65, 31, 'Análisis de la Mariposa Monarca', 'pp. 78-95', NULL, NULL),
-	(14, 66, 32, 'Estudio detallado sobre la importancia histórica y ecológica del Ahuehuete como árbol nacional de México', '45-67', NULL, NULL),
-	(15, 67, 33, 'Análisis del estado de conservación y distribución del Pinus maximartinezii en su hábitat natural', '78-92', NULL, NULL),
-	(16, 68, 34, 'Investigación sobre la diversidad genética y patrones de distribución de Tigridia pavonia', '112-128', NULL, NULL),
-	(17, 69, 35, 'Estudio sobre la diversidad de variedades nativas de cacao en México y su importancia en la conservación', '156-170', NULL, NULL),
-	(18, 70, 36, 'Evaluación del estado actual de las poblaciones silvestres de vainilla y su diversidad genética', '203-225', NULL, NULL);
+-- Volcando estructura de base de datos para biodiversity_management
+CREATE DATABASE IF NOT EXISTS `biodiversity_management` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `biodiversity_management`;
+
+-- Volcando estructura para tabla biodiversity_management.biodiversity_categories
+CREATE TABLE IF NOT EXISTS `biodiversity_categories` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `scientific_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `common_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `conservation_status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kingdom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idreino` bigint unsigned DEFAULT NULL,
+  `idclase` bigint unsigned DEFAULT NULL,
+  `idorden` bigint unsigned DEFAULT NULL,
+  `conservation_status_id` bigint unsigned DEFAULT NULL,
+  `idfamilia` bigint unsigned DEFAULT NULL,
+  `habitat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `biodiversity_categories_conservation_status_foreign` (`conservation_status`),
+  KEY `biodiversity_categories_idfamilia_foreign` (`idfamilia`),
+  KEY `biodiversity_categories_idreino_foreign` (`idreino`),
+  KEY `biodiversity_categories_conservation_status_id_foreign` (`conservation_status_id`),
+  KEY `biodiversity_categories_idclase_index` (`idclase`),
+  KEY `biodiversity_categories_idorden_index` (`idorden`),
+  CONSTRAINT `biodiversity_categories_conservation_status_id_foreign` FOREIGN KEY (`conservation_status_id`) REFERENCES `conservation_statuses` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `biodiversity_categories_idclase_foreign` FOREIGN KEY (`idclase`) REFERENCES `clases` (`idclase`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `biodiversity_categories_idfamilia_foreign` FOREIGN KEY (`idfamilia`) REFERENCES `familias` (`idfamilia`) ON DELETE SET NULL,
+  CONSTRAINT `biodiversity_categories_idorden_foreign` FOREIGN KEY (`idorden`) REFERENCES `ordens` (`idorden`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `biodiversity_categories_idreino_foreign` FOREIGN KEY (`idreino`) REFERENCES `reinos` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=498 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.biodiversity_categories: ~482 rows (aproximadamente)
+INSERT INTO `biodiversity_categories` (`id`, `name`, `scientific_name`, `common_name`, `description`, `conservation_status`, `kingdom`, `idreino`, `idclase`, `idorden`, `conservation_status_id`, `idfamilia`, `habitat`, `image_path`, `deleted_at`, `created_at`, `updated_at`) VALUES
+	(1, 'Liolaemus tacnae', 'Liolaemus tacnae', 'Lagartija', 'Liolaemus signifer, la iguana del árbol zodiacal, es una especie de lagarto de la familia Liolaemidae. Es originaria de Chile, Bolivia y Perú.', 'VU', 'Animal', NULL, 1, 1, 5, 3, NULL, NULL, NULL, '2024-10-18 23:54:40', '2025-09-05 19:47:31'),
+	(2, 'Liolaemus signifer', 'Liolaemus signifer', 'Lagartija', 'Liolaemus signifer, la iguana del árbol zodiacal, es una especie de lagarto de la familia Liolaemidae. Es originaria de Chile, Bolivia y Perú.', 'NT', 'Animal', NULL, 1, 1, 6, 3, NULL, NULL, NULL, '2024-10-19 00:05:27', '2025-09-05 19:47:31'),
+	(3, 'Liolaemus basadrei', 'Liolaemus basadrei', 'Lagartija', 'Liolaemus basadrei es una especie de lagarto de la familia Liolaemidae. Es originario de Perú.', 'NT', 'Animal', NULL, 1, 1, 6, 3, NULL, NULL, NULL, '2024-10-19 00:32:56', '2025-09-05 19:47:32'),
+	(4, 'Liolaemus poconchilensis', 'Liolaemus poconchilensis', 'Lagartija', NULL, 'EN', 'Animal', NULL, 1, 1, 4, 3, NULL, NULL, NULL, '2024-10-19 00:40:38', '2025-09-05 19:47:32'),
+	(5, 'Liolaemus chungara', 'Liolaemus chungara', 'Lagartija', 'Quinteros et al. (2014) describieron a esta especie sobre la base de ejemplares provenientes de las \ncercanías de Putre, Región de Arica y Parinacota, Chile. Demangel (2016) menciona esta especie como \nuna sinonimia de Liolaemus alticolor, argumentando que los caracteres diagnósticos en algunos casos \nno están presentes, como por ejemplo la presencia de poros supernumerarios en machos de L. \nchungara. Sin embargo, otros trabajos la consideran válida, omitiendo esta propuesta (Ruiz De Gamboa \n2016, Mella 2017).', 'LC', 'Animal', NULL, 1, 1, 7, 3, NULL, NULL, NULL, '2024-10-19 00:49:57', '2025-09-05 19:47:32'),
+	(6, 'Liolaemus pleopholis', 'Liolaemus pleopholis', 'Lagartija', 'Liolaemus pleopholis es una especie de lagarto de la familia Iguanidae. Es de Chile.', 'LC', 'Animal', NULL, 1, 1, 7, 3, NULL, NULL, NULL, '2024-10-21 17:42:03', '2025-09-05 19:47:33'),
+	(7, 'Liolaemus sp.', 'Liolaemus sp.', 'Lagartija', 'Liolaemus sp. Familia: Liolaemidae Orden: Squamata Clase: Reptilia Filo / División: Chordata Reino: Animalia', 'LC', 'Animal', NULL, 1, 1, 7, 3, NULL, NULL, NULL, '2024-10-21 17:57:43', '2025-09-05 19:47:33'),
+	(8, 'Microlophus peruvianus', 'Microlophus peruvianus', 'Lagartija', 'La lagartija peruana, lagartija de las playas o qalaywa es una especie de lagartija en la familia tropiduridae, propia de la costa desértica del Perú, Ecuador y norte de Chile.', 'LC', 'Animal', NULL, 1, 1, 7, 4, NULL, NULL, NULL, '2024-10-21 18:04:47', '2025-09-05 19:47:33'),
+	(9, 'Microlophus tigris', 'Microlophus tigris', 'Lagartija', 'Microlophus tigris, la iguana tigre del Pacífico, es una especie de lagarto de lava endémica de Perú', 'NT', 'Animal', NULL, 1, 1, 6, 4, NULL, NULL, NULL, '2024-10-21 18:18:00', '2025-09-05 19:47:34'),
+	(10, 'Microlophus yanezi', 'Microlophus yanezi', 'Lagartija', NULL, 'LC', 'Animal', NULL, 1, 1, 7, 4, NULL, NULL, NULL, '2024-10-21 18:39:36', '2025-09-05 19:47:34'),
+	(11, 'Microlophus thoracicus', 'Microlophus thoracicus', 'Lagarto Negro', 'La Iguana Tschudi Del Pacífico o lagartija de los gramadales es una especie de reptil escamoso que pertenece a la familia Tropiduridae.​ Es endémica de Perú.​', 'EN', 'Animal', NULL, 1, 1, 4, 4, NULL, NULL, NULL, '2024-10-21 18:43:35', '2025-09-05 19:47:34'),
+	(12, 'Phyllodactylus gerrhopygus ', 'Phyllodactylus gerrhopygus ', 'Salamanqueja', 'Phyllodactylus gerrhopygus es una especie de lagarto que se encuentra en la Reserva Nacional de Paracas (RNP)14. Fue descrita por Wiegmann en 1835 y se le conoce como "Salamanqueja del norte grande"5. La nomenclatura actual considera válida el nombre Phyllodactylus gerrhopygus', 'LC', 'Animal', NULL, 1, 1, 7, 2, NULL, NULL, NULL, '2024-10-21 18:48:47', '2025-09-05 19:47:34'),
+	(13, 'Phyllodactylus sp.', 'Phyllodactylus sp.', 'Salamanqueja', 'Phyllodactylus, es un género de geckos pertenecientes a la familia Gekkonidae. Hay miembros del género en toda América, excepto en los extremos norte y sur.', 'LC', 'Animal', NULL, 1, 1, 7, 2, NULL, NULL, NULL, '2024-10-21 18:53:14', '2025-09-05 19:47:35'),
+	(14, 'Tachymenis peruviana', 'Tachymenis peruviana', 'Culebrita', 'Tachymenis peruviana, también conocida en donde habita como falsa yarará o culebra peruana, es una serpiente de tamaño medio que puede alcanzar los 60 cm de longitud. Habita en zonas de altura, desde los 2000 m aproximadamente. Se oculta entre la vegetación y las piedras, y su dieta se basa en anfibios y lagartijas.', 'LC', 'Animal', NULL, 1, 1, 7, 1, NULL, NULL, NULL, '2024-10-21 18:58:41', '2025-09-05 19:47:35'),
+	(15, 'Pseudalsophis elegans', 'Pseudalsophis elegans', 'Serpiente corredor dorso rojizo', 'Pseudalsophis elegans es una especie de serpiente de la familia Colubridae. Es la única especie de serpiente del género Pseudalsophis que no se encuentra en las Islas Galápagos', 'LC', 'Animal', NULL, 1, 1, 7, 1, NULL, NULL, NULL, '2024-10-21 19:05:45', '2025-09-05 19:47:35'),
+	(16, 'Rhinella spinulosa (Bufo spinulosa, Rhinella arequipensis)', 'Rhinella spinulosa (Bufo spinulosa, Rhinella arequipensis)', 'Sapo', 'El sapo espinoso (Rhinella spinulosa, anteriormente Bufo spinulosus) es una especie de anfibio anuro propio de Sudamérica. Vive en el altiplano andino chileno, argentino, peruano y boliviano. Es mediano, de 5 a 12 centímetros de largo. Su nombre proviene de las espinas queratinosas que tiene en la piel del dorso que es extremadamente granulosa y verrucosa.', 'LC', 'Animal', NULL, 2, 2, 7, 5, NULL, NULL, NULL, '2024-10-21 19:11:07', '2025-09-05 19:47:36'),
+	(17, 'Rhinella limensis ', 'Rhinella limensis ', 'Sapo', 'El sapo de Lima o sapo costero peruano es una especie de anfibios de la familia Bufonidae. Es endémica de la región costera de Perú. Su hábitat incluye ríos, desiertos, playas de arena, tierra arable y jardines rurales.', 'IUCN 2024: NT  - D.S.004-2014: VU', 'Animal', NULL, 2, 2, 7, 5, NULL, 'images/migrated_from_bioserver/species_17_1.jpg', NULL, '2024-10-21 19:15:03', '2025-09-05 20:13:29'),
+	(18, 'Rhinella cf arequipensis', 'Rhinella cf arequipensis', 'Sapo', 'Esta especie es endémica del sur del Perú. Habita en las regiones de Arequipa, Moquegua y Tacna.', 'IUCN 2024: NT ', 'Animal', NULL, 2, 2, 4, 5, NULL, 'images/migrated_from_bioserver/species_18_1.jpg', NULL, '2024-10-21 19:23:04', '2025-09-05 20:13:29'),
+	(19, 'Telmatobius peruvianus', 'Telmatobius peruvianus', 'Rana acuática Perú', 'Telmatobius peruvianus es una especie de anfibios de la familia Leptodactylidae. Se encuentra en Chile y el Perú. Se encuentra amenazada de extinción por la pérdida de su hábitat natural.', 'IUCN 2024: NT ', 'Animal', NULL, 2, 2, 5, 55, NULL, 'images/migrated_from_bioserver/species_19_1.jpg', NULL, '2024-10-21 19:28:15', '2025-09-05 20:13:29'),
+	(20, 'Pleurodema marmorata', 'Pleurodema marmorata', 'Rana', 'Pleurodema marmoratum es una especie de anfibio anuro de la familia Leiuperidae. Se encuentra en Argentina, Bolivia, Chile y Perú.', 'IUCN 2024: EN - D.S. 00-2014-MINAGRI: VU ', 'Animal', NULL, 2, 2, 5, 55, NULL, 'images/migrated_from_bioserver/species_20_1.jpg', NULL, '2024-10-21 19:31:52', '2025-09-05 20:13:29'),
+	(21, 'Abrocoma cinerea', 'Abrocoma cinerea', 'Rata chinchilla cenicienta', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 1, NULL, 'images/migrated_from_bioserver/species_21_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(22, 'Abrothrix andinus', 'Abrothrix andinus', 'Ratón campestre andino', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 2, NULL, 'images/migrated_from_bioserver/species_22_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(23, 'Abrothrix jelskii', 'Abrothrix jelskii', 'Ratón campestre de jelski', NULL, 'Ninguno', 'Animal', NULL, 3, 1, 7, 2, NULL, 'images/migrated_from_bioserver/species_23_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(24, 'Akodon albiventer', 'Akodon albiventer', 'Ratón campestre de vientre blanco', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 2, NULL, 'images/migrated_from_bioserver/species_24_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(25, 'Amorphochilus schnablii', 'Amorphochilus schnablii', 'Murciélago ahumado', NULL, 'IUCN 2024: LC, D.S. 004-2014 MINAGRI: NT', 'Animal', NULL, 3, 2, 4, 3, NULL, 'images/migrated_from_bioserver/species_25_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(26, 'Arctocephalus australis ', 'Arctocephalus australis ', 'Lobo fino, cochapuma', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 3, 4, 4, NULL, 'images/migrated_from_bioserver/species_26_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(27, 'Chinchilla chinchilla', 'Chinchilla chinchilla', 'Chinchilla andina', NULL, 'IUCN 2024: LC, ENDEMICO', 'Animal', NULL, 3, 1, 3, 5, NULL, 'images/migrated_from_bioserver/species_27_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(28, 'Chinchillula sahamae ', 'Chinchillula sahamae ', 'Rata chinchilla de Sajama', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 2, NULL, 'images/migrated_from_bioserver/species_28_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(29, 'Conepatus chinga ', 'Conepatus chinga ', 'Zorrino, añás', NULL, 'Ninguno', 'Animal', NULL, 3, 3, 7, 6, NULL, 'images/migrated_from_bioserver/species_29_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(30, 'Ctenomys opimus', 'Ctenomys opimus', 'Tucu-tucu del Titicaca', NULL, 'IUCN 2024: LC ', 'Animal', NULL, 3, 1, 5, 7, NULL, 'images/migrated_from_bioserver/species_30_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(31, 'Delphinus delphis', 'Delphinus delphis', 'Delfín común de hocico corto', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 4, 7, 8, NULL, 'images/migrated_from_bioserver/species_31_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(32, 'Desmodus rotundus', 'Desmodus rotundus', 'Vampiro común', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 2, 7, 9, NULL, 'images/migrated_from_bioserver/species_32_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(33, 'Galea musteloides ', 'Galea musteloides ', 'Sacha cuy', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 10, NULL, 'images/migrated_from_bioserver/species_33_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(34, 'Galictis cuja ', 'Galictis cuja ', 'Hurón menor, cuya', NULL, 'IUCN 2024: EN', 'Animal', NULL, 3, 3, 7, 11, NULL, 'images/migrated_from_bioserver/species_34_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(35, 'Hippocamelus antisensis', 'Hippocamelus antisensis', 'Ciervo altoandino, taruca', NULL, 'IUCN 2024: VU, D.S. 004-2014 MINAGRI: VU', 'Animal', NULL, 3, 4, 5, 12, NULL, 'images/migrated_from_bioserver/species_35_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(36, 'Histiotus macrotus ', 'Histiotus macrotus ', 'Murciélago orejudo mayor', NULL, 'IUCN 2024: VU', 'Animal', NULL, 3, 2, 7, 13, NULL, 'images/migrated_from_bioserver/species_36_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(37, 'Histiotus montanus ', 'Histiotus montanus ', 'Murciélago orejón andino', NULL, 'LC', 'Animal', NULL, 3, 2, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(38, 'Lagenorhynchus obscurus ', 'Lagenorhynchus obscurus ', 'Delfín obscuro', NULL, 'DD', 'Animal', NULL, 3, 4, 8, 8, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(39, 'Lagidium peruanum ', 'Lagidium peruanum ', 'Viscacha peruana', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 5, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(40, 'Lagidium viscacia ', 'Lagidium viscacia ', 'Viscacha Chilena', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 5, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(41, 'Lama guanicoe', 'Lama guanicoe', 'Guanaco', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 4, 3, 14, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(42, 'Leopardus colocolo (Oncifelis colocolo*, Lynchailurus pajeros*)', 'Leopardus colocolo (Oncifelis colocolo*, Lynchailurus pajeros*)', 'Gato del pajonal, oscollo', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 3, 6, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(43, 'Leopardus jacobita (Oreailurus jacobita*)', 'Leopardus jacobita (Oreailurus jacobita*)', 'Gato montés, gato andino', NULL, 'IUCN 2024: EN, D.S.004-2014: EN', 'Animal', NULL, 3, 3, 4, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(44, 'Lepus europaeus A', 'Lepus europaeus A', 'Liebre europea', NULL, 'IUCN 2024: LC, D.S.004-2014: EN, CITES 2023:II', 'Animal', NULL, 3, 5, 7, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(45, 'Lontra felina ', 'Lontra felina ', 'Gato marino, chingungo, huallaque', NULL, 'IUCN 2024: CR, D.S.004-2014: DD, CITES 2023:I', 'Animal', NULL, 3, 3, 4, 11, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(46, 'Lycalopex culpaeus (Pseudalopex culpaeus*)', 'Lycalopex culpaeus (Pseudalopex culpaeus*)', 'Zorro colorado, atoj', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 3, 7, 17, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(47, 'Lycalopex griseus (Pseudalopex griseus*)', 'Lycalopex griseus (Pseudalopex griseus*)', 'Zorro gris, chilla', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 3, 7, 17, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(48, 'Megaptera novaeangliae', 'Megaptera novaeangliae', 'Ballena jorobada, yubarta', NULL, 'IUCN 2024: LC, D.S.004-2014: VU', 'Animal', NULL, 3, 4, 7, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(49, 'Mormopterus kalinowskii ', 'Mormopterus kalinowskii ', 'Murciélago de cola libre de Kalinowski', NULL, 'IUCN 2024: LC, CITES 2023:II', 'Animal', NULL, 3, 2, 7, 19, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(50, 'Mus musculusA', 'Mus musculusA', 'Ratón común', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 20, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(51, 'Myotis atacamensis ', 'Myotis atacamensis ', 'Murcielaguito de Atacama', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 2, 6, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(52, 'Otaria flavescens (Otaria byronia)', 'Otaria flavescens (Otaria byronia)', 'Lobo chusco, cochapuma', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 3, 5, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(53, 'Phocoena spinipinnis', 'Phocoena spinipinnis', 'Marsopa espinosa, chancho marino', NULL, 'IUCN 2024: VU, D.S.004-2014: VU, CITES 2023:I', 'Animal', NULL, 3, 4, 8, 21, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(54, 'Phyllotis limatus', 'Phyllotis limatus', 'Ratón orejón de Lima', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 2, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(55, 'Phyllotis magister', 'Phyllotis magister', 'Ratón orejón maestro', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 1, 7, 2, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(56, 'Phyllotis chilensis', 'Phyllotis chilensis', 'Ratón orejón chileno', NULL, 'IUCN 2024: DD, CITES 2023:II', 'Animal', NULL, 3, 1, 7, 2, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(57, 'Platalina genovensium ', 'Platalina genovensium ', 'Murciélago longirostro peruano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 2, 4, 9, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(58, 'Promops davisoni', 'Promops davisoni', 'Murciélago mastín con cresta de Davison', NULL, 'IUCN 2024: LC', 'Animal', NULL, 3, 2, 7, 19, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(59, 'Puma concolor ', 'Puma concolor ', 'Puma, león, lluichu-puma, kirajari matsonsori', NULL, 'IUCN 2024: LC, D.S.004-2014: CR, CITES 2023:II', 'Animal', NULL, 3, 3, 6, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(60, 'Punomys lemminus', 'Punomys lemminus', 'Ratón de puna', NULL, 'IUCN 2024: NT, D.S.004-2014: DD, CITES 2023:II', 'Animal', NULL, 3, 1, 5, 2, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(61, 'Tadarida brasiliensis ', 'Tadarida brasiliensis ', 'Murciélago mastín', NULL, 'IUCN 2024: EN, D.S.004-2014: EN, CITES 2023:I', 'Animal', NULL, 3, 2, 7, 19, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(62, 'Thylamys pallidior              ', 'Thylamys pallidior              ', 'Marmosa coligruesa de vientre blanco', 'La marmosa pálida o comadrejita de vientre blanco, llaca de la Puna o comadreja enana, es una especie de marsupial didelfimorfo de la familia Didelphidae propio de Sudamérica. Se encuentra en el este de Argentina, sur y este de Bolivia, norte de Chile y la parte occidental de los Andes peruanos', 'IUCN 2024: LC', 'Animal', NULL, 3, 6, 7, 22, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(63, 'Tursiops truncatus', 'Tursiops truncatus', 'Delfín pico de botella', NULL, 'IUCN 2024: EN, D.S.004-2014: EN, CITES 2023:I', 'Animal', NULL, 3, 4, 7, 8, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(64, 'Vicugna vicugna', 'Vicugna vicugna', 'Vicuña', NULL, 'IUCN 2024: LC, CITES 2023:II', 'Animal', NULL, 3, 4, 6, 14, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(65, 'Actitis macularius (A. macularia*)', 'Actitis macularius (A. macularia*)', 'Playero Coleador', NULL, 'IUCN 2024: LC, D.S.004-2014: DD, CITES 2023:II', 'Animal', NULL, 4, 19, 4, 53, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(66, 'Aeronautes andecolus', 'Aeronautes andecolus', 'Vencejo Andino', NULL, 'IUCN 2024: LC, CITES 2023:I', 'Animal', NULL, 4, 2, 4, 2, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(67, 'Agriornis montanus (A. montana*)', 'Agriornis montanus (A. montana*)', 'Arriero de Pico Negro', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 3, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(68, 'Agriornis micropterus', 'Agriornis micropterus', 'Arriero de Vientre Gris', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 3, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(69, 'Anairetes flavirostris', 'Anairetes flavirostris', 'Torito de Pico Amarillo', NULL, 'IUCN 2024: NT, D.S.004-2014: NT', 'Animal', NULL, 4, 3, 4, 3, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(70, 'Anairetes reguloides', 'Anairetes reguloides', 'Torito de Cresta Pintada', NULL, 'IUCN 2024: LC, D.S.004-2014: VU', 'Animal', NULL, 4, 3, 4, 3, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(71, 'Anas bahamensis ', 'Anas bahamensis ', 'Pato Gargantillo', NULL, 'IUCN 2024: DD, CITES 2023:II', 'Animal', NULL, 4, 4, 4, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(72, 'Anas cyanoptera ', 'Anas cyanoptera ', 'Pato Colorado', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 4, 4, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(73, 'Anas flavirostris ', 'Anas flavirostris ', 'Pato Barcino', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 4, 4, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(74, 'Anas georgica ', 'Anas georgica ', 'Pato Jergón', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 4, 4, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(75, 'Anas puna ', 'Anas puna ', 'Pato de la Puna', NULL, 'IUCN 2024: NT, D.S.004-2014: EN', 'Animal', NULL, 4, 4, 4, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(76, 'Anthus lutescens', 'Anthus lutescens', 'Cachirla Amarillenta', NULL, 'IUCN 2024: LC, D.S.004-2014: ', 'Animal', NULL, 4, 3, 7, 5, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(77, 'Aphriza virgata', 'Aphriza virgata', 'Chorlo de las Rompientes', NULL, 'IUCN 2024: LC, D.S.004-2014: NT, CITES 2023:I', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(78, 'Ardea alba ', 'Ardea alba ', 'Garza Grande', NULL, 'IUCN 2024: VU, D.S.004-2014: VU', 'Animal', NULL, 4, 5, 4, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(79, 'Ardea cocoi ', 'Ardea cocoi ', 'Garza Cuca', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 5, 4, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(80, 'Ardenna bulleri (Puffinus bulleri*)', 'Ardenna bulleri (Puffinus bulleri*)', 'Pardela de Buller', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 6, 5, 7, NULL, 'images/migrated_from_bioserver/species_80_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(81, 'Ardenna creatopus (Puffinus creatopus*)', 'Ardenna creatopus (Puffinus creatopus*)', 'Pardela de Pata Rosada', NULL, 'IUCN 2024: LC, CITES 2023:II', 'Animal', NULL, 4, 6, 5, 7, NULL, 'images/migrated_from_bioserver/species_81_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(82, 'Ardenna grisea (Puffinus griseus*)', 'Ardenna grisea (Puffinus griseus*)', 'Pardela Oscura', NULL, 'IUCN 2024: LC, D.S.004-2014: NT, CITES 2023:II', 'Animal', NULL, 4, 6, 6, 7, NULL, 'images/migrated_from_bioserver/species_82_1.jpg', NULL, NULL, '2025-09-05 20:13:29'),
+	(83, 'Arenaria interpres', 'Arenaria interpres', 'Vuelvepiedras Rojizo', NULL, 'IUCN 2014: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(84, 'Asio flammeus ', 'Asio flammeus ', 'Lechuza de Oreja Corta', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 7, 4, 8, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(85, 'Asthenes dorbignyi', 'Asthenes dorbignyi', 'Canastero de Pecho Cremoso', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 4, 9, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(86, 'Asthenes modesta', 'Asthenes modesta', 'Canastero Cordillerano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 4, 9, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(87, 'Asthenes pudibunda', 'Asthenes pudibunda', 'Canastero de Quebradas', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 4, 9, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(88, 'Asthenes sclateri', 'Asthenes sclateri', 'Canastero de la Puna', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 9, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(89, 'Athene cunicularia ', 'Athene cunicularia ', 'Lechuza Terrestre', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 7, 7, 8, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(90, 'Attagis gayi', 'Attagis gayi', 'Agachona de Vientre Rufo', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 10, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(91, 'Bartramia longicauda', 'Bartramia longicauda', 'Playero Batitú', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(92, 'Bubo virginianus ', 'Bubo virginianus ', 'Búho Americano', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 7, 4, 8, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(93, 'Bubulcus ibis ', 'Bubulcus ibis ', 'Garcita Bueyera', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 5, 4, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(94, 'Burhinus superciliaris', 'Burhinus superciliaris', 'Alcaraván Huerequeque', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 11, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(95, 'Buteo albigula', 'Buteo albigula', 'Aguilucho de Garganta Blanca', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 8, 4, 12, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(96, 'Butorides striata', 'Butorides striata', 'Garcita Estriada', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 5, 7, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(97, 'Calidris alba', 'Calidris alba', 'Playero Arenero', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(98, 'Calidris bairdii ', 'Calidris bairdii ', 'Playerito de Baird', NULL, 'IUCN 2024: VU', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(99, 'Calidris fuscicollis', 'Calidris fuscicollis', 'Playerito de Cuello Rojo', NULL, 'IUCN 2024: VU', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(100, 'Calidris mauri', 'Calidris mauri', 'Playerito Occidental', NULL, 'IUCN 2024: NT', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(101, 'Calidris melanotos ', 'Calidris melanotos ', 'Playero Pectoral', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(102, 'Calidris minutilla', 'Calidris minutilla', 'Playerito Menudo', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(103, 'Calidris pusilla', 'Calidris pusilla', 'Playerito Semipalmado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(104, 'Catamenia analis', 'Catamenia analis', 'Semillero de Cola Bandeada', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(105, 'Catamenia inornata', 'Catamenia inornata', 'Semillero Simple', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(106, 'Cathartes aura', 'Cathartes aura', 'Gallinazo de Cabeza Roja', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 5, 4, 14, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(107, 'Chaetura pelagica', 'Chaetura pelagica', 'Vencejo de Chimenea', NULL, 'IUCN 2024: LC, CITES 2015:II', 'Animal', NULL, 4, 2, 4, 2, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(108, 'Charadrius alticola ', 'Charadrius alticola ', 'Chorlo de la Puna', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(109, 'Charadrius collaris', 'Charadrius collaris', 'Chorlo Acollarado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(110, 'Charadrius modestus', 'Charadrius modestus', 'Chorlo Chileno', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 7, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(111, 'Charadrius nivosus (C. alexandrinus*)', 'Charadrius nivosus (C. alexandrinus*)', 'Chorlo Nevado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(112, 'Charadrius semipalmatus', 'Charadrius semipalmatus', 'Chorlo Semipalmado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(113, 'Charadrius vociferus ', 'Charadrius vociferus ', 'Chorlo Gritón', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 15, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(114, 'Chlidonias niger', 'Chlidonias niger', 'Gaviotín Negro', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(115, 'Chordeiles acutipennis', 'Chordeiles acutipennis', 'Chotacabras Menor', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 9, 4, 17, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(116, 'Chroicocephalus cirrocephalus (Larus cirrocephalus*)', 'Chroicocephalus cirrocephalus (Larus cirrocephalus*)', 'Gaviota de Capucha Gris', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(117, 'Chroicocephalus serranus (Larus serranus*)', 'Chroicocephalus serranus (Larus serranus*)', 'Gaviota Andina', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(118, 'Cinclodes albiventris (C. fuscus*)', 'Cinclodes albiventris (C. fuscus*)', 'Churrete de Ala Crema', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 7, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(119, 'Cinclodes atacamensis', 'Cinclodes atacamensis', 'Churrete de Ala Blanca', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(120, 'Cinclodes fuscus (Cinclodes fuscus fuscus)', 'Cinclodes fuscus (Cinclodes fuscus fuscus)', 'Churrete acanelado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(121, 'Cinclodes taczanowskii', 'Cinclodes taczanowskii', 'Churrete Marisquero', NULL, 'IUCN 2024: NT, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(122, 'Circus cinereus', 'Circus cinereus', 'Aguilucho Cenizo', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 8, 4, 19, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(123, 'Colaptes atricollis', 'Colaptes atricollis', 'Carpintero de Cuello Negro', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 10, 4, 20, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(124, 'Colaptes rupicola ', 'Colaptes rupicola ', 'Carpintero Andino', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 10, 4, 20, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(125, 'Colibri coruscans ', 'Colibri coruscans ', 'Oreja-Violeta de Vientre Azul', NULL, 'IUCN 2024: NT, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 2, 4, 21, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(126, 'Columba livia', 'Columba livia', 'Paloma Doméstica', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 11, 7, 22, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(127, 'Columbina cruziana', 'Columbina cruziana', 'Tortolita Peruana', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 11, 4, 22, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(128, 'Conirostrum cinereum', 'Conirostrum cinereum', 'Pico-de-Cono Cinéreo', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 23, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(129, 'Conirostrum tamarugense ', 'Conirostrum tamarugense ', 'Pico-de-Cono de los Tamarugales', NULL, 'IUCN 2024: NT, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 5, 23, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(130, 'Crotophaga sulcirostris', 'Crotophaga sulcirostris', 'Garrapatero de Pico Estriado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 12, 7, 24, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(131, 'Daption capense', 'Daption capense', 'Petrel Damero', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 6, 4, 7, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(132, 'Diglossa brunneiventris', 'Diglossa brunneiventris', 'Pincha-Flor de Garganta Negra', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(133, 'Diuca speculifera ', 'Diuca speculifera ', 'Diuca de Ala Blanca', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(134, 'Egretta caerulea ', 'Egretta caerulea ', 'Garcita Azul', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 5, 4, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(135, 'Egretta thula ', 'Egretta thula ', 'Garcita Blanca', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 5, 4, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(136, 'Egretta tricolor', 'Egretta tricolor', 'Garcita Tricolor', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 5, 4, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(137, 'Elaenia albiceps', 'Elaenia albiceps', 'Fío-Fío de Cresta Blanca', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 4, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(138, 'Falco femoralis ', 'Falco femoralis ', 'Halcón Aplomado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 8, 4, 26, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(139, 'Falco peregrinus', 'Falco peregrinus', 'Halcón Peregrino', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 8, 4, 26, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(140, 'Falco sparverius ', 'Falco sparverius ', 'Cernícalo Americano', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 8, 4, 26, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(141, 'Fulica ardesiaca ', 'Fulica ardesiaca ', 'Gallareta Andina', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 13, 4, 27, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(142, 'Fulica gigantea ', 'Fulica gigantea ', 'Gallareta Gigante', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 13, 4, 27, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(143, 'Fulmarus glacialoides', 'Fulmarus glacialoides', 'Petrel Plateado', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 6, 4, 28, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(144, 'Gallinago andina', 'Gallinago andina', 'Becasina de la Puna', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 1, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(145, 'Gallinula galeata (G.chloropus*)', 'Gallinula galeata (G.chloropus*)', 'Polla de Agua Común', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 13, 4, 27, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(146, 'Geositta cunicularia', 'Geositta cunicularia', 'Minero Común', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(147, 'Geositta maritima', 'Geositta maritima', 'Minero Gris', NULL, 'IUCN 2024: VU, D.S.004-2014: VU', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(148, 'Geositta punensis ', 'Geositta punensis ', 'Minero de la Puna', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(149, 'Geositta tenuirostris', 'Geositta tenuirostris', 'Minero de Pico Largo', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(150, 'Geranoaetus melanoleucus ', 'Geranoaetus melanoleucus ', 'Aguilucho de Pecho Negro', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 8, 4, 12, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(151, 'Geranoaetus polyosoma (Buteo polyosoma*)', 'Geranoaetus polyosoma (Buteo polyosoma*)', 'Aguilucho Variable', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 8, 4, 12, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(152, 'Glaucidium peruanum', 'Glaucidium peruanum', 'Lechucita Peruana', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 7, 4, 8, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(153, 'Haematopus ater', 'Haematopus ater', 'Ostrero Negruzco', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 29, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(154, 'Haematopus palliatus', 'Haematopus palliatus', 'Ostrero Americano', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 29, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(155, 'Himantopus melanurus(a)  ', 'Himantopus melanurus(a)  ', 'Cigüeñuela común', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:RR', 'Animal', NULL, 4, 14, 7, 30, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(156, 'Himantopus mexicanus', 'Himantopus mexicanus', 'Cigüeñuela de Cuello Negro', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 14, 4, 30, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(157, 'Hirundo rustica', 'Hirundo rustica', 'Golondrina Tijereta', NULL, 'IUCN 2024: LC, D.S.004-2014: NT, CITES 2015:I, Estatus Estacional Schulenberg 2010:EB / REB', 'Animal', NULL, 4, 3, 7, 31, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(158, 'Ixobrychus exilis', 'Ixobrychus exilis', 'Mirasol Leonado', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 5, 4, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(159, 'Larosterna inca', 'Larosterna inca', 'Gaviotín Zarcillo', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(160, 'Larus belcheri', 'Larus belcheri', 'Gaviota Peruana', NULL, 'IUCN 2024: LC, D.S.004-2014: NT, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(161, 'Larus dominicanus', 'Larus dominicanus', 'Gaviota Dominicana', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(162, 'Laterallus jamaicensis', 'Laterallus jamaicensis', 'Gallineta Negra', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 13, 4, 32, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(163, 'Leptasthenura aegithaloides', 'Leptasthenura aegithaloides', 'Tijeral de Manto Llano', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(164, 'Leptasthenura striata ', 'Leptasthenura striata ', 'Tijeral Listado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(165, 'Lessonia oreas ', 'Lessonia oreas ', 'Negrito Andino', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(166, 'Leucophaeus atricilla (Larus atricilla*)', 'Leucophaeus atricilla (Larus atricilla*)', 'Gaviota Reidora', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(167, 'Leucophaeus modestus (Larus modestus*)', 'Leucophaeus modestus (Larus modestus*)', 'Gaviota Gris', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(168, 'Leucophaeus pipixcan (Larus pipixcan*)', 'Leucophaeus pipixcan (Larus pipixcan*)', 'Gaviota de Franklin', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(169, 'Limosa haemastica', 'Limosa haemastica', 'Aguja de Mar', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(170, 'Limnodromus griseus', 'Limnodromus griseus', 'Agujeta de Pico Corto', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(171, 'Lophonetta specularioides ', 'Lophonetta specularioides ', 'Pato Crestón', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 4, 4, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(172, 'Macronectes giganteus', 'Macronectes giganteus', 'Petrel Gigante Sureño', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 6, 4, 34, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(173, 'Macronectes halli', 'Macronectes halli', 'Petrel Gigante Norteño', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 6, 6, 28, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(174, 'Metallura phoebe ', 'Metallura phoebe ', 'Colibrí Negro', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 2, 4, 35, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(175, 'Metriopelia aymara', 'Metriopelia aymara', 'Tortolita de Puntos Dorados', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 11, 4, 36, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(176, 'Metriopelia ceciliae ', 'Metriopelia ceciliae ', 'Tortolita Moteada', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 11, 4, 36, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(177, 'Metriopelia melanoptera', 'Metriopelia melanoptera', 'Tortolita de Ala Negra', NULL, 'IUCN 2024: NT, D.S.004-2014: VU, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 11, 4, 36, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(178, 'Molothrus bonariensis', 'Molothrus bonariensis', 'Tordo Brilloso', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 37, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(179, 'Muscigralla brevicauda', 'Muscigralla brevicauda', 'Dormilona de Cola Corta', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(180, 'Muscisaxicola albifrons ', 'Muscisaxicola albifrons ', 'Dormilona de Frente Blanca', NULL, 'IUCN 2024: NT, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(181, 'Muscisaxicola cinereus (M. cinerea*)', 'Muscisaxicola cinereus (M. cinerea*)', 'Dormilona Cinérea', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(182, 'Muscisaxicola flavinucha', 'Muscisaxicola flavinucha', 'Dormilona de Nuca Ocrácea', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(183, 'Muscisaxicola griseus(b)', 'Muscisaxicola griseus(b)', 'Dormilona de Taczanowski', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(184, 'Muscisaxicola juninensis', 'Muscisaxicola juninensis', 'Dormilona de la Puna', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(185, 'Muscisaxicola maclovianus', 'Muscisaxicola maclovianus', 'Dormilona de Cara Oscura', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(186, 'Muscisaxicola maculirostris', 'Muscisaxicola maculirostris', 'Dormilona Chica', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(187, 'Muscisaxicola rufivertex', 'Muscisaxicola rufivertex', 'Dormilona de Nuca Rojiza', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(188, 'Myiophobus fasciatus', 'Myiophobus fasciatus', 'Mosquerito de Pecho Rayado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(189, 'Myrtis fanny', 'Myrtis fanny', 'Estrellita de Collar Púrpura', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 2, 4, 35, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(190, 'Nothoprocta pentlandii', 'Nothoprocta pentlandii', 'Perdiz Andina', NULL, 'IUCN 2024: LC, D.S.004-2014: NT, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 15, 4, 38, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(191, 'Numenius phaeopus', 'Numenius phaeopus', 'Zarapito Trinador', NULL, 'IUCN 2024: LC, D.S.004-2014: NT', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(192, 'Nycticorax nycticorax ', 'Nycticorax nycticorax ', 'Huaco Común', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 5, 4, 6, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(193, 'Oceanites gracilis', 'Oceanites gracilis', 'Golondrina de Mar Chica', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 6, 4, 39, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(194, 'Oceanites oceanicus', 'Oceanites oceanicus', 'Golondrina de Mar de Wilson', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 6, 4, 39, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(195, 'Oceanodroma hornbyi', 'Oceanodroma hornbyi', 'Golondrina de Mar Acollarada', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 6, 4, 39, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(196, 'Oceanodroma markhami', 'Oceanodroma markhami', 'Golondrina de Mar de Markham', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 6, 4, 39, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(197, 'Ochthoeca leucophrys', 'Ochthoeca leucophrys', 'Pitajo de Ceja Blanca', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(198, 'Ochthoeca oenanthoides', 'Ochthoeca oenanthoides', 'Pitajo de d’Orbigny', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(199, 'Oreomanes fraseri', 'Oreomanes fraseri', 'Pico-de-Cono Gigante', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 6, 23, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(200, 'Oreopholus ruficollis', 'Oreopholus ruficollis', 'Chorlo de Campo', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 40, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(201, 'Oreotrochilus estella  (Oreotrichilus estella**, Oreotrochillus stella**)', 'Oreotrochilus estella  (Oreotrichilus estella**, Oreotrochillus stella**)', 'Estrella Andina', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 2, 4, 35, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(202, 'Oressochen melanopterus (Chloephaga melanoptera*)', 'Oressochen melanopterus (Chloephaga melanoptera*)', 'Oressochen melanopterus', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 4, 7, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(203, 'Orochelidon murina (Notiochelidon murina*)', 'Orochelidon murina (Notiochelidon murina*)', 'Orochelidon murina', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 31, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(204, 'Orochelidon andecola (Stelgidopteryx andecola, Haplochelidon andecola*)', 'Orochelidon andecola (Stelgidopteryx andecola, Haplochelidon andecola*)', 'Orochelidum andecola', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 31, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(205, 'Oxyura jamaicensis (O. ferruginea*)', 'Oxyura jamaicensis (O. ferruginea*)', 'Pato Rana', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 4, 4, 4, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(206, 'Pachyptila desolata', 'Pachyptila desolata', 'Petrel-Azul Antártico', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 6, 4, 28, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(207, 'Pandion haliaetus', 'Pandion haliaetus', 'Aguila Pescadora', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 8, 4, 41, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(208, 'Parabuteo unicinctus', 'Parabuteo unicinctus', 'Gavilán Mixto', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 8, 4, 19, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(209, 'Pardirallus sanguinolentus', 'Pardirallus sanguinolentus', 'Pardirallus sanguinolentus', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 13, 4, 32, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(210, 'Passer domesticus', 'Passer domesticus', 'Rascón Plomizo', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 42, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(211, 'Patagioenas maculosa', 'Patagioenas maculosa', 'Paloma de Ala Moteada', NULL, 'IUCN 2024: DD, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 11, 4, 22, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(212, 'Patagona gigas ', 'Patagona gigas ', 'Colibrí Gigante', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 2, 4, 21, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(213, 'Pelecanoides garnotii', 'Pelecanoides garnotii', 'Potoyunco Peruano', NULL, 'IUCN 2024: DD, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 6, 4, 7, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(214, 'Pelecanus thagus', 'Pelecanus thagus', 'Pelícano Peruano', NULL, 'IUCN 2024: DD, D.S.004-2014: VU, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 16, 4, 43, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(215, 'Petrochelidon rufocollaris', 'Petrochelidon rufocollaris', 'Golondrina de Collar Castaño', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 44, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(216, 'Phalacrocorax bougainvillii', 'Phalacrocorax bougainvillii', 'Cormorán Guanay', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 16, 4, 45, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(217, 'Phalacrocorax brasilianus', 'Phalacrocorax brasilianus', 'Cormorán Neotropical', NULL, 'IUCN 2024: NT, D.S.004-2014: NT', 'Animal', NULL, 4, 16, 4, 45, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(218, 'Phalacrocorax gaimardi', 'Phalacrocorax gaimardi', 'Cormorán de Pata Roja', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EA / REA', 'Animal', NULL, 4, 16, 4, 45, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(219, 'Phalaropus lobatus', 'Phalaropus lobatus', 'Faláropo de Pico Fino', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(220, 'Phalaropus tricolor ', 'Phalaropus tricolor ', 'Faláropo Tricolor', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(221, 'Phalcoboenus megalopterus ', 'Phalcoboenus megalopterus ', 'Caracara Cordillerano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 8, 4, 26, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(222, 'Phegornis mitchellii', 'Phegornis mitchellii', 'Chorlo Cordillerano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 40, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(223, 'Phleocryptes melanops', 'Phleocryptes melanops', 'Junquero', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(224, 'Phoenicoparrus andinus ', 'Phoenicoparrus andinus ', 'Parina Grande', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 17, 4, 46, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(225, 'Phoenicoparrus jamesi ', 'Phoenicoparrus jamesi ', 'Parina Chica', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 17, 4, 46, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(226, 'Phoenicopterus chilensis ', 'Phoenicopterus chilensis ', 'Flamenco Chileno', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 17, 4, 46, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(227, 'Phrygilus alaudinus', 'Phrygilus alaudinus', 'Fringilo de Cola Bandeada', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(228, 'Phrygilus atriceps', 'Phrygilus atriceps', 'Fringilo de Capucha Negra', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(229, 'Phrygilus erythronotus', 'Phrygilus erythronotus', 'Fringilo de Garganta Blanca', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(230, 'Phrygilus fruticeti', 'Phrygilus fruticeti', 'Fringilo de Pecho Negro', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(231, 'Phrygilus plebejus', 'Phrygilus plebejus', 'Fringilo de Pecho Cenizo', NULL, 'IUCN 2024: EN, D.S.004-2014: VU, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(232, 'Phrygilus punensis ', 'Phrygilus punensis ', 'Fringilo Peruano', NULL, 'IUCN 2024: NT, D.S.004-2014: EN, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(233, 'Phrygilus unicolor', 'Phrygilus unicolor', 'Fringilo Plomizo', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(234, 'Pipraeidea bonariensis (Thraupis bonariensis*)', 'Pipraeidea bonariensis (Thraupis bonariensis*)', 'Tangara Azul y Amarilla', NULL, 'IUCN 2024: NT, D.S.004-2014: NT, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 23, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(235, 'Platalea ajaja', 'Platalea ajaja', 'Espátula Rosada', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 5, 6, 47, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(236, 'Plegadis ridgwayi ', 'Plegadis ridgwayi ', 'Ibis de la Puna', NULL, 'IUCN 2024: NT, D.S.004-2014: EN, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 5, 4, 47, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(237, 'Pluvialis dominica ', 'Pluvialis dominica ', 'Chorlo Dorado Americano', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 40, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(238, 'Pluvialis squatarola', 'Pluvialis squatarola', 'Chorlo Gris', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 40, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(239, 'Podiceps major', 'Podiceps major', 'Zambullidor Grande', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 18, 4, 48, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(240, 'Podiceps occipitalis ', 'Podiceps occipitalis ', 'Zambullidor Plateado', NULL, 'IUCN 2024: NT, D.S.004-2014: NT, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 18, 4, 48, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(241, 'Podilymbus podiceps ', 'Podilymbus podiceps ', 'Zambullidor de Pico Grueso', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 18, 4, 48, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(242, 'Polioxolmis rufipennis', 'Polioxolmis rufipennis', 'Ala-Rufa Canelo', NULL, 'IUCN 2024: VU, D.S.004-2014: VU, CITES 2015:II, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(243, 'Poospiza hispaniolensis', 'Poospiza hispaniolensis', 'Monterita Acollarada', NULL, 'IUCN 2024: NT, D.S.004-2014: VU, CITES 2015:II, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 3, 7, 23, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(244, 'Procellaria aequinoctialis', 'Procellaria aequinoctialis', 'Petrel de Mentón Blanco', NULL, 'IUCN 2024: NT, D.S.004-2014: NT, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 6, 4, 28, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(245, 'Progne murphyi', 'Progne murphyi', 'Martín Peruano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 5, 44, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(246, 'Psilopsiagon aurifrons ', 'Psilopsiagon aurifrons ', 'Perico Cordillerano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 19, 4, 49, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(247, 'Psittacara wagleri (Aratinga wagleri*)', 'Psittacara wagleri (Aratinga wagleri*)', 'Cotorra de Frente Escarlata', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 19, 4, 50, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(248, 'Pygochelidon cyanoleuca', 'Pygochelidon cyanoleuca', 'Golondrina Azul y Blanca', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 31, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(249, 'Pyrocephalus rubinus', 'Pyrocephalus rubinus', 'Mosquero Bermellón', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(250, 'Recurvirostra andina ', 'Recurvirostra andina ', 'Avoceta Andina', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 51, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(251, 'Rhea pennata', 'Rhea pennata', 'Ñandú Petizo (Suri)', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 20, 3, 52, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(252, 'Rhodopis vesper', 'Rhodopis vesper', 'Colibrí de Oasis', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 2, 4, 21, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(253, 'Riparia riparia', 'Riparia riparia', 'Golondrina Ribereña', NULL, 'IUCN 2024: LC, D.S.004-2014: NT', 'Animal', NULL, 4, 3, 7, 31, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(254, 'Rollandia rolland', 'Rollandia rolland', 'Zambullidor Pimpollo', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 18, 4, 48, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(255, 'Rynchops niger (Rhynchops niger**)', 'Rynchops niger (Rhynchops niger**)', 'Rayador Negro', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 53, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(256, 'Saltator aurantiirostris', 'Saltator aurantiirostris', 'Saltador de Pico Dorado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 3, 7, 54, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(257, 'Sicalis lutea ', 'Sicalis lutea ', 'Chirigüe de la Puna', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(258, 'Sicalis luteola', 'Sicalis luteola', 'Chirigüe Común', NULL, 'IUCN 2024: LC, D.S.004-2014: NT, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(259, 'Sicalis olivascens', 'Sicalis olivascens', 'Chirigüe Verdoso', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(260, 'Sicalis raimondii', 'Sicalis raimondii', 'Chirigüe de Raimondi', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(261, 'Sicalis uropygialis', 'Sicalis uropygialis', 'Chirigüe de Lomo Brillante', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(262, 'Spheniscus humboldti', 'Spheniscus humboldti', 'Pingüino de Humboldt', NULL, 'IUCN 2024: VU, D.S.004-2014: VU, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 21, 4, 55, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(263, 'Spinus atratus (Carduelis atrata*)', 'Spinus atratus (Carduelis atrata*)', 'Jilguero Negro', NULL, 'IUCN 2024: VU, D.S.004-2014: VU', 'Animal', NULL, 4, 3, 7, 56, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(264, 'Spinus crassirostris (Carduelis crassirostris*)', 'Spinus crassirostris (Carduelis crassirostris*)', 'Jilguero de Pico Grueso', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 56, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(265, 'Spinus magellanicus (Carduelis magellanica*)', 'Spinus magellanicus (Carduelis magellanica*)', 'Jilguero Encapuchado', NULL, 'IUCN 2024: NT, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 56, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(266, 'Spinus uropygialis (Carduelis uropygialis*)', 'Spinus uropygialis (Carduelis uropygialis*)', 'Jilguero Cordillerano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 56, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(267, 'Sporophila simplex', 'Sporophila simplex', 'Espiguero Simple', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(268, 'Sporophila telasco', 'Sporophila telasco', 'Espiguero de Garganta Castaña', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(269, 'Stercorarius chilensis', 'Stercorarius chilensis', 'Salteador Chileno', NULL, 'IUCN 2024: LC, D.S.004-2014: CR, CITES 2015:I, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 57, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(270, 'Stercorarius parasiticus', 'Stercorarius parasiticus', 'Salteador Parásito', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 57, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(271, 'Stercorarius pomarinus', 'Stercorarius pomarinus', 'Salteador Pomarino', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 57, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(272, 'Sterna hirundinacea', 'Sterna hirundinacea', 'Gaviotín Sudamericano', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 3, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(273, 'Sterna hirundo', 'Sterna hirundo', 'Gaviotín Común', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(274, 'Sterna paradisaea', 'Sterna paradisaea', 'Gaviotín Artico', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(275, 'Sternula lorata', 'Sternula lorata', 'Gaviotín Peruano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(276, 'Sturnella bellicosa', 'Sturnella bellicosa', 'Pastorero Peruano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 7, 58, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(277, 'Sula dactylatra', 'Sula dactylatra', 'Piquero Enmascarado', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 16, 4, 59, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(278, 'Sula nebouxii', 'Sula nebouxii', 'Piquero de Pata Azul', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 16, 4, 59, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(279, 'Sula variegata', 'Sula variegata', 'Piquero Peruano', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 16, 4, 59, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(280, 'Systellura longirostris (Caprimulgus longirostris*)', 'Systellura longirostris (Caprimulgus longirostris*)', 'Chotacabras de Ala Bandeada', NULL, 'IUCN 2024: VU, D.S.004-2014: EN, CITES 2015:I, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 9, 7, 60, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(281, 'Tachuris rubrigastra', 'Tachuris rubrigastra', 'Siete Colores de la Totora', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 3, 4, 25, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(282, 'Thalassarche melanophrys', 'Thalassarche melanophrys', 'Albatros de Ceja Negra', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 6, 4, 61, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(283, 'Thalassarche salvini', 'Thalassarche salvini', 'Albatros de Salvin', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 6, 4, 61, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(284, 'Thalasseus elegans (Sterna elegans*)', 'Thalasseus elegans (Sterna elegans*)', 'Colibrí de Cora', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 16, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(285, 'Thaumastura cora (Thamaustura cora*)', 'Thaumastura cora (Thamaustura cora*)', 'Colibrí de Cora', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 2, 4, 35, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(286, 'Theristicus branickii', 'Theristicus branickii', 'Bandurria Andina', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 6, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(287, 'Theristicus melanopis ', 'Theristicus melanopis ', 'Bandurria de Cara Negra', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 1, 4, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(288, 'Thinocorus orbignyianus', 'Thinocorus orbignyianus', 'Agachona de Pecho Gris', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(289, 'Thinocorus rumicivorus', 'Thinocorus rumicivorus', 'Agachona Chica', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(290, 'Tinamotis pentlandii', 'Tinamotis pentlandii', 'Perdiz de la Puna', NULL, 'IUCN 2024: LC, D.S.004-2014: CR, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 15, 4, 38, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(291, 'Tringa flavipes ', 'Tringa flavipes ', 'Playero Pata Amarilla Menor', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(292, 'Tringa melanoleuca ', 'Tringa melanoleuca ', 'Playero Pata Amarilla Mayor', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(293, 'Tringa semipalmatus (Catoptrophorus semipalmatus*)', 'Tringa semipalmatus (Catoptrophorus semipalmatus*)', 'Playero de Ala Blanca', NULL, 'IUCN 2024: EN, D.S.004-2014: EN, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(294, 'Tringa solitaria', 'Tringa solitaria', 'Playero Solitario', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(295, 'Troglodytes aedon', 'Troglodytes aedon', 'Cucarachero Común', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 3, 7, 63, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(296, 'Tryngites subruficollis', 'Tryngites subruficollis', 'Playero Acanelado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 1, 4, 33, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(297, 'Turdus chiguanco', 'Turdus chiguanco', 'Zorzal Chiguanco', NULL, 'IUCN 2024: LC, D.S.004-2014: EN, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 64, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(298, 'Tyto alba', 'Tyto alba', 'Lechuza de Campanario', NULL, 'IUCN 2024: LC', 'Animal', NULL, 4, 7, 4, 65, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(299, 'Upucerthia validirostris (U. jelskii*)', 'Upucerthia validirostris (U. jelskii*)', 'Bandurrita de Pecho Anteado', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 4, 18, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(300, 'Vanellus resplendens ', 'Vanellus resplendens ', 'Avefría Andina', NULL, 'IUCN 2024: NT, D.S.004-2014: EN, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 1, 7, 40, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(301, 'Volatinia jacarina', 'Volatinia jacarina', 'Semillerito Negro Azulado', NULL, 'IUCN 2024: VU, D.S.004-2014: VU, Estatus Estacional Schulenberg 2010:EA', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(302, 'Vultur gryphus ', 'Vultur gryphus ', 'Cóndor Andino', NULL, 'IUCN 2024: NT, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 4, 5, 4, 66, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(303, 'Xenodacnis parina', 'Xenodacnis parina', 'Azulito Altoandino', NULL, 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(304, 'Xenospingus concolor', 'Xenospingus concolor', 'Fringilo Apizarrado', NULL, 'IUCN 2024: NT', 'Animal', NULL, 4, 3, 5, 13, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(305, 'Zenaida auriculata', 'Zenaida auriculata', 'Tórtola Orejuda', NULL, 'IUCN 2024: LC, D.S.004-2014: VU, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 11, 4, 22, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(306, 'Zenaida meloda', 'Zenaida meloda', 'Tórtola Melódica', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 11, 4, 22, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(307, 'Zonotrichia capensis', 'Zonotrichia capensis', 'Gorrión de Collar Rufo', NULL, 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 4, 3, 7, 67, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(308, 'Ephedra americana Humb. & Bonpl. ex Willd.', 'Ephedra americana Humb. & Bonpl. ex Willd.', 'Pinco-pinco', 'Ephedraceae', 'IUCN 2024: LC, D.S.004-2014: NT, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 5, 5, 7, 56, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(309, 'Ephedra breana Phil.', 'Ephedra breana Phil.', 'Pinco-pinco', 'Ephedraceae', 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 5, 5, 7, 56, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(310, 'Bomarea dulcis (Hook.) Beauverd', 'Bomarea dulcis (Hook.) Beauverd', 'Orko-orko', 'Alstroemeriaceae', 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 8, 8, 7, 57, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(311, 'Lemna minuta Kunth', 'Lemna minuta Kunth', 'Lenteja de agua', 'Araceae', 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 8, 8, 7, 59, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(312, 'Tillandsia capillaris var. capillaris Ruiz & Pav.', 'Tillandsia capillaris var. capillaris Ruiz & Pav.', 'Siempre viva', 'Bromeliaceae', 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 8, 8, 7, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(313, 'Tillandsia capillaris Ruiz & Pav.', 'Tillandsia capillaris Ruiz & Pav.', 'Siempre viva', 'Bromeliaceae', 'IUCN 2024: LC', 'Animal', NULL, 8, 8, 7, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(314, 'Tillandsia geissei Phil.', 'Tillandsia geissei Phil.', 'Siempre viva', 'Bromeliaceae', 'IUCN 2024: NT, Estatus Estacional Schulenberg 2010:EB', 'Animal', NULL, 8, 8, 7, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(315, 'Tillandsia landbeckii Phil.', 'Tillandsia landbeckii Phil.', 'Siempre viva', 'Bromeliaceae', 'IUCN 2024: LC', 'Animal', NULL, 8, 8, 7, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(316, 'Tillandsia purpurea Ruiz & Pav.', 'Tillandsia purpurea Ruiz & Pav.', 'Siempre viva', 'Bromeliaceae', 'IUCN 2024: LC, CITES 2015:II, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 8, 8, 7, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(317, 'Tillandsia werdermannii Harms', 'Tillandsia werdermannii Harms', 'Siempre viva', 'Bromeliaceae', 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 8, 8, 7, 62, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(318, 'Distichia muscoides Nees & Meyen', 'Distichia muscoides Nees & Meyen', 'Kunkuna, Orccotina, Waricha, Tiña', 'Juncaceae', 'IUCN 2024: LC', 'Animal', NULL, 8, 8, 7, 64, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(319, 'Oxychloe andina Phil.', 'Oxychloe andina Phil.', 'Packo', 'Juncaceae', 'IUCN 2024: LC', 'Animal', NULL, 8, 8, 7, 64, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(320, 'Elodea potamogeton (Bertero) Espinosa', 'Elodea potamogeton (Bertero) Espinosa', 'Bertero', 'Hydrocharitaceae', 'IUCN 2024: NT, D.S.004-2014: EN, CITES 2015:I, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 8, 8, 7, 66, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(321, 'Anthochloa lepidula Nees & Meyen', 'Anthochloa lepidula Nees & Meyen', 'Pasto', 'Poaceae', 'IUCN 2024: LC', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(322, 'Aristida adscensionis L.', 'Aristida adscensionis L.', 'Pasto', 'Poaceae', 'IUCN 2024: NT, D.S.004-2014: VU', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(323, 'Arundo donax L.', 'Arundo donax L.', 'Caña hueca', 'Poaceae', 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(324, 'Bromus catharticus Vahl', 'Bromus catharticus Vahl', 'Cebadilla', 'Poaceae', 'IUCN 2024: LC, Estatus Estacional Schulenberg 2010:R', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(325, 'Cenchrus echinatus L.', 'Cenchrus echinatus L.', 'Cadillo', 'Poaceae', 'IUCN 2024: LC', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(326, 'Cortaderia jubata (Lemoine) Stapf', 'Cortaderia jubata (Lemoine) Stapf', 'Cortadera', 'Poaceae', '-', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(327, 'Cymbopogon citratus (DC.) Stapf', 'Cymbopogon citratus (DC.) Stapf', 'Hierba luisa', 'Poaceae', '-', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(328, 'Cynodon dactylon (L.) Pers.', 'Cynodon dactylon (L.) Pers.', 'Grama dulce', 'Poaceae', '-', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(329, 'Distichlis spicata (L.) Greene', 'Distichlis spicata (L.) Greene', 'Grama salada', 'Poaceae', '-', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(330, 'Festuca orthophylla Pilg.', 'Festuca orthophylla Pilg.', 'Pajonal', 'Poaceae', '-', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(331, 'Phragmites australis (Cav.) Trin. ex Steud.', 'Phragmites australis (Cav.) Trin. ex Steud.', 'Carrizo', 'Poaceae', '-', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(332, 'Jarava ichu (Stipa ichu) (Ruiz & Pav.) Kunth', 'Jarava ichu (Stipa ichu) (Ruiz & Pav.) Kunth', 'Ichu', 'Poaceae', '-', 'Animal', NULL, 8, 8, 7, 68, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(333, 'Aloe vera  (L.) Burm. f.', 'Aloe vera  (L.) Burm. f.', 'Sábila', 'Xanthorrhoeaceae', '-', 'Animal', NULL, 8, 8, 7, 72, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(334, 'Sesuvium portulacastrum (L.) L.', 'Sesuvium portulacastrum (L.) L.', 'Verdolaga', 'Aizoaceae', '-', 'Animal', NULL, 9, 9, 7, 73, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(335, 'Alternanthera halimifolia (Lam.) Standl. ex', 'Alternanthera halimifolia (Lam.) Standl. ex', 'Hierba blanca', 'Amaranthaceae', '-', 'Animal', NULL, 9, 9, 7, 74, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(336, 'Dysphania ambrioides (Chenopodium ambrosioides*)  L. ', 'Dysphania ambrioides (Chenopodium ambrosioides*)  L. ', 'Paico', 'Amaranthaceae', '-', 'Animal', NULL, 9, 9, 7, 74, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(337, 'Haplorhus peruviana Engl.', 'Haplorhus peruviana Engl.', 'Jassi, molle, carzo', 'Anacardiaceae', '-', 'Animal', NULL, 9, 9, 7, 75, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(338, 'Schinus molle L.', 'Schinus molle L.', 'Molle', 'Anacardiaceae', '-', 'Animal', NULL, 9, 9, 7, 75, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(339, 'Azorella compacta Phil.', 'Azorella compacta Phil.', 'Yareta, Capo', 'Apiaceae', '-', 'Animal', NULL, 9, 9, 7, 76, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(340, 'Hydrocotyle bonariensis Lam.', 'Hydrocotyle bonariensis Lam.', 'Hoja redonda', 'Araliaceae', '-', 'Animal', NULL, 9, 9, 7, 78, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(341, 'Acanthoxanthium spinosum (L.) Fourr.', 'Acanthoxanthium spinosum (L.) Fourr.', 'Espina de perro, Anuchapi', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(342, 'Achyrocline alata (Kunth) DC.', 'Achyrocline alata (Kunth) DC.', 'Wira wira hembra', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(343, 'Ambrosia arborescens Mill.', 'Ambrosia arborescens Mill.', 'Altamiza', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(344, 'Artemisia absinthium L.', 'Artemisia absinthium L.', 'Ajenjo', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(345, 'Baccharis boliviensis (Wedd.) Cabrera', 'Baccharis boliviensis (Wedd.) Cabrera', 'Tolilla', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(346, 'Baccharis genistelloides (Lam.) Pers.', 'Baccharis genistelloides (Lam.) Pers.', 'Kimsaucho, Karkeja', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(347, 'Baccharis incarum (Wedd.) Cuatrec', 'Baccharis incarum (Wedd.) Cuatrec', 'Tola', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(348, 'Baccharis peruviana Cuatrec.', 'Baccharis peruviana Cuatrec.', 'Altamisa', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(349, 'Baccharis petiolata DC', 'Baccharis petiolata DC', 'Chilca, Chara', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(350, 'Baccharis tricuneata (L.f.) Pers.', 'Baccharis tricuneata (L.f.) Pers.', 'Tola', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(351, 'Bidens andicola var. andicola Kunth', 'Bidens andicola var. andicola Kunth', 'Misico', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(352, 'Bidens pilosa var pilosa (DC.) Sherff', 'Bidens pilosa var pilosa (DC.) Sherff', 'Cadillo, chiriro', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(353, 'Chersodoma jodopappa Cabrera', 'Chersodoma jodopappa Cabrera', 'Tola blanca', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(354, 'Chersodoma juanisernii (Cuatrec.) Cuatrec.', 'Chersodoma juanisernii (Cuatrec.) Cuatrec.', 'Guishuara karkataya', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(355, 'Chuquiraga rotundifolia Wedd.', 'Chuquiraga rotundifolia Wedd.', 'Guishuara', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(356, 'Diplostephium meyenii (Sch. Bip. ex Wedd.) S.F.', 'Diplostephium meyenii (Sch. Bip. ex Wedd.) S.F.', 'Kalihua, Kasihua', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(357, 'Flaveria bidentis (L.) Kuntze', 'Flaveria bidentis (L.) Kuntze', 'Matagusano', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(358, 'Gnaphalium dombeyanum DC.', 'Gnaphalium dombeyanum DC.', 'Wira wira macho', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(359, 'Grindelia glutinosa (Cav.) Mart.', 'Grindelia glutinosa (Cav.) Mart.', 'Chiñe', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(360, 'Grindelia tarapacana Phil.', 'Grindelia tarapacana Phil.', 'Chiñe', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(361, 'Leucheria daucifolia (D.Don) Crisci', 'Leucheria daucifolia (D.Don) Crisci', 'Sasawi', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(362, 'Matricaria recutita L.', 'Matricaria recutita L.', 'Manzanilla', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(363, 'Mutisia acuminata var. bicolor Cabrera', 'Mutisia acuminata var. bicolor Cabrera', 'Chinchirkuma', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(364, 'Mutisia acuminata var. hirsuta (Meyen) Cabrera', 'Mutisia acuminata var. hirsuta (Meyen) Cabrera', 'Chinchirkuma', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(365, 'Ophryosporus heptanthus (Sch.Bip. ex Wedd.) R.M.King & H.Rob.', 'Ophryosporus heptanthus (Sch.Bip. ex Wedd.) R.M.King & H.Rob.', 'Chilliniza', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(366, 'Parastrephia lepidophylla (Wedd.) Cabrera', 'Parastrephia lepidophylla (Wedd.) Cabrera', 'Tola', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(367, 'Parastrephia lucida (Meyen) Cabrera', 'Parastrephia lucida (Meyen) Cabrera', 'Tola', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(368, 'Parastrephia quadrangularis (Meyen) Cabrera', 'Parastrephia quadrangularis (Meyen) Cabrera', 'Tola', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(369, 'Perezia multiflora (Bonpl.) Less.', 'Perezia multiflora (Bonpl.) Less.', 'Chancoromo', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(370, 'Pluchea chingoyo (Kunth) DC.', 'Pluchea chingoyo (Kunth) DC.', 'Chingoyo, Toñuz', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(371, 'Proustia berberidifolia (Cuatrec.) Ferreyra', 'Proustia berberidifolia (Cuatrec.) Ferreyra', 'Taza', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(372, 'Senecio nutans Sch.Bip.', 'Senecio nutans Sch.Bip.', 'Chachacomo', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(373, 'Senecio spinosus DC.', 'Senecio spinosus DC.', 'Canlla', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(374, 'Sonchus oleraceus L.', 'Sonchus oleraceus L.', 'Cerraja, Canacho', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(375, 'Tagetes multiflora Kunth', 'Tagetes multiflora Kunth', 'Chicchipa', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(376, 'Taraxacum officinale F.H. Wigg.', 'Taraxacum officinale F.H. Wigg.', 'Diente de León', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(377, 'Tessaria integrifolia Ruiz & Pav.', 'Tessaria integrifolia Ruiz & Pav.', 'Pajaro bobo', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(378, 'Xenophyllum poposum (Phil.) V.A.Funk', 'Xenophyllum poposum (Phil.) V.A.Funk', 'Pura pura', 'Asteraceae', '-', 'Animal', NULL, 9, 9, 7, 79, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(379, 'Tecoma fulva (Cav.) G. Don', 'Tecoma fulva (Cav.) G. Don', 'Chuve', 'Bignoniaceae', '-', 'Animal', NULL, 9, 9, 7, 83, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(380, 'Tecoma sambucifolia Kunth', 'Tecoma sambucifolia Kunth', 'Huaranhua', 'Bignoniaceae', '-', 'Animal', NULL, 9, 9, 7, 83, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(381, 'Heliotropium curassavicum L.', 'Heliotropium curassavicum L.', 'Hierba de alacrán', 'Boraginaceae', '-', 'Animal', NULL, 9, 9, 7, 84, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(382, 'Tiquilia paronychioides (Phil.) A.T. Richardson', 'Tiquilia paronychioides (Phil.) A.T. Richardson', 'Flor de arena', 'Boraginaceae', '-', 'Animal', NULL, 9, 9, 7, 84, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(383, 'Brassica rapa subsp. campestris (L.)', 'Brassica rapa subsp. campestris (L.)', 'Nabo silvestre, Mostaza', 'Brassicaceae', '-', 'Animal', NULL, 9, 9, 7, 85, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(384, 'Capsella bursa-pastoris (L.) Medik.', 'Capsella bursa-pastoris (L.) Medik.', 'Bolsa de pastor', 'Brassicaceae', '-', 'Animal', NULL, 9, 9, 7, 85, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(385, 'Descurainia myriophylla (Willd.) R.E.Fr.', 'Descurainia myriophylla (Willd.) R.E.Fr.', 'Cani cani', 'Brassicaceae', '-', 'Animal', NULL, 9, 9, 7, 85, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(386, 'Lepidium chichicara Desv.', 'Lepidium chichicara Desv.', 'Mata conejo, Anis silvestre', 'Brassicaceae', '-', 'Animal', NULL, 9, 9, 7, 85, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(387, 'Austrocylindropuntia subulata (Muehlenpf.) Backeb.', 'Austrocylindropuntia subulata (Muehlenpf.) Backeb.', 'Cure, coniña', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(388, 'Browningia candelaris (Meyen) Britton & Rose', 'Browningia candelaris (Meyen) Britton & Rose', 'Candelabro', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(389, 'Cleistocactus sextonianus (Backeb.) D.R. Hunt', 'Cleistocactus sextonianus (Backeb.) D.R. Hunt', 'Cactus', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(390, 'Corryocactus brachypetalus (Vaupel) Britton & Rose', 'Corryocactus brachypetalus (Vaupel) Britton & Rose', 'Cactus', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(391, 'Corryocactus brevistylus (K. Schum. ex Vaupel) Britton & Rose', 'Corryocactus brevistylus (K. Schum. ex Vaupel) Britton & Rose', 'Curi, Sankallo', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(392, 'Eriosyce islayensis (Foerster) Katt.', 'Eriosyce islayensis (Foerster) Katt.', 'Cactus', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(393, 'Haageocereus platinospinus (Werderm. & Backeb.) Backeb.', 'Haageocereus platinospinus (Werderm. & Backeb.) Backeb.', 'Cactus', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(394, 'Neoraimondia arequipensis Backeb.', 'Neoraimondia arequipensis Backeb.', 'Gigantón', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(395, 'Opuntia ficus-indica (L.) Mill.', 'Opuntia ficus-indica (L.) Mill.', 'Tuna', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(396, 'Opuntia ignescens Vaupel', 'Opuntia ignescens Vaupel', 'Pulla-pulla, Puscalla', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(397, 'Oreocereus leucotrichus (Phil.) Wagenkn.', 'Oreocereus leucotrichus (Phil.) Wagenkn.', 'Viejito, Abuelito', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(398, 'Tunilla soehrensii (Britton & Rose) D.R. Hunt & Iliff', 'Tunilla soehrensii (Britton & Rose) D.R. Hunt & Iliff', 'Ayrampo', 'Cactaceae', '-', 'Animal', NULL, 9, 9, 7, 86, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(399, 'Calceolaria inamoena subsp inamoena', 'Calceolaria inamoena subsp inamoena', 'Zapato, Amayzapato', 'Calceolariaceae', '-', 'Animal', NULL, 9, 9, 7, 87, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(400, 'Calceolaria inamoena Kraenzl', 'Calceolaria inamoena Kraenzl', 'Amayzapato, Zapato zapato', 'Calceolariaceae', '-', 'Animal', NULL, 9, 9, 7, 87, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(401, 'Hypsela reniformis (Kunth) C.Presl', 'Hypsela reniformis (Kunth) C.Presl', 'Chiñi kururu', 'Campanulaceae', '-', 'Animal', NULL, 9, 9, 7, 89, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(402, 'Vasconcellea candicans (A. Gray) (Carica candicans)', 'Vasconcellea candicans (A. Gray) (Carica candicans)', 'Mito, Papaya silvestre', 'Caricaceae', '-', 'Animal', NULL, 9, 9, 7, 91, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(403, 'Arenaria serpens Kunth', 'Arenaria serpens Kunth', 'Arenilla', 'Caryophyllaceae', '-', 'Animal', NULL, 9, 9, 7, 92, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(404, 'Pycnophyllum molle Remy', 'Pycnophyllum molle Remy', 'Almohadilla, Huaricuca', 'Caryophyllaceae', '-', 'Animal', NULL, 9, 9, 7, 92, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(405, 'Casuarina equisetifolia J.R. Forst. & G. Forst.', 'Casuarina equisetifolia J.R. Forst. & G. Forst.', 'Casuarina', 'Casuarinaceae', '-', 'Animal', NULL, 9, 9, 7, 93, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(406, 'Escallonia angustifolia C. Presl', 'Escallonia angustifolia C. Presl', 'Chalsa', 'Escalloniaceae', '-', 'Animal', NULL, 9, 9, 7, 99, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(407, 'Ricinus communis L.', 'Ricinus communis L.', 'Higuerilla', 'Euphorbiaceae', '-', 'Animal', NULL, 9, 9, 7, 100, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(408, 'Vachellia aroma (Acacia aroma)Gillies ex Hook. & Arn.', 'Vachellia aroma (Acacia aroma)Gillies ex Hook. & Arn.', 'Aromo', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(409, 'Vachellia huarango (Acacia huarango) Ruiz ex J.F. Macbr.', 'Vachellia huarango (Acacia huarango) Ruiz ex J.F. Macbr.', 'Yaro, Huarango', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(410, 'Vachellia macracantha Humb. & Bonpl. ex Willd. (Acacia macracantha)', 'Vachellia macracantha Humb. & Bonpl. ex Willd. (Acacia macracantha)', 'Faique', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(411, 'Vachellia visco (Acacia visco) Lorentz ex Griseb.', 'Vachellia visco (Acacia visco) Lorentz ex Griseb.', 'Vilca', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(412, 'Adesmia spinosissima Meyen ex Vogel', 'Adesmia spinosissima Meyen ex Vogel', 'Kanllia hembra', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(413, 'Tara spinosa Feuillée ex Molina (Caesalpinia spinosa Kuntze)', 'Tara spinosa Feuillée ex Molina (Caesalpinia spinosa Kuntze)', 'Tara', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(414, 'Geoffroea decorticans (Gillies ex Hook. & Arn.) Burkart', 'Geoffroea decorticans (Gillies ex Hook. & Arn.) Burkart', 'Chañar', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(415, 'Leucaena leucocephala (Lam.) de Wit', 'Leucaena leucocephala (Lam.) de Wit', 'Arabisca, Valquilla, Aroma blanco', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(416, 'Lupinus pinguis Ulbr.', 'Lupinus pinguis Ulbr.', 'Quela', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(417, 'Medicago polymorpha L.', 'Medicago polymorpha L.', 'Trebol', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(418, 'Melilotus albus Medik.', 'Melilotus albus Medik.', 'Alfalfilla', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(419, 'Otholobium pubescens (Poir.)J.W. Grimes', 'Otholobium pubescens (Poir.)J.W. Grimes', 'Pulén de tomar', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(420, 'Parkinsonia aculeata L', 'Parkinsonia aculeata L', 'Azote de cristo', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(421, 'Prosopis chilensis (Molina) Stuntz', 'Prosopis chilensis (Molina) Stuntz', 'Algarrobo chileno', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(422, 'Prosopis pallida (Humb. & Bonpl. ex Willd.) Kunth', 'Prosopis pallida (Humb. & Bonpl. ex Willd.) Kunth', 'Algarrobo cultivado', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(423, 'Spartium junceum L.', 'Spartium junceum L.', 'Retama', 'Fabaceae', '-', 'Animal', NULL, 9, 9, 7, 101, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(424, 'Myriophyllum elatinoides Gaudich.', 'Myriophyllum elatinoides Gaudich.', 'Llacho', 'Haloragaceae', '-', 'Animal', NULL, 9, 9, 7, 107, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(425, 'Myriophyllum quitense Kunth', 'Myriophyllum quitense Kunth', 'Llacho, Chchinqui', 'Haloragaceae', '-', 'Animal', NULL, 9, 9, 7, 107, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(426, 'Krameria lappacea (Dombey) Burdet & B.B. Simpson', 'Krameria lappacea (Dombey) Burdet & B.B. Simpson', 'Lipi lipi', 'Krameriaceae', '-', 'Animal', NULL, 9, 9, 7, 109, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(427, 'Marrubium vulgare L.', 'Marrubium vulgare L.', 'Matico', 'Lamiaceae', '-', 'Animal', NULL, 9, 9, 7, 110, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(428, 'Mentha aquatica L. (piperita)', 'Mentha aquatica L. (piperita)', 'Menta', 'Lamiaceae', '-', 'Animal', NULL, 9, 9, 7, 110, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(429, 'Origanum vulgare L.', 'Origanum vulgare L.', 'Orégano', 'Lamiaceae', '-', 'Animal', NULL, 9, 9, 7, 110, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(430, 'Satureja boliviana (Benth.) Briq.', 'Satureja boliviana (Benth.) Briq.', 'Muña', 'Lamiaceae', '-', 'Animal', NULL, 9, 9, 7, 110, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(431, 'Satureja parvifolia (Phil.) Epling', 'Satureja parvifolia (Phil.) Epling', 'Muña', 'Lamiaceae', '-', 'Animal', NULL, 9, 9, 7, 110, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(432, 'Caiophora andina Urb. & Gilg', 'Caiophora andina Urb. & Gilg', 'Ortiga colorada', 'Loasaceae', '-', 'Animal', NULL, 9, 9, 7, 112, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(433, 'Caiophora pentlandii (Paxton ex Graham) G. Don ex Loudon', 'Caiophora pentlandii (Paxton ex Graham) G. Don ex Loudon', 'Ortiga macho', 'Loasaceae', '-', 'Animal', NULL, 9, 9, 7, 112, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(434, 'Caiophora sepiaria (Ruiz & Pav. ex G. Don) J.F. Macbr.', 'Caiophora sepiaria (Ruiz & Pav. ex G. Don) J.F. Macbr.', 'Ortiga macho', 'Loasaceae', '-', 'Animal', NULL, 9, 9, 7, 112, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(435, 'Caiophora superba Phil.', 'Caiophora superba Phil.', 'Ortiga colorada', 'Loasaceae', '-', 'Animal', NULL, 9, 9, 7, 112, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(436, 'Ligaria cuneifolia (Ruiz & Pav.) Tiegh.', 'Ligaria cuneifolia (Ruiz & Pav.) Tiegh.', 'Sulta sulta, Sueda sueda', 'Loranthaceae', '-', 'Animal', NULL, 9, 9, 7, 114, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(437, 'Gossypium barbadense L.', 'Gossypium barbadense L.', 'Algodón', 'Malvaceae', '-', 'Animal', NULL, 9, 9, 7, 116, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(438, 'Malva parviflora L.', 'Malva parviflora L.', 'Malva', 'Malvaceae', '-', 'Animal', NULL, 9, 9, 7, 116, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(439, 'Nototriche argentea A.W. Hill', 'Nototriche argentea A.W. Hill', 'Aldia', 'Malvaceae', '-', 'Animal', NULL, 9, 9, 7, 116, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(440, 'Tarasa operculata (Cav.) Krapov', 'Tarasa operculata (Cav.) Krapov', 'Palo blanco', 'Malvaceae', '-', 'Animal', NULL, 9, 9, 7, 116, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(441, 'Waltheria ovata Cav.', 'Waltheria ovata Cav.', 'Membrillejo, Palo negro', 'Malvaceae', '-', 'Animal', NULL, 9, 9, 7, 116, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(442, 'Eucalyptus camaldulensis Dehnh.', 'Eucalyptus camaldulensis Dehnh.', 'Eucalipto', 'Myrtaceae', '-', 'Animal', NULL, 9, 9, 7, 120, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(443, 'Eucalyptus globulus Labill.', 'Eucalyptus globulus Labill.', 'Eucalipto', 'Myrtaceae', '-', 'Animal', NULL, 9, 9, 7, 120, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(444, 'Epilobium denticulatum Ruiz & Pav.', 'Epilobium denticulatum Ruiz & Pav.', 'Layo', 'Onagraceae', '-', 'Animal', NULL, 9, 9, 7, 122, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(445, 'Oenothera rosea L\'Hér. ex Aiton', 'Oenothera rosea L\'Hér. ex Aiton', 'Chupa sangre', 'Onagraceae', '-', 'Animal', NULL, 9, 9, 7, 122, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(446, 'Argemone subfusiformis G.B. Ownbey', 'Argemone subfusiformis G.B. Ownbey', 'Cardosanto', 'Papaveraceae', '-', 'Animal', NULL, 9, 9, 7, 125, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(447, 'Malesherbia turbinea J.F. Macbr', 'Malesherbia turbinea J.F. Macbr', 'Lampayo', 'Passifloraceae', '-', 'Animal', NULL, 9, 9, 7, 126, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(448, 'Mimulus glabratus Kunth', 'Mimulus glabratus Kunth', 'Berro, Occocolo', 'Phrymaceae', '-', 'Animal', NULL, 9, 9, 7, 127, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(449, 'Bacopa monnieri (L.) Edwall', 'Bacopa monnieri (L.) Edwall', 'Verdolaga', 'Plantaginaceae', '-', 'Animal', NULL, 9, 9, 7, 128, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(450, 'Plantago lanceolata L.', 'Plantago lanceolata L.', 'Llantén', 'Plantaginaceae', '-', 'Animal', NULL, 9, 9, 7, 128, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(451, 'Plantago major L.', 'Plantago major L.', 'Llantén', 'Plantaginaceae', '-', 'Animal', NULL, 9, 9, 7, 128, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(452, 'Cantua buxifolia Juss. ex Lam.', 'Cantua buxifolia Juss. ex Lam.', 'Catuta, Flor del Inca, Cando', 'Polemoniaceae', '-', 'Animal', NULL, 9, 9, 7, 130, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(453, 'Muehlenbeckia hastulata (Sm.) I.M. Johnst.', 'Muehlenbeckia hastulata (Sm.) I.M. Johnst.', 'Mora', 'Polygonaceae', '-', 'Animal', NULL, 9, 9, 7, 132, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(454, 'Rumex cuneifolius Campd.', 'Rumex cuneifolius Campd.', 'Lengua de vaca, romasa', 'Polygonaceae', '-', 'Animal', NULL, 9, 9, 7, 132, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(455, 'Alchemilla diplophylla Diels', 'Alchemilla diplophylla Diels', 'Libro-libro', 'Rosaceae', '-', 'Animal', NULL, 9, 9, 7, 137, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(456, 'Kageneckia lanceolata Ruiz & Pav.', 'Kageneckia lanceolata Ruiz & Pav.', 'Lloque', 'Rosaceae', '-', 'Animal', NULL, 9, 9, 7, 137, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(457, 'Polylepis rugulosa Bitter', 'Polylepis rugulosa Bitter', 'Queñoa', 'Rosaceae', '-', 'Animal', NULL, 9, 9, 7, 137, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(458, 'Polylepis subtusalbida (Bitter) M. Kessler & Schmidt-Leb.', 'Polylepis subtusalbida (Bitter) M. Kessler & Schmidt-Leb.', 'Queñoa', 'Rosaceae', '-', 'Animal', NULL, 9, 9, 7, 137, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(459, 'Polylepis tarapacana Phil.', 'Polylepis tarapacana Phil.', 'Queñoa', 'Rosaceae', '-', 'Animal', NULL, 9, 9, 7, 137, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(460, 'Tetraglochin cristatum (Britton) Rothm.', 'Tetraglochin cristatum (Britton) Rothm.', 'Kanllia macho', 'Rosaceae', '-', 'Animal', NULL, 9, 9, 7, 137, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(461, 'Populus nigra  L.', 'Populus nigra  L.', 'Alamo italiano', 'Salicaceae', '-', 'Animal', NULL, 9, 9, 7, 140, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(462, 'Salix humboldtiana Willd.', 'Salix humboldtiana Willd.', 'Sauce', 'Salicaceae', '-', 'Animal', NULL, 9, 9, 7, 140, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(463, 'Azolla filiculoides Lam.', 'Azolla filiculoides Lam.', 'Lenteja de agua', 'Salvinaceae', '-', 'Animal', NULL, 9, 9, 7, 141, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(464, 'Buddleja coriacea Remy', 'Buddleja coriacea Remy', 'Safrán', 'Scrophulariaceae', '-', 'Animal', NULL, 9, 9, 7, 144, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(465, 'Cestrum auriculatum L\'Hér.', 'Cestrum auriculatum L\'Hér.', 'Hierba santa', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(466, 'Datura stramonium L.', 'Datura stramonium L.', 'Chamico', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(467, 'Dunalia spinosa (Meyen) Dammer', 'Dunalia spinosa (Meyen) Dammer', 'Yara', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(468, 'Fabiana stephanii Hunz. & Barboza', 'Fabiana stephanii Hunz. & Barboza', 'Quilla', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(469, 'Lycopersicon chilense Dunal', 'Lycopersicon chilense Dunal', 'Tomatillo', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(470, 'Nicotiana glauca Graham', 'Nicotiana glauca Graham', 'Tabaquillo', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(471, 'Nicotiana paniculata L.', 'Nicotiana paniculata L.', 'Tabaco cimarrón', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(472, 'Nolana adansonii (Roem. &Schult.) I.M. Johnst.', 'Nolana adansonii (Roem. &Schult.) I.M. Johnst.', 'Nolana', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(473, 'Nolana jaffuelii I.M. Johnst.', 'Nolana jaffuelii I.M. Johnst.', 'Nolana', 'Solanaceae', '-', 'Animal', NULL, 9, 9, 7, 145, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(474, 'Urtica magellanica Juss. ex Poir.', 'Urtica magellanica Juss. ex Poir.', 'Ortiga hembra', 'Urticaceae', '-', 'Animal', NULL, 9, 9, 7, 148, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(475, 'Aloysia triphylla Royle', 'Aloysia triphylla Royle', 'Cedrón', 'Verbenaceae', '-', 'Animal', NULL, 9, 9, 7, 149, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(476, 'Lippia nodiflora (L.) Michx.', 'Lippia nodiflora (L.) Michx.', 'Tiquil tiquil', 'Verbenaceae', '-', 'Animal', NULL, 9, 9, 7, 149, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(477, 'Cupressus sempervirens L.', 'Cupressus sempervirens L.', 'Cipres', 'Cupressaceae', '-', 'Animal', NULL, 10, 10, 7, 153, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(478, 'Pinus radiata D. Don', 'Pinus radiata D. Don', 'Pino', 'Pinaceae', '-', 'Animal', NULL, 10, 10, 7, 154, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(479, 'Equisetum giganteum L.', 'Equisetum giganteum L.', 'Cola de caballo', 'Equisetaceae', '-', 'Animal', NULL, 11, 11, 7, 158, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(480, 'Thelypteris cheilanthoides (Kunze) Proctor', 'Thelypteris cheilanthoides (Kunze) Proctor', 'Helecho', 'Thelypteridaceae', '-', 'Animal', NULL, 11, 11, 7, 161, NULL, NULL, NULL, NULL, '2025-09-05 19:47:30'),
+	(481, 'Epecia Nueva', 'Epecia Nueva', 'PLanta nueva', 'INformacion eetc', '-', 'Animal', NULL, 8, 23, 7, 67, NULL, NULL, NULL, '2025-01-09 22:34:50', '2025-09-05 19:47:30'),
+	(482, 'Xd', 'Xd', 'xd', NULL, '-', 'Animal', NULL, 4, 19, 7, 53, NULL, NULL, NULL, '2025-01-10 00:20:57', '2025-09-05 19:47:30');
+
+-- Volcando estructura para tabla biodiversity_management.biodiversity_category_publication
+CREATE TABLE IF NOT EXISTS `biodiversity_category_publication` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `biodiversity_category_id` bigint unsigned NOT NULL,
+  `publication_id` bigint unsigned NOT NULL,
+  `relevant_excerpt` text COLLATE utf8mb4_unicode_ci,
+  `page_reference` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `national_image_url` text COLLATE utf8mb4_unicode_ci COMMENT 'URL de imagen de fuente nacional',
+  `national_image_source` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Fuente de la imagen nacional',
+  `national_image_credits` text COLLATE utf8mb4_unicode_ci COMMENT 'Créditos de la imagen nacional',
+  `national_image_description` text COLLATE utf8mb4_unicode_ci COMMENT 'Descripción de la imagen nacional',
+  `international_image_url` text COLLATE utf8mb4_unicode_ci COMMENT 'URL de imagen de fuente internacional',
+  `international_image_source` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Fuente de la imagen internacional',
+  `international_image_credits` text COLLATE utf8mb4_unicode_ci COMMENT 'Créditos de la imagen internacional',
+  `international_image_description` text COLLATE utf8mb4_unicode_ci COMMENT 'Descripción de la imagen internacional',
+  `image_license` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Licencia de uso de las imágenes',
+  `images_verified` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Indica si las imágenes han sido verificadas',
+  `images_last_updated` timestamp NULL DEFAULT NULL COMMENT 'Última actualización de imágenes',
+  `image_path` text COLLATE utf8mb4_unicode_ci COMMENT 'Ruta principal de imagen de fuente nacional o internacional',
+  `image_path2` text COLLATE utf8mb4_unicode_ci COMMENT 'Segunda imagen alternativa',
+  `image_path3` text COLLATE utf8mb4_unicode_ci COMMENT 'Tercera imagen alternativa',
+  `image_path4` text COLLATE utf8mb4_unicode_ci COMMENT 'Cuarta imagen alternativa',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `bio_cat_pub_unique` (`biodiversity_category_id`,`publication_id`),
+  KEY `bio_cat_pub_publication_fk` (`publication_id`),
+  CONSTRAINT `bio_cat_pub_category_fk` FOREIGN KEY (`biodiversity_category_id`) REFERENCES `biodiversity_categories` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `bio_cat_pub_publication_fk` FOREIGN KEY (`publication_id`) REFERENCES `publications` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.biodiversity_category_publication: ~6 rows (aproximadamente)
+INSERT INTO `biodiversity_category_publication` (`id`, `biodiversity_category_id`, `publication_id`, `relevant_excerpt`, `page_reference`, `created_at`, `updated_at`, `national_image_url`, `national_image_source`, `national_image_credits`, `national_image_description`, `international_image_url`, `international_image_source`, `international_image_credits`, `international_image_description`, `image_license`, `images_verified`, `images_last_updated`, `image_path`, `image_path2`, `image_path3`, `image_path4`) VALUES
+	(3, 17, 1048, NULL, NULL, '2024-10-25 23:29:02', '2025-09-05 19:25:35', 'https://ejemplo-nacional.pe/images/especies/rhinella_limensis_.jpg', 'SERNANP - Servicio Nacional de Áreas Naturales Protegidas', 'Fotografía: Ministerio del Ambiente del Perú', 'Imagen de Rhinella limensis  en su hábitat natural peruano', 'https://ejemplo-internacional.org/species/rhinella_limensis_.jpg', 'iNaturalist Global Database', 'Fotografía: Comunidad científica internacional', 'Imagen de referencia internacional de Rhinella limensis ', 'CC BY-SA 4.0', 1, '2025-09-05 19:18:06', 'https://www.sernanp.gob.pe/documents/especies/jaguar-manu.jpg', 'https://www.inaturalist.org/photos/jaguar-peru-wild.jpg', 'https://www.gbif.org/occurrence/media/panthera-onca-amazon.jpg', 'https://www.worldwildlife.org/species/jaguar/photos/jaguar-habitat.jpg'),
+	(4, 32, 1073, NULL, NULL, '2024-10-28 20:08:18', '2025-09-05 19:24:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 'https://www.inaturalist.org/photos/123456789-species-peru.jpg', 'https://ebird.org/media/catalog/123456/bird-species-peru.jpg', 'https://www.gbif.org/occurrence/media/456789123-peru-fauna.jpg', 'https://www.flickr.com/photos/wildlife/peru-biodiversity.jpg'),
+	(5, 32, 2101, NULL, NULL, '2024-11-07 01:18:00', '2025-09-05 19:24:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 'https://www.fishbase.org/photos/PicturesSummary.php?ID=amazonian-fish.jpg', 'https://www.iucnredlist.org/species/photos/peru-endemic-species.jpg', 'https://www.worldwildlife.org/species/peru/photos/amazon-wildlife.jpg', NULL),
+	(6, 32, 1105, NULL, NULL, '2024-11-07 01:40:26', '2025-09-05 19:24:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 'https://www.allaboutbirds.org/guide/assets/photo/neotropical-species.jpg', 'https://www.audubon.org/sites/default/files/south-american-fauna.jpg', 'https://www.birdlife.org/wp-content/uploads/conservation-peru.jpg', NULL),
+	(7, 33, 2101, NULL, NULL, '2024-11-07 01:40:52', '2024-11-07 01:40:52', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+	(8, 20, 2101, NULL, NULL, '2024-11-07 01:43:51', '2025-09-05 19:24:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 'https://www.conacs.gob.pe/portal/images/fauna-andes-peru.jpg', 'https://cdn.www.gob.pe/uploads/document/file/especies-endemicas.jpg', 'https://www.minam.gob.pe/wp-content/uploads/2021/05/biodiversidad-nacional.jpg', NULL);
+
+-- Volcando estructura para tabla biodiversity_management.biodiversity_publication
+CREATE TABLE IF NOT EXISTS `biodiversity_publication` (
+  `biodiversity_id` bigint unsigned NOT NULL,
+  `publication_id` bigint unsigned NOT NULL,
+  `relevant_excerpt` text COLLATE utf8mb4_unicode_ci,
+  `page_reference` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`biodiversity_id`,`publication_id`),
+  KEY `biodiversity_publication_publication_id_foreign` (`publication_id`),
+  CONSTRAINT `biodiversity_publication_biodiversity_id_foreign` FOREIGN KEY (`biodiversity_id`) REFERENCES `biodiversity_categories` (`id`),
+  CONSTRAINT `biodiversity_publication_publication_id_foreign` FOREIGN KEY (`publication_id`) REFERENCES `publications` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.biodiversity_publication: ~0 rows (aproximadamente)
 
--- Volcando datos para la tabla biodiversity_management.cache: ~0 rows (aproximadamente)
+-- Volcando estructura para tabla biodiversity_management.cache
+CREATE TABLE IF NOT EXISTS `cache` (
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.cache: ~2 rows (aproximadamente)
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+	('laravel-cache-site_visit_stats', 'a:5:{s:12:"total_visits";i:0;s:15:"unique_visitors";i:0;s:12:"today_visits";i:0;s:16:"this_week_visits";i:0;s:17:"this_month_visits";i:0;}', 1757110493),
+	('laravel-cache-top_pages_10', 'a:0:{}', 1757110793);
+
+-- Volcando estructura para tabla biodiversity_management.cache_locks
+CREATE TABLE IF NOT EXISTS `cache_locks` (
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.cache_locks: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla biodiversity_management.clases
+CREATE TABLE IF NOT EXISTS `clases` (
+  `idclase` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `definicion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idreino` bigint unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idclase`),
+  KEY `clases_idreino_foreign` (`idreino`),
+  CONSTRAINT `clases_idreino_foreign` FOREIGN KEY (`idreino`) REFERENCES `reinos` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.clases: ~11 rows (aproximadamente)
+INSERT INTO `clases` (`idclase`, `nombre`, `definicion`, `idreino`, `created_at`, `updated_at`) VALUES
+	(1, 'Reptiles', 'Reptilia', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(2, 'Anfibios', 'Amphibia\r\nAmphibia\r\nAmphibia\r\nAmphibia', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(3, 'Mamiferos', 'Mammalia', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(4, 'Aves', 'Aves', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(5, 'Gnetopsida', 'Gnetopsida', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(6, 'Pinopsida', 'Pinopsida', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(7, 'Polypodiopsida', 'Polypodiopsida', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(8, 'Liliopsida', 'Liliopsida', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(9, 'Magnoliopsida', 'Magnoliopsida', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(10, 'Pinopsida', 'Pinopsida', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(11, 'Polypodiopsida', 'Polypodiopsida', NULL, '2025-08-28 00:36:27', '2025-08-28 00:36:27');
+
+-- Volcando estructura para tabla biodiversity_management.conservation_statuses
+CREATE TABLE IF NOT EXISTS `conservation_statuses` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_en` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `color` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'secondary',
+  `priority` int NOT NULL DEFAULT '0',
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `conservation_statuses_code_unique` (`code`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.conservation_statuses: ~9 rows (aproximadamente)
 INSERT INTO `conservation_statuses` (`id`, `code`, `name`, `name_en`, `description`, `color`, `priority`, `is_active`, `created_at`, `updated_at`) VALUES
 	(1, 'EX', 'Extinto', 'Extinct', 'No hay duda razonable de que el último individuo existente ha muerto.', 'danger', 9, 1, '2025-07-31 20:27:52', '2025-07-31 20:27:52'),
-	(2, 'EW', 'Extinto en Estado Silvestre', 'Extinct in the Wild', 'Se sabe que solo sobrevive en cultivo, en cautividad o como población naturalizada fuera de su área de distribución histórica.', '#ff0f0f', 8, 1, '2025-07-31 20:27:52', '2025-07-31 20:55:08'),
-	(3, 'CR', 'En Peligro Crítico', 'Critically Endangered', 'Se considera que se enfrenta a un riesgo extremadamente alto de extinción en estado silvestre.', '#f70202', 7, 1, '2025-07-31 20:27:52', '2025-07-31 20:59:37'),
-	(4, 'EN', 'En Peligro', 'Endangered', 'Se considera que se enfrenta a un riesgo muy alto de extinción en estado silvestre.', '#1153ee', 6, 1, '2025-07-31 20:27:52', '2025-07-31 21:07:07'),
+	(2, 'EW', 'Extinto en Estado Silvestre', 'Extinct in the Wild', 'Se sabe que solo sobrevive en cultivo, en cautividad o como población naturalizada fuera de su área de distribución histórica.', 'danger', 8, 1, '2025-07-31 20:27:52', '2025-08-18 20:36:14'),
+	(3, 'CR', 'En Peligro Crítico', 'Critically Endangered', 'Se considera que se enfrenta a un riesgo extremadamente alto de extinción en estado silvestre.', 'danger', 7, 1, '2025-07-31 20:27:52', '2025-08-18 20:36:14'),
+	(4, 'EN', 'En Peligro', 'Endangered', 'Se considera que se enfrenta a un riesgo muy alto de extinción en estado silvestre.', 'warning', 6, 1, '2025-07-31 20:27:52', '2025-08-18 20:36:14'),
 	(5, 'VU', 'Vulnerable', 'Vulnerable', 'Se considera que se enfrenta a un riesgo alto de extinción en estado silvestre.', 'warning', 5, 1, '2025-07-31 20:27:52', '2025-07-31 20:27:52'),
 	(6, 'NT', 'Casi Amenazado', 'Near Threatened', 'No califica para En Peligro Crítico, En Peligro o Vulnerable ahora, pero está cerca de calificar o es probable que califique para una categoría amenazada en el futuro cercano.', 'info', 4, 1, '2025-07-31 20:27:52', '2025-07-31 20:27:52'),
 	(7, 'LC', 'Preocupación Menor', 'Least Concern', 'Ha sido evaluado y no califica para En Peligro Crítico, En Peligro, Vulnerable o Casi Amenazado.', 'success', 3, 1, '2025-07-31 20:27:52', '2025-07-31 20:27:52'),
 	(8, 'DD', 'Datos Insuficientes', 'Data Deficient', 'No hay información adecuada para hacer una evaluación directa o indirecta de su riesgo de extinción.', 'secondary', 2, 1, '2025-07-31 20:27:52', '2025-07-31 20:27:52'),
 	(9, 'NE', 'No Evaluado', 'Not Evaluated', 'No ha sido evaluado contra los criterios.', 'secondary', 1, 1, '2025-07-31 20:27:52', '2025-07-31 20:27:52');
 
+-- Volcando estructura para tabla biodiversity_management.email_verification_tokens
+CREATE TABLE IF NOT EXISTS `email_verification_tokens` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Volcando datos para la tabla biodiversity_management.email_verification_tokens: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla biodiversity_management.failed_jobs
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.failed_jobs: ~0 rows (aproximadamente)
 
--- Volcando datos para la tabla biodiversity_management.hero_slider_images: ~2 rows (aproximadamente)
-INSERT INTO `hero_slider_images` (`id`, `title`, `description`, `alt_text`, `button_text`, `button_url`, `sort_order`, `is_active`, `has_overlay_image`, `overlay_position`, `overlay_alt_text`, `overlay_description`, `overlay_button_text`, `overlay_button_url`, `created_at`, `updated_at`) VALUES
-	(1, 'FOTO1', 'FOTO1 DESCR', 'fotosssssssssss', 'lo maximo', NULL, 0, 1, 1, 'right', 'Gobierno Regional de Tacna', 'Es un portal muy interesante', NULL, NULL, '2025-07-31 21:53:13', '2025-08-01 22:19:34'),
-	(2, 'FOTO 2', 'FFFFFFFFFFF', 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF', 'FFFFFFFFF', NULL, 1, 1, 0, 'left', NULL, NULL, NULL, NULL, '2025-07-31 22:02:10', '2025-07-31 22:02:10');
+-- Volcando estructura para tabla biodiversity_management.familias
+CREATE TABLE IF NOT EXISTS `familias` (
+  `idfamilia` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `definicion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idorden` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idfamilia`)
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla biodiversity_management.home_content: ~29 rows (aproximadamente)
-INSERT INTO `home_content` (`id`, `section`, `key`, `value`, `type`, `is_active`, `sort_order`, `created_at`, `updated_at`) VALUES
-	(1, 'hero', 'title', 'Descubre la Riqueza de la Biodiversidad', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(2, 'hero', 'subtitle', 'Explora nuestra extensa base de datos de especies, ecosistemas y publicaciones científicas. México es uno de los países con mayor biodiversidad del mundo, hogar de miles de especies únicas.', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(3, 'hero', 'button_primary_text', 'Explorar Especies', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(4, 'hero', 'button_primary_url', '/biodiversity', 'url', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(5, 'hero', 'button_secondary_text', 'Publicaciones', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(6, 'hero', 'button_secondary_url', '/publications', 'url', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(7, 'hero', 'hero_image', 'fas fa-globe-americas', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(8, 'search', 'title', '¿Qué especie buscas?', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(9, 'search', 'subtitle', 'Busca entre miles de especies registradas en nuestro sistema', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(10, 'search', 'placeholder', 'Buscar por nombre común o científico...', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(11, 'stats', 'title', 'Nuestra Biodiversidad en Números', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(12, 'stats', 'categories_title', 'Categorías de Especies', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(13, 'stats', 'categories_description', 'Diferentes grupos taxonómicos registrados', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(14, 'stats', 'publications_title', 'Publicaciones Científicas', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(15, 'stats', 'publications_description', 'Investigaciones y estudios disponibles', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(16, 'stats', 'endangered_title', 'Especies en Peligro', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(17, 'stats', 'endangered_description', 'Requieren protección especial', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(18, 'stats', 'critical_title', 'En Peligro Crítico', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(19, 'stats', 'critical_description', 'Situación de conservación crítica', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(20, 'featured', 'title', 'Especies Destacadas', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(21, 'featured', 'view_all_text', 'Ver Todas las Especies', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(22, 'publications', 'title', 'Publicaciones Científicas Recientes', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(23, 'publications', 'view_all_text', 'Ver Todas las Publicaciones', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(24, 'cta', 'title', 'Contribuye a la Conservación', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(25, 'cta', 'description', 'La biodiversidad es un tesoro que debemos proteger. Únete a nuestros esfuerzos de conservación e investigación.', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(26, 'cta', 'button_primary_text', 'Colaborar', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(27, 'cta', 'button_primary_url', '#', 'url', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(28, 'cta', 'button_secondary_text', 'Descargar Datos', 'text', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(29, 'cta', 'button_secondary_url', '#', 'url', 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
-	(30, 'hero', 'use_image_slider', 'true', 'text', 1, 1, '2025-07-31 21:39:51', '2025-08-01 02:16:13'),
-	(31, 'hero', 'slider_autoplay', 'true', 'text', 1, 2, '2025-07-31 21:39:51', '2025-07-31 21:58:44'),
-	(32, 'hero', 'slider_interval', '5000', 'text', 1, 3, '2025-07-31 21:39:51', '2025-07-31 21:58:44'),
-	(33, 'hero', 'enable_icons', 'true', 'text', 1, 4, '2025-07-31 21:39:51', '2025-07-31 21:58:44');
+-- Volcando datos para la tabla biodiversity_management.familias: ~162 rows (aproximadamente)
+INSERT INTO `familias` (`idfamilia`, `nombre`, `definicion`, `idorden`, `created_at`, `updated_at`) VALUES
+	(1, 'Dipsadidae', 'Dipsadidae', 1, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(2, 'Gekkonidae', 'Gekkonidae', 1, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(3, 'Liolaemidae', 'Liolaemidae', 1, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(4, 'Tropiduridae', 'Tropiduridae', 1, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(5, 'Bufonidae', 'Bufonidae', 2, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(6, 'Canidae\r\n', 'Canidae\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(7, 'Felidae\r\n', 'Felidae\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(8, 'Mustelidae\r\n', 'Mustelidae\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(9, 'Mephitidae\r\n', 'Mephitidae\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(10, 'Otariidae\r\n', 'Otariidae\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(11, 'Balaenopteridae\r\n', 'Balaenopteridae\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(12, 'Camelidae\r\n', 'Camelidae\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(13, 'Cervidae\r\n', 'Cervidae\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(14, 'Delphinidae\r\n', 'Delphinidae\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(15, 'Phocoenidae\r\n', 'Phocoenidae\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(16, 'Furipteridae\r\n', 'Furipteridae\r\n', 5, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(17, 'Molossidae\r\n', 'Molossidae\r\n', 5, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(18, 'Phyllostomidae\r\n', 'Phyllostomidae\r\n', 5, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(19, 'Vespertilionidae\r\n', 'Vespertilionidae\r\n', 5, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(20, 'Didelphidae\r\n', 'Didelphidae\r\n', 6, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(21, 'Leporidae\r\n', 'Leporidae\r\n', 7, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(22, 'Abrocomidae\r\n', 'Abrocomidae\r\n', 8, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(23, 'Caviidae\r\n', 'Caviidae\r\n', 8, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(24, 'Chinchillidae\r\n', 'Chinchillidae\r\n', 8, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(25, 'Abrothrix andinus\r\n', 'Abrothrix andinus\r\n', 9, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(26, 'Abrothrix jelskii\r\n', 'Abrothrix jelskii\r\n', 9, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(27, 'Akodon albiventer\r\n', 'Akodon albiventer\r\n', 9, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(28, 'Chinchillula sahamae\r\n', 'Chinchillula sahamae\r\n', 9, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(29, 'Phyllotis limatus\r\n', 'Phyllotis limatus\r\n', 9, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(30, 'Phyllotis magister\r\n', 'Phyllotis magister\r\n', 9, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(31, 'Punomys lemminus\r\n', 'Punomys lemminus\r\n', 9, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(32, 'Ctenomys opimus\r\n', 'Ctenomys opimus\r\n', 10, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(33, 'Mus musculus\r\n', 'Mus musculus\r\n', 11, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(34, 'Anatidae\r\n', 'Anatidae\r\n', 12, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(35, 'Apodidae\r\n', 'Apodidae\r\n', 13, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(36, 'Trochilidae\r\n', 'Trochilidae\r\n', 13, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(37, 'Caprimulgidae\r\n', 'Caprimulgidae\r\n', 14, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(38, 'Burhinidae\r\n', 'Burhinidae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(39, 'Charadriidae\r\n', 'Charadriidae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(40, 'Haematopodidae\r\n', 'Haematopodidae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(41, 'Laridae\r\n', 'Laridae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(42, 'Recurvirostridae\r\n', 'Recurvirostridae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(43, 'Rhynchopidae\r\n', 'Rhynchopidae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(44, 'Scolopacidae\r\n', 'Scolopacidae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(45, 'Stercorariidae\r\n', 'Stercorariidae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(46, 'Thinocoridae\r\n', 'Thinocoridae\r\n', 15, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(47, 'Ardeidae\r\n', 'Ardeidae\r\n', 16, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(48, 'Cathartidae\r\n', 'Cathartidae\r\n', 16, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(49, 'Threskiornithidae\r\n', 'Threskiornithidae\r\n', 16, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(50, 'Columbidae\r\n', 'Columbidae\r\n', 17, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(51, 'Cuculidae\r\n', 'Cuculidae\r\n', 18, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(52, 'Accipitridae\r\n', 'Accipitridae\r\n', 19, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(53, 'Falconidae\r\n', 'Falconidae\r\n', 19, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(54, 'Pandionidae\r\n', 'Pandionidae\r\n', 19, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(55, 'Leptodactylidae', 'Leptodactylidae', 2, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(56, 'Ephedraceae', 'Ephedraceae', 20, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(57, 'Alstroemeriaceae', 'Alstroemeriaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(58, 'Amaryllidaceae', 'Amaryllidaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(59, 'Araceae', 'Araceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(60, 'Arecaceae', 'Arecaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(61, 'Asparagaceae', 'Asparagaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(62, 'Bromeliaceae', 'Bromeliaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(63, 'Cyperaceae', 'Cyperaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(64, 'Juncaceae', 'Juncaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(65, 'Orchidaceae', 'Orchidaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(66, 'Hydrocharitaceae', 'Hydrocharitaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(67, 'Iridaceae', 'Iridaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(68, 'Poaceae', 'Poaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(69, 'Potamogetonaceae', 'Potamogetonaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(70, 'Ruppiaceae', 'Ruppiaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(71, 'Typhaceae', 'Typhaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(72, 'Xanthorrhoeaceae', 'Xanthorrhoeaceae', 23, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(73, 'Aizoaceae', 'Aizoaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(74, 'Amaranthaceae', 'Amaranthaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(75, 'Anacardiaceae', 'Anacardiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(76, 'Apiaceae', 'Apiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(77, 'Apocynaceae', 'Apocynaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(78, 'Araliaceae', 'Araliaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(79, 'Asteraceae', 'Asteraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(80, 'Balanophoraceae', 'Balanophoraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(81, 'Basellaceae', 'Basellaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(82, 'Betulaceae', 'Betulaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(83, 'Bignoniaceae', 'Bignoniaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(84, 'Boraginaceae', 'Boraginaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(85, 'Brassicaceae', 'Brassicaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(86, 'Cactaceae', 'Cactaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(87, 'Calceolariaceae', 'Calceolariaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(88, 'Calyceraceae', 'Calyceraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(89, 'Campanulaceae', 'Campanulaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(90, 'Caprifoliaceae', 'Caprifoliaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(91, 'Caricaceae', 'Caricaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(92, 'Caryophyllaceae', 'Caryophyllaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(93, 'Casuarinaceae', 'Casuarinaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(94, 'Celastraceae', 'Celastraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(95, 'Cleomaceae', 'Cleomaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(96, 'Convolvulaceae', 'Convolvulaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(97, 'Crassulaceae', 'Crassulaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(98, 'Cucurbitaceae', 'Cucurbitaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(99, 'Escalloniaceae', 'Escalloniaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(100, 'Euphorbiaceae', 'Euphorbiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(101, 'Fabaceae', 'Fabaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(102, 'Francoaceae', 'Francoaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(103, 'Frankeniaceae', 'Frankeniaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(104, 'Gentianaceae', 'Gentianaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(105, 'Geraniaceae', 'Geraniaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(106, 'Grossulariaceae', 'Grossulariaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(107, 'Haloragaceae', 'Haloragaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(108, 'Hypericaceae', 'Hypericaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(109, 'Krameriaceae', 'Krameriaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(110, 'Lamiaceae', 'Lamiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(111, 'Linaceae', 'Linaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(112, 'Loasaceae', 'Loasaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(113, 'Loganiaceae', 'Loganiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(114, 'Loranthaceae', 'Loranthaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(115, 'Lythraceae', 'Lythraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(116, 'Malvaceae', 'Malvaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(117, 'Montiaceae', 'Montiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(118, 'Moraceae', 'Moraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(119, 'Myricaceae', 'Myricaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(120, 'Myrtaceae', 'Myrtaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(121, 'Nyctaginaceae', 'Nyctaginaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(122, 'Onagraceae', 'Onagraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(123, 'Orobanchaceae', 'Orobanchaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(124, 'Oxalidaceae', 'Oxalidaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(125, 'Papaveraceae', 'Papaveraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(126, 'Passifloraceae', 'Passifloraceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(127, 'Phrymaceae', 'Phrymaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(128, 'Plantaginaceae', 'Plantaginaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(129, 'Plumbaginaceae', 'Plumbaginaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(130, 'Polemoniaceae', 'Polemoniaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(131, 'Polygalaceae', 'Polygalaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(132, 'Polygonaceae', 'Polygonaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(133, 'Portulacaceae', 'Portulacaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(134, 'Primulaceae', 'Primulaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(135, 'Ranunculaceae', 'Ranunculaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(136, 'Rhamnaceae', 'Rhamnaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(137, 'Rosaceae', 'Rosaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(138, 'Rubiaceae', 'Rubiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(139, 'Rutaceae', 'Rutaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(140, 'Salicaceae', 'Salicaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(141, 'Salvinaceae', 'Salvinaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(142, 'Sapindaceae', 'Sapindaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(143, 'Schoepfiaceae', 'Schoepfiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(144, 'Scrophulariaceae', 'Scrophulariaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(145, 'Solanaceae', 'Solanaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(146, 'Tamaricaceae', 'Tamaricaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(147, 'Tropaeolaceae', 'Tropaeolaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(148, 'Urticaceae', 'Urticaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(149, 'Verbenaceae', 'Verbenaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(150, 'Vivianiaceae', 'Vivianiaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(151, 'Zygophyllaceae', 'Zygophyllaceae', 24, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(152, 'Araucariaceae', 'Araucariaceae', 25, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(153, 'Cupressaceae', 'Cupressaceae', 25, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(154, 'Pinaceae', 'Pinaceae', 25, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(155, 'Aspleniaceae', 'Aspleniaceae', 26, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(156, 'Azollaceae', 'Azollaceae', 26, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(157, 'Dryopteridaceae', 'Dryopteridaceae', 26, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(158, 'Equisetaceae', 'Equisetaceae', 26, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(159, 'Isoetaceae', 'Isoetaceae', 26, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(160, 'Pteridaceae', 'Pteridaceae', 26, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(161, 'Thelypteridaceae', 'Thelypteridaceae', 26, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(162, 'Woodsiaceae', 'Woodsiaceae', 26, '2025-08-28 00:36:27', '2025-08-28 00:36:27');
 
--- Volcando datos para la tabla biodiversity_management.jobs: ~2 rows (aproximadamente)
+-- Volcando estructura para tabla biodiversity_management.hero_slider_images
+CREATE TABLE IF NOT EXISTS `hero_slider_images` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `alt_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `overlay_image_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sort_order` int NOT NULL DEFAULT '0',
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `has_overlay_image` tinyint(1) NOT NULL DEFAULT '0',
+  `overlay_position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'left',
+  `overlay_alt_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `overlay_description` text COLLATE utf8mb4_unicode_ci,
+  `overlay_button_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `overlay_button_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `overlay_width` int NOT NULL DEFAULT '300',
+  `overlay_height` int NOT NULL DEFAULT '200',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.hero_slider_images: ~4 rows (aproximadamente)
+INSERT INTO `hero_slider_images` (`id`, `title`, `description`, `alt_text`, `image_path`, `overlay_image_path`, `button_text`, `button_url`, `sort_order`, `is_active`, `has_overlay_image`, `overlay_position`, `overlay_alt_text`, `overlay_description`, `overlay_button_text`, `overlay_button_url`, `overlay_width`, `overlay_height`, `created_at`, `updated_at`) VALUES
+	(1, 'Grt', 'FOTO1 DESCR', 'Biodiversidad', NULL, NULL, 'lo maximo', NULL, 0, 1, 1, 'right', 'Gobierno Regional de Tacna', 'Sub Gerencia de Gestión Ambiental', NULL, NULL, 300, 200, '2025-07-31 21:53:13', '2025-09-04 04:00:25'),
+	(2, 'FOTO 2', 'FFFFFFFFFFF', 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF', NULL, NULL, 'FFFFFFFFF', NULL, 1, 1, 0, 'left', NULL, NULL, NULL, NULL, 300, 200, '2025-07-31 22:02:10', '2025-07-31 22:02:10'),
+	(3, 'Tacna', 'Tacna', 'GRT', NULL, NULL, 'GRT', NULL, 3, 1, 0, 'left', NULL, NULL, NULL, NULL, 300, 200, '2025-09-04 03:53:08', '2025-09-04 03:53:08'),
+	(4, 'Tacna', 'Tacna', 'GRT', NULL, NULL, 'GRT', NULL, 4, 1, 0, 'left', NULL, NULL, NULL, NULL, 300, 200, '2025-09-04 03:54:21', '2025-09-04 03:54:21');
+
+-- Volcando estructura para tabla biodiversity_management.home_content
+CREATE TABLE IF NOT EXISTS `home_content` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `section` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'text',
+  `image_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `sort_order` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `home_content_section_key_unique` (`section`,`key`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.home_content: ~33 rows (aproximadamente)
+INSERT INTO `home_content` (`id`, `section`, `key`, `value`, `type`, `image_path`, `is_active`, `sort_order`, `created_at`, `updated_at`) VALUES
+	(1, 'hero', 'title', 'Descubre la Riqueza de la Biodiversidad', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(2, 'hero', 'subtitle', 'Explora nuestra extensa base de datos de especies, ecosistemas y publicaciones científicas. México es uno de los países con mayor biodiversidad del mundo, hogar de miles de especies únicas.', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(3, 'hero', 'button_primary_text', 'Explorar Especies', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(4, 'hero', 'button_primary_url', '/biodiversity', 'url', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(5, 'hero', 'button_secondary_text', 'Publicaciones', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(6, 'hero', 'button_secondary_url', '/publications', 'url', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(7, 'hero', 'hero_image', 'fas fa-globe-americas', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(8, 'search', 'title', '¿Qué especie buscas?', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(9, 'search', 'subtitle', 'Busca entre miles de especies registradas en nuestro sistema', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(10, 'search', 'placeholder', 'Buscar por nombre común o científico...', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(11, 'stats', 'title', 'Nuestra Biodiversidad en Números', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(12, 'stats', 'categories_title', 'Categorías de Especies', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(13, 'stats', 'categories_description', 'Diferentes grupos taxonómicos registrados', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(14, 'stats', 'publications_title', 'Publicaciones Científicas', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(15, 'stats', 'publications_description', 'Investigaciones y estudios disponibles', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(16, 'stats', 'endangered_title', 'Especies en Peligro', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(17, 'stats', 'endangered_description', 'Requieren protección especial', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(18, 'stats', 'critical_title', 'En Peligro Crítico', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(19, 'stats', 'critical_description', 'Situación de conservación crítica', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(20, 'featured', 'title', 'Especies Destacadas', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(21, 'featured', 'view_all_text', 'Ver Todas las Especies', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(22, 'publications', 'title', 'Publicaciones Científicas Recientes', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(23, 'publications', 'view_all_text', 'Ver Todas las Publicaciones', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(24, 'cta', 'title', 'Contribuye a la Conservación', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(25, 'cta', 'description', 'La biodiversidad es un tesoro que debemos proteger. Únete a nuestros esfuerzos de conservación e investigación.', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(26, 'cta', 'button_primary_text', 'Colaborar', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(27, 'cta', 'button_primary_url', '#', 'url', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(28, 'cta', 'button_secondary_text', 'Descargar Datos', 'text', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(29, 'cta', 'button_secondary_url', '#', 'url', NULL, 1, 0, '2025-07-31 21:26:16', '2025-07-31 21:26:16'),
+	(30, 'hero', 'use_image_slider', 'true', 'text', NULL, 1, 1, '2025-07-31 21:39:51', '2025-08-05 02:46:23'),
+	(31, 'hero', 'slider_autoplay', 'true', 'text', NULL, 1, 2, '2025-07-31 21:39:51', '2025-07-31 21:58:44'),
+	(32, 'hero', 'slider_interval', '5000', 'text', NULL, 1, 3, '2025-07-31 21:39:51', '2025-07-31 21:58:44'),
+	(33, 'hero', 'enable_icons', 'true', 'text', NULL, 1, 4, '2025-07-31 21:39:51', '2025-07-31 21:58:44');
+
+-- Volcando estructura para tabla biodiversity_management.jobs
+CREATE TABLE IF NOT EXISTS `jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attempts` tinyint unsigned NOT NULL,
+  `reserved_at` int unsigned DEFAULT NULL,
+  `available_at` int unsigned NOT NULL,
+  `created_at` int unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobs_queue_index` (`queue`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.jobs: ~8 rows (aproximadamente)
 INSERT INTO `jobs` (`id`, `queue`, `payload`, `attempts`, `reserved_at`, `available_at`, `created_at`) VALUES
 	(1, 'default', '{"uuid":"a4dffda7-6c5b-4c84-a60a-1558bc3ff93b","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:0:{}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:19;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1753980794,"delay":null}', 0, NULL, 1753980794, 1753980794),
-	(2, 'default', '{"uuid":"31f951fa-38d2-4453-b5e7-cc6fe2d0d7f4","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:0:{}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:20;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1753981330,"delay":null}', 0, NULL, 1753981330, 1753981330);
+	(2, 'default', '{"uuid":"31f951fa-38d2-4453-b5e7-cc6fe2d0d7f4","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:0:{}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:20;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1753981330,"delay":null}', 0, NULL, 1753981330, 1753981330),
+	(3, 'default', '{"uuid":"121ab3c2-9f9b-4b2c-94c5-32eec8d5daf5","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:1:{i:0;s:11:\\"hero_images\\";}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:26;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1756939562,"delay":null}', 0, NULL, 1756939562, 1756939562),
+	(4, 'default', '{"uuid":"8e5d48f6-341a-4234-81bd-33155a1450f6","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:1:{i:0;s:11:\\"hero_images\\";}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:27;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1756939946,"delay":null}', 0, NULL, 1756939946, 1756939946),
+	(5, 'default', '{"uuid":"752fbb94-4a49-4e36-b91c-be545b91b5f2","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:1:{i:0;s:11:\\"hero_images\\";}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:28;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1756939989,"delay":null}', 0, NULL, 1756939989, 1756939989),
+	(6, 'default', '{"uuid":"0a9b5142-59fc-4249-b334-b56a86bb0913","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:1:{i:0;s:11:\\"hero_images\\";}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:29;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1756940062,"delay":null}', 0, NULL, 1756940062, 1756940062),
+	(7, 'default', '{"uuid":"76e03d75-2a79-4c19-9af8-2a3e29a48655","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:1:{i:0;s:11:\\"hero_images\\";}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:30;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1756940240,"delay":null}', 0, NULL, 1756940240, 1756940240),
+	(8, 'default', '{"uuid":"5f36862e-6c4e-4bb7-8fd0-3bdb931d01e8","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:1:{i:0;s:11:\\"hero_images\\";}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:31;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1756940311,"delay":null}', 0, NULL, 1756940311, 1756940311),
+	(9, 'default', '{"uuid":"3686bad0-dd35-4cda-9060-471a49050113","displayName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob","command":"O:58:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Jobs\\\\PerformConversionsJob\\":6:{s:14:\\"\\u0000*\\u0000conversions\\";O:52:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\ConversionCollection\\":2:{s:8:\\"\\u0000*\\u0000items\\";a:1:{i:0;O:42:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Conversion\\":11:{s:12:\\"\\u0000*\\u0000fileNamer\\";O:54:\\"Spatie\\\\MediaLibrary\\\\Support\\\\FileNamer\\\\DefaultFileNamer\\":0:{}s:28:\\"\\u0000*\\u0000extractVideoFrameAtSecond\\";d:0;s:16:\\"\\u0000*\\u0000manipulations\\";O:45:\\"Spatie\\\\MediaLibrary\\\\Conversions\\\\Manipulations\\":1:{s:16:\\"\\u0000*\\u0000manipulations\\";a:5:{s:8:\\"optimize\\";a:1:{i:0;O:36:\\"Spatie\\\\ImageOptimizer\\\\OptimizerChain\\":3:{s:13:\\"\\u0000*\\u0000optimizers\\";a:7:{i:0;O:42:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Jpegoptim\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m85\\";i:1;s:7:\\"--force\\";i:2;s:11:\\"--strip-all\\";i:3;s:17:\\"--all-progressive\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:9:\\"jpegoptim\\";}i:1;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Pngquant\\":5:{s:7:\\"options\\";a:1:{i:0;s:7:\\"--force\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"pngquant\\";}i:2;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Optipng\\":5:{s:7:\\"options\\";a:3:{i:0;s:3:\\"-i0\\";i:1;s:3:\\"-o2\\";i:2;s:6:\\"-quiet\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"optipng\\";}i:3;O:37:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Svgo\\":5:{s:7:\\"options\\";a:1:{i:0;s:20:\\"--disable=cleanupIDs\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:4:\\"svgo\\";}i:4;O:41:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Gifsicle\\":5:{s:7:\\"options\\";a:2:{i:0;s:2:\\"-b\\";i:1;s:3:\\"-O3\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:8:\\"gifsicle\\";}i:5;O:38:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Cwebp\\":5:{s:7:\\"options\\";a:4:{i:0;s:4:\\"-m 6\\";i:1;s:8:\\"-pass 10\\";i:2;s:3:\\"-mt\\";i:3;s:5:\\"-q 90\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:5:\\"cwebp\\";}i:6;O:40:\\"Spatie\\\\ImageOptimizer\\\\Optimizers\\\\Avifenc\\":6:{s:7:\\"options\\";a:8:{i:0;s:14:\\"-a cq-level=23\\";i:1;s:6:\\"-j all\\";i:2;s:7:\\"--min 0\\";i:3;s:8:\\"--max 63\\";i:4;s:12:\\"--minalpha 0\\";i:5;s:13:\\"--maxalpha 63\\";i:6;s:14:\\"-a end-usage=q\\";i:7;s:12:\\"-a tune=ssim\\";}s:9:\\"imagePath\\";s:0:\\"\\";s:10:\\"binaryPath\\";s:0:\\"\\";s:7:\\"tmpPath\\";N;s:10:\\"binaryName\\";s:7:\\"avifenc\\";s:16:\\"decodeBinaryName\\";s:7:\\"avifdec\\";}}s:9:\\"\\u0000*\\u0000logger\\";O:33:\\"Spatie\\\\ImageOptimizer\\\\DummyLogger\\":0:{}s:10:\\"\\u0000*\\u0000timeout\\";i:60;}}s:6:\\"format\\";a:1:{i:0;s:3:\\"jpg\\";}s:5:\\"width\\";a:1:{i:0;i:300;}s:6:\\"height\\";a:1:{i:0;i:200;}s:7:\\"sharpen\\";a:1:{i:0;i:10;}}}s:23:\\"\\u0000*\\u0000performOnCollections\\";a:1:{i:0;s:11:\\"hero_images\\";}s:17:\\"\\u0000*\\u0000performOnQueue\\";b:1;s:26:\\"\\u0000*\\u0000keepOriginalImageFormat\\";b:0;s:27:\\"\\u0000*\\u0000generateResponsiveImages\\";b:0;s:18:\\"\\u0000*\\u0000widthCalculator\\";N;s:24:\\"\\u0000*\\u0000loadingAttributeValue\\";N;s:16:\\"\\u0000*\\u0000pdfPageNumber\\";i:1;s:7:\\"\\u0000*\\u0000name\\";s:5:\\"thumb\\";}}s:28:\\"\\u0000*\\u0000escapeWhenCastingToString\\";b:0;}s:8:\\"\\u0000*\\u0000media\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:49:\\"Spatie\\\\MediaLibrary\\\\MediaCollections\\\\Models\\\\Media\\";s:2:\\"id\\";i:32;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}s:14:\\"\\u0000*\\u0000onlyMissing\\";b:0;s:10:\\"connection\\";s:8:\\"database\\";s:5:\\"queue\\";s:0:\\"\\";s:11:\\"afterCommit\\";b:1;}"},"createdAt":1756940425,"delay":null}', 0, NULL, 1756940425, 1756940425);
+
+-- Volcando estructura para tabla biodiversity_management.job_batches
+CREATE TABLE IF NOT EXISTS `job_batches` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_jobs` int NOT NULL,
+  `pending_jobs` int NOT NULL,
+  `failed_jobs` int NOT NULL,
+  `failed_job_ids` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` mediumtext COLLATE utf8mb4_unicode_ci,
+  `cancelled_at` int DEFAULT NULL,
+  `created_at` int NOT NULL,
+  `finished_at` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.job_batches: ~0 rows (aproximadamente)
 
--- Volcando datos para la tabla biodiversity_management.media: ~18 rows (aproximadamente)
+-- Volcando estructura para tabla biodiversity_management.media
+CREATE TABLE IF NOT EXISTS `media` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model_id` bigint unsigned NOT NULL,
+  `uuid` char(36) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `collection_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mime_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `disk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `conversions_disk` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `size` bigint unsigned NOT NULL,
+  `manipulations` json NOT NULL,
+  `custom_properties` json NOT NULL,
+  `generated_conversions` json NOT NULL,
+  `responsive_images` json NOT NULL,
+  `order_column` int unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `media_uuid_unique` (`uuid`),
+  KEY `media_model_type_model_id_index` (`model_type`,`model_id`),
+  KEY `media_order_column_index` (`order_column`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.media: ~25 rows (aproximadamente)
 INSERT INTO `media` (`id`, `model_type`, `model_id`, `uuid`, `collection_name`, `name`, `file_name`, `mime_type`, `disk`, `conversions_disk`, `size`, `manipulations`, `custom_properties`, `generated_conversions`, `responsive_images`, `order_column`, `created_at`, `updated_at`) VALUES
 	(1, 'App\\Models\\BiodiversityCategory', 53, 'fde16ffd-709c-4144-9514-d133385eb859', 'images', 'Quetzal Resplandeciente', 'category_53.svg', 'image/svg+xml', 'public', 'public', 441, '[]', '[]', '[]', '[]', 1, '2025-07-31 01:26:12', '2025-07-31 01:26:12'),
 	(2, 'App\\Models\\BiodiversityCategory', 54, '08cfafd8-f734-4c86-b274-711fd9120bca', 'images', 'Quetzal Resplandeciente', 'category_54.svg', 'image/svg+xml', 'public', 'public', 441, '[]', '[]', '[]', '[]', 1, '2025-07-31 01:26:12', '2025-07-31 01:26:12'),
@@ -145,11 +1042,23 @@ INSERT INTO `media` (`id`, `model_type`, `model_id`, `uuid`, `collection_name`, 
 	(16, 'App\\Models\\BiodiversityCategory', 68, 'b00d9eb8-a033-476b-9071-4959a2db3466', 'images', 'Orquídea Tigre', 'category_68.svg', 'image/svg+xml', 'public', 'public', 489, '[]', '[]', '[]', '[]', 1, '2025-07-31 01:26:13', '2025-07-31 01:26:13'),
 	(17, 'App\\Models\\BiodiversityCategory', 69, '7c512998-d8e5-43b0-84c9-a2217e1507c9', 'images', 'Cacao', 'category_69.svg', 'image/svg+xml', 'public', 'public', 478, '[]', '[]', '[]', '[]', 1, '2025-07-31 01:26:13', '2025-07-31 01:26:13'),
 	(18, 'App\\Models\\BiodiversityCategory', 70, 'dbc18167-8b22-413a-a835-d2d253f91576', 'images', 'Vainilla', 'category_70.svg', 'image/svg+xml', 'public', 'public', 484, '[]', '[]', '[]', '[]', 1, '2025-07-31 01:26:13', '2025-07-31 01:26:13'),
-	(19, 'App\\Models\\HeroSliderImage', 1, 'b8f6884b-42f1-4cff-8489-e1fc36162f3f', 'hero_images', 'peru_1f101c7f_1254x836', 'peru_1f101c7f_1254x836.jpg', 'image/jpeg', 'public', 'public', 195323, '[]', '[]', '{"hero": true}', '[]', 1, '2025-07-31 21:53:13', '2025-07-31 21:53:14'),
-	(20, 'App\\Models\\HeroSliderImage', 2, 'cd5fd6fe-29e4-4c01-bcea-afb8cdab2ec1', 'hero_images', 'Tipos-de-Biodiversidad', 'Tipos-de-Biodiversidad.jpg', 'image/jpeg', 'public', 'public', 191070, '[]', '[]', '{"hero": true}', '[]', 1, '2025-07-31 22:02:10', '2025-07-31 22:02:10'),
-	(23, 'App\\Models\\HeroSliderImage', 1, '1da7a374-9c94-47ab-8229-83f06ae2935e', 'overlay_images', 'logo_mesomi_bn', 'logo_mesomi_bn.png', 'image/png', 'public', 'public', 100173, '[]', '[]', '[]', '[]', 2, '2025-08-01 21:58:05', '2025-08-01 21:58:05');
+	(23, 'App\\Models\\HeroSliderImage', 1, '1da7a374-9c94-47ab-8229-83f06ae2935e', 'overlay_images', 'logo_mesomi_bn', 'logo_mesomi_bn.png', 'image/png', 'public', 'public', 100173, '[]', '[]', '[]', '[]', 2, '2025-08-01 21:58:05', '2025-08-01 21:58:05'),
+	(24, 'App\\Models\\Publication', 36, 'a8e8c1b3-bd5d-42e1-bc39-45551cf60624', 'pdfs', '(1)', '(1).pdf', 'application/pdf', 'public', 'public', 384729, '[]', '[]', '[]', '[]', 1, '2025-08-20 20:52:05', '2025-08-20 20:52:05'),
+	(25, 'App\\Models\\Publication', 35, '5dc98eb1-47a2-469e-a4f9-bcbfd4685ee2', 'pdfs', '(2)', '(2).pdf', 'application/pdf', 'public', 'public', 1115460, '[]', '[]', '[]', '[]', 1, '2025-08-20 20:55:08', '2025-08-20 20:55:08'),
+	(29, 'App\\Models\\HeroSliderImage', 4, '98075dc3-c177-404b-ab6f-7d6ebadc3855', 'hero_images', 'DSC_0027', 'DSC_0027.jpg', 'image/jpeg', 'public', 'public', 4658810, '[]', '[]', '{"hero": true}', '[]', 1, '2025-09-04 03:54:21', '2025-09-04 03:54:22'),
+	(30, 'App\\Models\\HeroSliderImage', 2, 'ca421c72-b62e-4431-9441-88b9a7aa635a', 'hero_images', 'DSC_0027', 'DSC_0027.jpg', 'image/jpeg', 'public', 'public', 4658810, '[]', '[]', '{"hero": true}', '[]', 1, '2025-09-04 03:57:20', '2025-09-04 03:57:20'),
+	(31, 'App\\Models\\HeroSliderImage', 3, 'f4712b7f-95fb-4557-9a03-493e5f8ada35', 'hero_images', 'IMG_2635', 'IMG_2635.JPG', 'image/jpeg', 'public', 'public', 4257012, '[]', '[]', '{"hero": true}', '[]', 1, '2025-09-04 03:58:31', '2025-09-04 03:58:31'),
+	(32, 'App\\Models\\HeroSliderImage', 1, '45be6041-0ae3-4a6c-aa25-5987c743ade6', 'hero_images', 'IMG_6221', 'IMG_6221.JPG', 'image/jpeg', 'public', 'public', 2787428, '[]', '[]', '{"hero": true}', '[]', 3, '2025-09-04 04:00:25', '2025-09-04 04:00:25');
 
--- Volcando datos para la tabla biodiversity_management.migrations: ~16 rows (aproximadamente)
+-- Volcando estructura para tabla biodiversity_management.migrations
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.migrations: ~31 rows (aproximadamente)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '0001_01_01_000000_create_users_table', 1),
 	(2, '0001_01_01_000001_create_cache_table', 1),
@@ -169,16 +1078,129 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(17, '2025_07_31_162230_create_home_content_table', 7),
 	(18, '2025_07_31_164108_create_hero_slider_images_table', 8),
 	(19, '2025_08_01_162828_create_settings_table', 9),
-	(20, '2025_08_01_164838_add_overlay_image_to_hero_slider_images_table', 10);
+	(20, '2025_08_01_164838_add_overlay_image_to_hero_slider_images_table', 10),
+	(21, '2025_08_14_140000_add_familia_relationship_to_biodiversity_categories', 11),
+	(22, '2025_08_18_151736_create_reinos_table', 12),
+	(23, '2025_08_18_152140_add_idreino_to_biodiversity_categories_table', 13),
+	(24, '2025_08_18_153443_add_conservation_status_id_to_biodiversity_categories_table', 14),
+	(25, '2025_08_18_152003_add_idreino_to_clases_table', 15),
+	(26, '2025_01_21_000001_add_image_path_to_home_content_table', 16),
+	(27, '2025_08_25_145201_add_additional_image_paths_to_biodiversity_categories_table', 17),
+	(28, '2025_08_25_163950_add_familia_and_publications_to_biodiversity_categories', 18),
+	(29, '2025_08_25_190455_remove_publication_fields_from_biodiversity_categories_table', 19),
+	(30, '2025_08_25_213306_create_page_visits_table', 20),
+	(31, '2025_08_26_134747_migrate_publication_data_before_removal', 21),
+	(32, '2025_01_15_140000_add_idclase_idorden_to_biodiversity_categories_table', 22),
+	(33, '2025_09_03_225051_add_overlay_dimensions_to_hero_slider_images_table', 23),
+	(34, '2025_09_05_141618_add_image_fields_to_biodiversity_category_publication_table', 24),
+	(35, '2025_09_05_142254_add_image_path_fields_to_biodiversity_category_publication_table', 25);
+
+-- Volcando estructura para tabla biodiversity_management.model_has_permissions
+CREATE TABLE IF NOT EXISTS `model_has_permissions` (
+  `permission_id` bigint unsigned NOT NULL,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model_id` bigint unsigned NOT NULL,
+  PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
+  KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`),
+  CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.model_has_permissions: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla biodiversity_management.model_has_roles
+CREATE TABLE IF NOT EXISTS `model_has_roles` (
+  `role_id` bigint unsigned NOT NULL,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model_id` bigint unsigned NOT NULL,
+  PRIMARY KEY (`role_id`,`model_id`,`model_type`),
+  KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`),
+  CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.model_has_roles: ~2 rows (aproximadamente)
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 	(1, 'App\\Models\\User', 1),
 	(4, 'App\\Models\\User', 1);
 
+-- Volcando estructura para tabla biodiversity_management.ordens
+CREATE TABLE IF NOT EXISTS `ordens` (
+  `idorden` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `definicion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idclase` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idorden`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.ordens: ~26 rows (aproximadamente)
+INSERT INTO `ordens` (`idorden`, `nombre`, `definicion`, `idclase`, `created_at`, `updated_at`) VALUES
+	(1, 'squamata', 'squamata', 1, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(2, 'Anura', 'Anura', 2, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(3, 'Carnivora', 'Carnivora', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(4, 'Cetartiodactyla\r\n', 'Cetartiodactyla\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(5, 'Chiroptera\r\n', 'Chiroptera\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(6, 'Didelphimorphia\r\n', 'Didelphimorphia\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(7, 'Lagomorpha\r\n', 'Lagomorpha\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(8, 'Rodentia\r\n', 'Rodentia\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(9, 'Cricetidae\r\n', 'Cricetidae\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(10, 'Ctenomyidae\r\n', 'Ctenomyidae\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(11, 'Muridae\r\n', 'Muridae\r\n', 3, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(12, 'ANSERIFORMES', 'ANSERIFORMES\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(13, 'APODIFORMES', 'APODIFORMES\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(14, 'CAPRIMULGIFORMES', 'CAPRIMULGIFORMES\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(15, 'CHARADRIIFORMES\r\n', 'CHARADRIIFORMES\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(16, 'CICONIIFORMES\r\n', 'CICONIIFORMES\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(17, 'COLUMBIFORMES\r\n', 'COLUMBIFORMES\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(18, 'CUCULIFORMES\r\n', 'CUCULIFORMES\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(19, 'FALCONIFORMES\r\n', 'FALCONIFORMES\r\n', 4, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(20, 'Gnetopsida', 'Gnetopsida', 5, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(21, 'Pinopsida', 'Pinopsida', 6, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(22, 'Polypodiopsida', 'Polypodiopsida', 7, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(23, 'Liliopsida', 'Liliopsida', 8, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(24, 'Magnoliopsida', 'Magnoliopsida', 9, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(25, 'Pinopsida', 'Pinopsida', 10, '2025-08-28 00:36:27', '2025-08-28 00:36:27'),
+	(26, 'Polypodiopsida', 'Polypodiopsida', 11, '2025-08-28 00:36:27', '2025-08-28 00:36:27');
+
+-- Volcando estructura para tabla biodiversity_management.page_visits
+CREATE TABLE IF NOT EXISTS `page_visits` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `session_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` bigint unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `page_visits_url_created_at_index` (`url`,`created_at`),
+  KEY `page_visits_ip_address_index` (`ip_address`),
+  KEY `page_visits_user_id_foreign` (`user_id`),
+  CONSTRAINT `page_visits_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.page_visits: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla biodiversity_management.password_reset_tokens
+CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Volcando datos para la tabla biodiversity_management.password_reset_tokens: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla biodiversity_management.permissions
+CREATE TABLE IF NOT EXISTS `permissions` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.permissions: ~23 rows (aproximadamente)
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
@@ -206,25 +1228,88 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 	(22, 'backup_database', 'web', '2025-07-31 01:12:01', '2025-07-31 01:12:01'),
 	(23, 'restore_database', 'web', '2025-07-31 01:12:01', '2025-07-31 01:12:01');
 
--- Volcando datos para la tabla biodiversity_management.publications: ~17 rows (aproximadamente)
+-- Volcando estructura para tabla biodiversity_management.publications
+CREATE TABLE IF NOT EXISTS `publications` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abstract` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publication_year` year NOT NULL,
+  `author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `journal` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `doi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pdf_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2103 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.publications: ~35 rows (aproximadamente)
 INSERT INTO `publications` (`id`, `title`, `abstract`, `publication_year`, `author`, `journal`, `doi`, `pdf_path`, `created_at`, `updated_at`) VALUES
-	(20, 'Distribución y estado de conservación del Quetzal', 'Estudio sobre la distribución actual del Pharomachrus mocinno y los desafíos para su conservación.', '2023', 'García-Rodríguez, A.', 'Mesoamerican Biology', '10.1016/j.mesobio.2023.001', NULL, '2025-07-30 21:53:10', '2025-07-30 21:53:10'),
-	(21, 'Distribución actual y estado de conservación del jaguar en México', 'Análisis comprehensivo de las poblaciones de Panthera onca en México, incluyendo amenazas actuales y estrategias de conservación.', '2023', 'Martínez-López, R.', 'Revista Mexicana de Biodiversidad', '10.1016/j.rmb.2023.002', NULL, '2025-07-30 21:54:07', '2025-07-30 21:54:07'),
-	(22, 'Estado crítico de la población de vaquita marina', 'Evaluación actual de la población de Phocoena sinus y los esfuerzos de conservación en el Golfo de California.', '2023', 'Rojas-Bracho, L.', 'Marine Mammal Science', '10.1111/mms.2023.003', NULL, '2025-07-30 21:54:24', '2025-07-30 21:54:24'),
-	(23, 'Capacidades regenerativas del Ambystoma mexicanum', 'Investigación sobre los mecanismos moleculares detrás de la regeneración tisular en el ajolote mexicano y sus aplicaciones potenciales en medicina regenerativa.', '2023', 'Sánchez-García, M.', 'Developmental Biology', '10.1016/j.devbio.2023.004', NULL, '2025-07-30 21:54:42', '2025-07-30 21:54:42'),
-	(24, 'Patrones de dispersión de semillas por Ara macao', 'Estudio sobre el rol ecológico de la guacamaya roja en la dispersión de semillas y la regeneración forestal en la selva tropical mesoamericana.', '2023', 'González-Torres, F.', 'Tropical Ecology', '10.1007/s42965-023-005', NULL, '2025-07-30 21:54:57', '2025-07-30 21:54:57'),
-	(25, 'Patrones de anidación de Lepidochelys kempii', 'Análisis de los patrones de anidación y éxito reproductivo de la tortuga lora en las costas de Tamaulipas, México.', '2023', 'Pérez-Castañeda, R.', 'Chelonian Conservation and Biology', '10.2744/CCB-2023.006', NULL, '2025-07-30 21:55:11', '2025-07-30 21:55:11'),
-	(26, 'Recuperación poblacional del lobo mexicano', 'Evaluación de los programas de reintroducción y recuperación del Canis lupus baileyi en su rango histórico de distribución.', '2023', 'Ramos-Rendón, J.', 'Conservation Biology', '10.1111/cobi.2023.007', NULL, '2025-07-30 21:55:26', '2025-07-30 21:55:26'),
-	(27, 'Estado poblacional del Águila Real en México', 'Análisis de la distribución actual y tendencias poblacionales del Águila Real en el territorio mexicano, con énfasis en las amenazas y estrategias de conservación.', '2023', 'González-Rojas, M.', 'Journal of Raptor Research', '10.3356/JRR-2023.008', NULL, '2025-07-30 21:55:51', '2025-07-30 21:55:51'),
-	(28, 'Ecología del Tapir Centroamericano', 'Estudio sobre los patrones de movimiento y uso de hábitat del Tapirus bairdii en la Selva Maya, con implicaciones para su conservación.', '2023', 'Naranjo, E.J.', 'Biotropica', '10.1111/btp.2023.009', NULL, '2025-07-30 21:56:41', '2025-07-30 21:56:41'),
-	(29, 'Conservación del Manatí en el Caribe Mexicano', 'Evaluación del estado de conservación y amenazas actuales para las poblaciones de Trichechus manatus en el Caribe mexicano, incluyendo estrategias de protección.', '2023', 'Morales-Vela, B.', 'Aquatic Mammals', '10.1578/AM.2023.010', NULL, '2025-07-30 21:56:55', '2025-07-30 21:56:55'),
-	(30, 'Ecología del Mono Araña en la Selva Maya', 'Investigación sobre el comportamiento social y patrones de alimentación de Ateles geoffroyi en la Selva Maya, con énfasis en su rol como dispersor de semillas.', '2023', 'Ramos-Fernández, G.', 'American Journal of Primatology', '10.1002/ajp.2023.011', NULL, '2025-07-30 21:57:16', '2025-07-30 21:57:16'),
-	(31, 'Tendencias poblacionales de la Mariposa Monarca', 'Análisis de los cambios en la población de Danaus plexippus durante su migración anual entre Canadá y México, con énfasis en los impactos del cambio climático y la pérdida de hábitat.', '2023', 'Vidal, O.', 'Conservation Biology', '10.1111/cobi.2023.012', NULL, '2025-07-30 21:58:24', '2025-07-30 21:58:24'),
-	(32, 'El Ahuehuete: Árbol Nacional de México', 'Estudio comprehensivo sobre el Ahuehuete (Taxodium mucronatum) y su importancia cultural y ecológica en México. Se analiza su distribución, características botánicas y su papel en la historia mexicana.', '2022', 'García Martínez, R.; López Hernández, M.', 'Revista Mexicana de Biodiversidad', '10.1234/ahuehuete.2022.01', NULL, '2025-07-30 22:10:30', '2025-07-30 22:10:30'),
-	(33, 'Conservación y Ecología del Pinus maximartinezii', 'Investigación detallada sobre la distribución, estado de conservación y características ecológicas del Pinus maximartinezii, una especie endémica de México. Se analizan las amenazas actuales y se proponen estrategias de conservación.', '2023', 'Sánchez-González, A.; Pérez-Ramos, B.', 'Botanical Sciences', '10.1234/pinus.2023.02', NULL, '2025-07-30 22:10:48', '2025-07-30 22:10:48'),
-	(34, 'Diversidad y Conservación de Tigridia pavonia en México', 'Estudio sobre la diversidad genética, distribución y estado de conservación de Tigridia pavonia en México. Se documenta su importancia cultural, usos tradicionales y potencial ornamental, así como estrategias para su conservación y cultivo sustentable.', '2023', 'Rodríguez-Jiménez, L.; Martínez-Flores, E.', 'Mexican Journal of Botany', '10.1234/tigridia.2023.03', NULL, '2025-07-30 22:11:05', '2025-07-30 22:11:05'),
-	(35, 'El Cacao en México: Biodiversidad y Conservación de Variedades Nativas', 'Análisis comprehensivo de la diversidad genética del cacao en México, incluyendo la caracterización de variedades nativas y su importancia en la conservación de recursos fitogenéticos. Se estudian las prácticas tradicionales de cultivo y su rol en la preservación de la biodiversidad.', '2023', 'López-García, F.; Torres-Morales, M.', 'Agrobiodiversity Journal', '10.1234/cacao.2023.04', NULL, '2025-07-30 22:11:25', '2025-07-30 22:11:25'),
-	(36, 'Vanilla planifolia: Estado de Conservación y Diversidad Genética en México', 'Investigación sobre el estado actual de las poblaciones silvestres de Vanilla planifolia en México, su diversidad genética y las amenazas a su conservación. Se analiza la importancia de las prácticas tradicionales de cultivo y su papel en la preservación de esta especie emblemática.', '2023', 'Hernández-Apolinar, M.; González-Astorga, J.', 'Economic Botany', '10.1234/vanilla.2023.05', NULL, '2025-07-30 22:11:40', '2025-07-30 22:11:40');
+	(1048, 'CONSERVACIÓN, DISTRIBUCIÓN Y DENSIDAD POBLACIONAL DE Platalina genovensium (THOMAS, 1928) EN LAS LOMAS DEL MORRO SAMA, DISTRITO DE SAMA, PROVINCIA DE TACNA.', '(1).pdf', '2007', 'Giovanni Aragón Alvarado, Mónica Aguirre Quispe', 'Revista "Zonas Aridas" (Universidad Nacional Agraria La Molina)', NULL, 'estudios/p45XksXcipquYv9NHqMaf8vH3gCTHNuvLfrBgb1b.pdf', '2025-09-05 18:52:51', '2024-10-25 21:41:39'),
+	(1049, 'PRESENCIA DE LA LIEBRE EUROPEA (Lepus europaeus) EN EL DEPARTAMENTO DE TACNA.', '(2).pdf', '2007', 'Miguel Lleellish, Richard Cadenillas Ordinoña y Giovana Chipana Incacuña', 'Instituto Nacional de Recursos Naturales (INRENA) MINISTERIO DE AGRICULTURA', NULL, 'estudios/8VDAA3zbB0YFmaJr3VSEGjzwhbAWug6yTwCD68le.pdf', '2025-09-05 18:52:51', '2024-10-25 21:52:42'),
+	(1053, 'EVALUACIÓN POBLACIONAL DE NUTRIA MARINA EN EL LITORAL DE TACNA.', '(3).pdf', '2008', 'Giovanna Chipana Incacuña.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/y1zgSyJsp8WHTClHDy20CvNpDv2AxMiQyytTsuJR.pdf', '2025-09-05 18:52:51', '2024-10-25 21:53:04'),
+	(1055, 'EVALUACIÓN DE GUANACO (Lama guanicoe) (Müller, 1776) EN LA REGIÓN TACNA.', '(4).pdf', '2009', 'Hugo Zamora Mesa, Richard Lazo Ramos y Joel Córdova Maquera.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/vNMG62S392Bzxrx4V5wBxAOR49UvRWCjD92Cx1yw.pdf', '2025-09-05 18:52:51', '2024-10-25 22:00:20'),
+	(1059, 'EVALUACIÓN DEL LOBO MARINO CHUSCO (Otaria flavescens) EN LA REGION TACNA.', '(5).pdf', '2009', 'Hugo Zamora Mesa, Richard Lazo Ramos y Joel Córdova Maquera.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/94iZLCZVb5MTUIptDnwIpwhx6j5Wj2a0wwg7T9sk.pdf', '2025-09-05 18:52:51', '2024-10-25 22:01:01'),
+	(1061, 'EVALUACIÓN DEL GATO ANDINO (Leopardus jacobita) EN LA REGION TACNA', '(6).pdf', '2009', 'Hugo Zamora Mesa, Richard Lazo Ramos y Joel Córdova Maquera.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/fPRCdZShYAGbQCabh3MYDrpDXdOoXeVnnd2VkvxX.pdf', '2025-09-05 18:52:51', '2024-10-25 22:01:19'),
+	(1065, 'EVALUACIÓN DE TARUKA (Hippocamelus antisensis) EN LA REGIÓN TACNA', '(7).pdf', '2009', 'Hugo Zamora Mesa, Richard Lazo Ramos y Joel Córdova Maquera.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/yLdPh3KEKQVZFQyS9wIh3llKq0AQrA7oiGB0a8Vi.pdf', '2025-09-05 18:52:51', '2024-10-25 22:01:37'),
+	(1068, 'LISTA DE MAMIFEROS DE TACNA ', '(8).pdf', '2009', 'Hugo Zamora Mesa, Richard Lazo Ramos y Joel Córdova Maquera.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/WgUhFYdHicba5BFNxfgF2lIIgHWJUPk4VB6azyWk.pdf', '2025-09-05 18:52:51', '2024-10-25 22:01:50'),
+	(1069, 'RESULTADOS DE LA EVALUACIÓN DE CHINCHILLA (Chinchilla chinchilla) EN LA REGION TACNA', '(9).pdf', '2009', 'Hugo Zamora Mesa, Richard Lazo Ramos y Joel Córdova Maquera.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/qeFzLpxk06vf4OxXc04gL9HMURMDpq6T1coH5qku.pdf', '2025-09-05 18:52:51', '2024-10-25 22:02:52'),
+	(1071, 'EVALUACIÓN DE LA NUTRIA MARINA O CHUNGUNGO (Lontra felina) EN EL LITORAL DE TACNA', 'Pesca incidental, degradación, disminución de hábitats, uso ilegal de explosivos, capturados como mascotas y ahorcamiento en redes de pescar.', '2009', 'Hugo Zamora Mesa, Richard Lazo Ramos y Joel Córdova Maquera.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/(10).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1073, 'EVALUACIÓN DE PUMA (Puma concolor) EN LA REGIÓN TACNA', 'El problema en la depredación del ganado camélido por pumas se ha hecho frecuente en las partes altas de la región, este problema ha traido como consecuencia la disminución de las poblaciones de esta especie por caza o envenamiento de los ganados por acción de los pobladores. ', '2009', 'Hugo Zamora Mesa, Richard Lazo Ramos y Joel Córdova Maquera.', 'Gobierno Regional de Tacna. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/(11).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1076, 'MASTOFAUNA DE LOS BOSQUES DE QUEÑOA (Polylepis tomentella y Polylepis besseri) EN LA REGIÓN TACNA', 'Estos bosques en la actualidad presentan amenaza de la deforaciòn continua por los pobladores locales aledaños, cuyo producto constituye fuente de energìa como combustible, causa la pèrdida de estos ecosistemas frágiles afectando tambien a poblaciones de fauna que alberga. ', '2010', 'Equipo técnico del proyecto', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Desarrollo de capacidades para la conservación de la flora y fauna amenazada en la Región Tacna"', NULL, 'estudios/(12).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1080, 'PLAN MAESTRO ÁREA DE CONSERVACIÓN REGIONAL VILACOTA MAURE - ACRVM.', '-', '2012', 'Equipo técnico de la GRRN y GMA', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/(13).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1083, 'ESTUDIO POBLACIONAL DE GATO ANDINO (Leopardus jacobita. Cornalia, 1865) EN LA ZONA ALTOANDINA DE LA REGIÓN TACNA. ', 'Uso biológico del recurso (Cacería, creencias religiosas), Intrusión humana y disturbios, Modificación de sistemas naturales.', '2013', 'Fiorella Nasha Gonzales Guillén.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Mejoramiento del Servicio de Monitoreo e Información Ambiental"', NULL, 'estudios/(14).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1087, 'ESTUDIO POBLACIONAL DE Lontra felina (NUTRIA MARINA) EN LA ZONA LITORAL DE TACNA', 'Actividades antropogénicas de tipo deportiva, industrial, pesquera, urbana, artesanal, contaminación marina. ', '2013', 'Giovanni Aragón Alvarado.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Mejoramiento del Servicio de Monitoreo e Información Ambiental"', NULL, 'estudios/(15).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1089, 'INFORME DEL ESTUDIO POBLACIONAL DE Platalina genovensium EN LAS LOMAS DE MORRO SAMA Y QUEBRADA DE BURROS.', 'Pérdida de hábitat por la remoción de rocas para la ampliación del espigón de puerto Morro-Sama e impactos negativos por actividades como los ritos pagano-religiosos que realizan en la zona.', '2013', 'Mónica del Rosario Aguirre Quispe.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Mejoramiento del Servicio de Monitoreo e Información Ambiental"', NULL, 'estudios/(16).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1090, 'TESIS: DIVERSIDAD DEL ORDEN QUIRÓPTERA EN EL DISTRITO DE LOCUMBA – TACNA', '-', '2013', 'Ana Cecilia Ticona Ramos.', 'Universidad Nacional Jorge Basadre Grohmann - Facultad de Ciencias - Escuela de Biología Microbiología', NULL, 'estudios/(17).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1091, 'TESIS: DIVERSIDAD, HÁBITAT Y DIETA DE LOS MICROMAMÍFEROS NO VOLADORES EN LA QUEBRADA TACAHUAY, DISTRITO DE ITE – TACNA', '-', '2013', 'Joel Rolando Córdova Maquera.', 'Universidad Nacional Jorge Basadre Grohmann - Facultad de Ciencias - Escuela de Biología Microbiología', NULL, 'estudios/(18).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1092, 'ELABORACIÓN DE ESTUDIOS TÉCNICOS PARA LA DEFINICIÓN DE SITIOS PRIORITARIOS, ANÁLISIS DE CONECTIVIDAD Y DEFINICIÓN DE INDICADORES DE REPRESENTATIVIDAD Y CONECTIVIDAD – COMPONENTE BIODIVERSIDAD', '-', '2011', 'Cesar Nicolás Cáceres Musaja.', 'Fondo Nacional para Áreas Naturales Protegidas por el Estado (PROFONANPE). Proyecto: "Fortalecimiento de la Conservación de la Biodiversidad a través del Programa Nacional de Áreas Naturales Protegidas (PRONANP)"', NULL, 'estudios/(19).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1093, 'ESTUDIO POBLACIONAL DE PUMA (Puma concolor Linnaeus, 1771) EN LA ZONA ALTOANDINA DE LA REGIÓN TACNA.', 'Actividades antropogénicas de tipo deportiva, industrial, pesquera, urbana, artesanal, contaminación marina. ', '2013', 'Fiorella Nasha Gonzales Guillén.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Mejoramiento del Servicio de Monitoreo e Información Ambiental"', NULL, 'estudios/(20).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1097, 'ELABORACIÓN DEL “ESTUDIO DE LA BIODIVERSIDAD DEL VALLE DE CINTO"', '-', '2013', 'Horacio Zeballos Patrón.', 'Gobierno Regional de Tacna. Gerencia de Recursos Naturales y Gestión del Medio Ambiente. Proyecto: "Mejoramiento del Servicio de Monitoreo e Información Ambiental"', NULL, 'estudios/(21).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1098, 'DISTRIBUCIÓN DE MURCIÉLAGOS (CHIROPTERA) DE LA REGIÓN TACNA, PERÚ', 'La creencia de que su sangre u órganos son efectivos en la cura de ciertas enfermedades, como el asma entre otras, motiva que sean capturados y comercializados especialmente en el valle de Ite, donde todas las especies reportadas son entomófagas y cumplen función de controladores biológicos.', '2014', 'Giovanni Aragón Alvarado, Mónica Aguirre Quispe. ', 'Revista "Idesia" Universidad de Tarapacá (Arica-Chile)', NULL, 'estudios/(22).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1101, 'Distribution of Promops davisoni Thomas, 1921 (Chiroptera: Molossidae) in Peru with a new record and southward range extension.', '-', '2015', 'Marisel Flores Quispe, Giüseppy Calizaya Mamani, Víctor Pacheco y Giovanni Aragón Alvarado.', 'Revista científica "Checklist: The Journal of Biodiversity Data" ', NULL, 'estudios/(23).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1102, 'Estado del zorro gris Lycalopex griseus (Gray, 1837) (Mammalia: Canidae) en el Perú', '-', '2014', 'Elena Vivar y Víctor Pacheco', 'Revista Peruana de Biología, Facultad de Ciencias Biológicas de la Universidad Nacional Mayor de San Marcos', NULL, 'estudios/(24).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1104, 'Estudio de Biodiversidad de los Bofedales de Huaytire, Chaullapujo, Livicalani, Japopunco y Surapata en el Centro Poblado Huaytire”', 'No abstract available', '2015', 'Evaristo L. López Tejeda', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/(25).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(1105, 'Diagnóstico situacional de guanaco (Lama guanicoe) en la zona altoandina de la Región Tacna y su plan de conservación”', 'Los pobladores no aprecian al guanaco, por desconocimiento de su potencial y valor, tambien  por que no lo perciben como beneficioso y la caza furtiva en la subpoblación de Tarata y Tacna.', '2015', 'Horacio Zeballos Patrón', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/(26).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2089, 'EVALUACION DE Caesalpinia spinosa EN LAS LOMAS DE TACAHUAY', 'No abstract available', '2009', 'Hipólita Paniagua, Javier Ignacio y Lisseth Silva. ', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/rep(1).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2090, 'EVALUACIÓN DE Carica candicans y Weberbaurella brongniartioides DEL ECOSISTEMA LOMAS DEL DESIERTO COSTERO DE LA REGIÓN TACNA', 'No abstract available', '2009', 'Hipólita Paniagua, Javier Ignacio y Lisseth Silva. ', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/rep(2).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2092, 'EVALUACIÓN DE LA HERPETOFAUNA DE LOS BOSQUES DE QUEÑOA DE: POMA, SUSAPAYA, YUCAMANI, SANTA CRUZ DE ILABAYA, ANCOMA, ALTO PERU Y PAUCARANI', 'No abstract available', '2010', 'Aarón Quiroz Rodriguez.', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/rep(3).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2096, 'EXPEDIENTE TÉCNICO PROPUESTA DE ZONA RESERVADA LOMAS DE TACAHUAY.', 'No abstract available', '2012', 'GOBIERNO REGIONAL TACNA. ', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/rep(4).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2097, 'ESTUDIO DE Carica candicans EN MORRO SAMA Y LOMAS DE TACAHUAY', 'No abstract available', '2013', 'Pablo Juan Franco León', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/rep(5).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2099, 'ESTUDIO DE LA BIODIVERSIDAD DEL VALLE DE CINTO', 'No abstract available', '2013', 'Horacio Zeballos Patrón. ', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/rep(6).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2100, 'ESTUDIO DE LA ESTRUCTURA COMUNITARIA, FUNCIÓN ECOFISIOLÓGICA, RED TRÓFICA Y PROPUESTA DE CONSERVACIÓN DEL TILLANDSIAL DE TACNA.', 'No abstract available', '2014', 'Richard Lazo Ramos.', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/rep(7).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2101, 'Estudio de Biodiversidad de los Bofedales de Huaytire, Chaullapujo, Livicalani, Japopunco y Surapata en el Centro Poblado Huaytire”', 'No abstract available', '2015', 'Evaristo L. López Tejeda', 'Gobierno Regional de Tacna. Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente.', NULL, 'estudios/rep(8).pdf', '2025-09-05 18:56:26', '2025-09-05 18:56:26'),
+	(2102, 'Conservación del Tigre de Bengala: Desafíos y Estrategias', '<p>Este estudio examina los desafíos actuales en la conservación del tigre de Bengala (Panthera tigris tigris) en el subcontinente indio. Se analizan las amenazas principales como la pérdida de hábitat, la caza furtiva y los conflictos humano-tigre, así como las estrategias de conservación implementadas en diferentes reservas de tigres.</p><p>Los resultados indican que las áreas protegidas con corredores ecológicos funcionales y participación comunitaria muestran mejores tasas de recuperación de población. Se proponen recomendaciones para mejorar los esfuerzos de conservación, incluyendo el fortalecimiento de la vigilancia contra la caza furtiva, la restauración de hábitats degradados y la implementación de programas de compensación por pérdidas de ganado.</p>', '2021', 'Sharma, P. & Kumar, A.', 'Journal of Wildlife Conservation', '10.1234/jwc.2021.0123', NULL, '2025-09-06 01:17:07', '2025-09-06 01:17:07');
+
+-- Volcando estructura para tabla biodiversity_management.reinos
+CREATE TABLE IF NOT EXISTS `reinos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `reinos_nombre_unique` (`nombre`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.reinos: ~5 rows (aproximadamente)
+INSERT INTO `reinos` (`id`, `nombre`, `descripcion`, `created_at`, `updated_at`) VALUES
+	(1, 'Animalia', 'Reino que incluye todos los organismos multicelulares eucariotas que se alimentan por ingestión.', '2025-08-18 20:23:19', '2025-08-18 20:23:19'),
+	(2, 'Plantae', 'Reino que incluye organismos eucariotas multicelulares que realizan fotosíntesis.', '2025-08-18 20:23:19', '2025-08-18 20:23:19'),
+	(3, 'Fungi', 'Reino que incluye organismos eucariotas que se alimentan por absorción, como hongos y levaduras.', '2025-08-18 20:23:19', '2025-08-18 20:23:19'),
+	(4, 'Protista', 'Reino que incluye organismos eucariotas unicelulares y algunos multicelulares simples.', '2025-08-18 20:23:19', '2025-08-18 20:23:19'),
+	(5, 'Monera', 'Reino que incluye organismos procariotas como bacterias y cianobacterias.', '2025-08-18 20:23:19', '2025-08-18 20:23:19');
+
+-- Volcando estructura para tabla biodiversity_management.roles
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.roles: ~6 rows (aproximadamente)
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
@@ -234,6 +1319,16 @@ INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VAL
 	(4, 'Técnico de Campo', 'web', '2025-07-31 01:12:01', '2025-07-31 01:12:01'),
 	(5, 'Consultor', 'web', '2025-07-31 01:12:01', '2025-07-31 01:12:01'),
 	(6, 'Estudiante', 'web', '2025-07-31 01:12:01', '2025-07-31 01:12:01');
+
+-- Volcando estructura para tabla biodiversity_management.role_has_permissions
+CREATE TABLE IF NOT EXISTS `role_has_permissions` (
+  `permission_id` bigint unsigned NOT NULL,
+  `role_id` bigint unsigned NOT NULL,
+  PRIMARY KEY (`permission_id`,`role_id`),
+  KEY `role_has_permissions_role_id_foreign` (`role_id`),
+  CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla biodiversity_management.role_has_permissions: ~65 rows (aproximadamente)
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
@@ -303,21 +1398,85 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(15, 6),
 	(23, 6);
 
--- Volcando datos para la tabla biodiversity_management.sessions: ~5 rows (aproximadamente)
-INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-	('dte3ZK79BFQBtbvAaRKrqir7yZABGialdIGdrjoi', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibDRzYjFPZ0ZCYjBWdWFFRTBvMUtzd2F3czF0Rm9yRDZyeGRXYWNPZyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC8/aWRlX3dlYnZpZXdfcmVxdWVzdF90aW1lPTE3NTQwODQyNjcxMTQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1754084311),
-	('Ku0MEwpEXMrBPrjsmJqSmqm2Igc5PWfpqxI8RIoL', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSGZFUER3U1ZIclBtd2xqRjJ5S2tjOWF3eFZ4eDdoZHg2UXBQYVd0cCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc1NDA3OTc5Mzt9fQ==', 1754084344),
-	('VjYGzH31fbrvfjth7EV1rr9svBI6zDtOsFRzA0S2', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNTAzaWhqWnJIdndwVHRhVjc2S0RvamRwWENlRlFyNlZISjFieUg3dSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1754084353);
+-- Volcando estructura para tabla biodiversity_management.sessions
+CREATE TABLE IF NOT EXISTS `sessions` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint unsigned DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_activity` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sessions_user_id_index` (`user_id`),
+  KEY `sessions_last_activity_index` (`last_activity`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla biodiversity_management.settings: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla biodiversity_management.sessions: ~4 rows (aproximadamente)
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+	('52JPV87lovWA7bIU32CKp2N5Rkdj3ivDDP0N9KAu', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRW1DMW5IRXQ3dTZ4a1dwcklycjJseHlWN0h4ZHR1ZzV3UUdRZ1VUViI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1757086730),
+	('6RXUmGhi8gp743XA3Y1Nnt1Y7ES1IzuKOBvpwe7K', NULL, '127.0.0.1', 'curl/8.12.1', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiejZLNHNpOHQ1TnBPR05UUXMzdzE2eURKc1NlZmdaM0M2RUdqSWRxVyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1757106842),
+	('g0tP30PkPqYSYXu2p8VrNF4GZIBNlNhA7ysPJmsK', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiUkcxeUVhNVc5UnlLa0NSWngxWGpmV3NHVERnRExNMGt2VGpDdnlxdiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9iaW9kaXZlcnNpdHkiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjQ6ImF1dGgiO2E6MTp7czoyMToicGFzc3dvcmRfY29uZmlybWVkX2F0IjtpOjE3NTcwODI2ODE7fX0=', 1757110200),
+	('U2G1u1oGtL2GBCdi8w5LIWTxr0b08npQcZNf1uqg', NULL, '127.0.0.1', 'curl/8.12.1', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiYmk4WHkxdk13VHNhREg5bWdVc2I3ckNwQjhvWVBFeUlDYlgwN2JSayI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0MzoiaHR0cDovLzEyNy4wLjAuMTo4MDAyL2FkbWluL2Jpb2RpdmVyc2l0eS8yNyI7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDIvYWRtaW4vYmlvZGl2ZXJzaXR5LzI3Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1757109429);
+
+-- Volcando estructura para tabla biodiversity_management.settings
+CREATE TABLE IF NOT EXISTS `settings` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci,
+  `group` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'general',
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'text',
+  `options` text COLLATE utf8mb4_unicode_ci,
+  `label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `order` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `settings_key_unique` (`key`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.settings: ~2 rows (aproximadamente)
 INSERT INTO `settings` (`id`, `key`, `value`, `group`, `type`, `options`, `label`, `description`, `order`, `created_at`, `updated_at`) VALUES
 	(1, 'site_logo', 'logos/default-logo.svg', 'general', 'text', NULL, NULL, NULL, 0, '2025-08-01 21:38:42', '2025-08-01 21:40:02'),
-	(2, 'site_logo_alt', 'Biodiversidad Gobierno Regional Tacna', 'general', 'text', NULL, NULL, NULL, 0, '2025-08-01 21:38:42', '2025-08-01 21:42:22'),
-	(3, 'main_menu', '[{"text":"Inicio","url":"\\/","order":1,"parent_id":null,"is_active":true},{"text":"Biodiversidad","url":"\\/biodiversity","order":2,"parent_id":null,"is_active":true},{"text":"Publicaciones","url":"\\/publications","order":3,"parent_id":null,"is_active":true},{"text":"Panel Admin","url":"\\/admin","order":4,"parent_id":null,"is_active":true}]', 'general', 'text', NULL, NULL, NULL, 0, '2025-08-01 21:40:02', '2025-08-01 21:40:02');
+	(2, 'site_logo_alt', 'Biodiversidad Gobierno Regional', 'general', 'text', NULL, NULL, NULL, 0, '2025-08-01 21:38:42', '2025-08-05 02:48:46'),
+	(3, 'main_menu', '[{"text":"Inicio","url":"\\/","order":"1","parent_id":null,"is_active":"1"},{"text":"Biodiversidad","url":"\\/biodiversity","order":"2","parent_id":null,"is_active":"1"},{"text":"Publicaciones","url":"\\/publications","order":"3","parent_id":null,"is_active":"1"},{"text":"Panel Admin","url":"\\/admin","order":"4","parent_id":null,"is_active":"1"}]', 'general', 'text', NULL, NULL, NULL, 0, '2025-08-01 21:40:02', '2025-08-20 02:07:29');
 
--- Volcando datos para la tabla biodiversity_management.users: ~0 rows (aproximadamente)
+-- Volcando estructura para tabla biodiversity_management.temp_migration_log
+CREATE TABLE IF NOT EXISTS `temp_migration_log` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `operation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `details` text COLLATE utf8mb4_unicode_ci,
+  `success` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.temp_migration_log: ~0 rows (aproximadamente)
+INSERT INTO `temp_migration_log` (`id`, `operation`, `details`, `success`, `created_at`, `updated_at`) VALUES
+	(1, 'no_migration_needed', 'Los campos de publicación ya no existen en biodiversity_categories', 1, '2025-08-26 18:48:33', '2025-08-26 18:48:33');
+
+-- Volcando estructura para tabla biodiversity_management.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla biodiversity_management.users: ~4 rows (aproximadamente)
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(1, 'Admin', 'admin@example.com', NULL, '$2y$12$cBxeeGgTIK7X1.aws1g7Nu/1HSAbTxUY2osSkj.V/FicGEOkKHsoa', NULL, '2025-07-30 21:01:34', '2025-07-30 21:01:34');
+	(1, 'Admin', 'admin@example.com', NULL, '$2y$12$cBxeeGgTIK7X1.aws1g7Nu/1HSAbTxUY2osSkj.V/FicGEOkKHsoa', 'cBoFrlUGlYljoScxM5FfukWPVtgRWXJzv1HJ36KcZ0kwgVKBAzJSWRCmRgoY', '2025-07-30 21:01:34', '2025-07-30 21:01:34'),
+	(3, 'Admin Test', 'admin@test.com', NULL, '$2y$12$6wUeofjkU5wdUASyEtZyeeUL4xj4vOFK53IRP4MG.fvACbUSt7iEq', NULL, '2025-08-18 18:16:48', '2025-08-20 01:15:04'),
+	(5, 'Administrador Principal', 'admin@biodiversidad.com', '2025-08-20 00:43:48', '$2y$12$c9B/gRr8aS3pPcH/oWxO1eeIn89QUku3S3.inTiigzXocVR6Q5ju2', NULL, '2025-08-20 00:43:48', '2025-08-20 00:43:48'),
+	(6, 'Usuario de Prueba', 'usuario@biodiversidad.com', '2025-08-20 00:43:48', '$2y$12$HUXKaP8Ot9Q8nt/bGiA6B.AyW1Y7WYTBbo6MVzIhVrKkOVSaCjHn.', NULL, '2025-08-20 00:43:48', '2025-08-20 00:43:48'),
+	(7, 'Test User', 'test@example.com', '2025-08-20 00:43:48', '$2y$12$o81ysmsVLpOX/YB7LzTbr.sv4ftCAGWoh3bm/vVoLOMSRlhHvxB8C', NULL, '2025-08-20 00:43:48', '2025-08-20 00:43:48');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

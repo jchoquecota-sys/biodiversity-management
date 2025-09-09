@@ -63,7 +63,7 @@
                                     {{ $conservationStatuses[$item->conservation_status] ?? $item->conservation_status }}
                                 </span>
                             </td>
-                            <td>{{ $item->deleted_at->format('d/m/Y H:i') }}</td>
+                            <td>{{ $item->deleted_at ? $item->deleted_at->format('d/m/Y H:i') : 'N/A' }}</td>
                             <td>
                                 <form action="{{ route('admin.biodiversity.restore', $item->id) }}" method="POST" class="d-inline">
                                     @csrf

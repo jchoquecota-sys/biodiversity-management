@@ -58,11 +58,11 @@
                         </tr>
                         <tr>
                             <th>Fecha de Creación</th>
-                            <td>{{ $publication->created_at->format('d/m/Y H:i') }}</td>
+                            <td>{{ $publication->created_at ? $publication->created_at->format('d/m/Y H:i') : 'N/A' }}</td>
                         </tr>
                         <tr>
                             <th>Última Actualización</th>
-                            <td>{{ $publication->updated_at->format('d/m/Y H:i') }}</td>
+                            <td>{{ $publication->updated_at ? $publication->updated_at->format('d/m/Y H:i') : 'N/A' }}</td>
                         </tr>
                     </table>
                 </div>
@@ -72,8 +72,8 @@
                             <h5 class="card-title mb-0">Archivo PDF</h5>
                         </div>
                         <div class="card-body text-center">
-                            @if($publication->pdf_path && Storage::disk('public')->exists($publication->pdf_path))
-                                <a href="{{ Storage::disk('public')->url($publication->pdf_path) }}" target="_blank" class="btn btn-lg btn-info">
+                            @if($publication->hasPdfFile())
+                                <a href="{{ $publication->getPdfUrl() }}" target="_blank" class="btn btn-lg btn-info">
                                     <i class="fas fa-file-pdf fa-2x"></i>
                                     <div class="mt-2">Ver PDF</div>
                                 </a>

@@ -82,9 +82,9 @@
                     @error('pdf')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
-                    @if($publication->pdf_path && Storage::disk('public')->exists($publication->pdf_path))
+                    @if($publication->hasPdfFile())
                     <div class="mt-2">
-                        <a href="{{ Storage::disk('public')->url($publication->pdf_path) }}" target="_blank" class="btn btn-sm btn-info">
+                        <a href="{{ $publication->getPdfUrl() }}" target="_blank" class="btn btn-sm btn-info">
                             <i class="fas fa-file-pdf"></i> Ver PDF actual
                         </a>
                     </div>

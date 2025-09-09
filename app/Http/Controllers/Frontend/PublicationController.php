@@ -101,12 +101,29 @@ class PublicationController extends Controller
      */
     public function downloadPdf(Publication $publication)
     {
-        if (!$publication->pdf_path || !Storage::disk('public')->exists($publication->pdf_path)) {
+        if (!$publication->pdf_path) {
             return redirect()->back()->with('error', 'No se encontró el archivo PDF para esta publicación.');
         }
         
-        $filePath = Storage::disk('public')->path($publication->pdf_path);
+        $filePath = null;
         $fileName = $publication->title . '.pdf';
+        
+        // Verificar si el archivo está en storage/app/public/
+        if (Storage::disk('public')->exists($publication->pdf_path)) {
+            $filePath = Storage::disk('public')->path($publication->pdf_path);
+        }
+        // Verificar si el archivo está en public/estudios/
+        elseif (file_exists(public_path('estudios/' . basename($publication->pdf_path)))) {
+            $filePath = public_path('estudios/' . basename($publication->pdf_path));
+        }
+        // Verificar si el archivo está directamente en public/
+        elseif (file_exists(public_path($publication->pdf_path))) {
+            $filePath = public_path($publication->pdf_path);
+        }
+        
+        if (!$filePath || !file_exists($filePath)) {
+            return redirect()->back()->with('error', 'No se encontró el archivo PDF para esta publicación.');
+        }
         
         return response()->download($filePath, $fileName);
     }

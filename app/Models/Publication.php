@@ -125,4 +125,62 @@ class Publication extends Model implements HasMedia
                 ->orWhere('abstract', 'LIKE', "%{$term}%");
         });
     }
+
+    /**
+     * Verificar si el PDF existe físicamente.
+     *
+     * @return bool
+     */
+    public function hasPdfFile()
+    {
+        if (!$this->pdf_path) {
+            return false;
+        }
+        
+        // Verificar si el archivo está en storage/app/public/
+        if (\Storage::disk('public')->exists($this->pdf_path)) {
+            return true;
+        }
+        
+        // Verificar si el archivo está en public/estudios/
+        if (file_exists(public_path('estudios/' . basename($this->pdf_path)))) {
+            return true;
+        }
+        
+        // Verificar si el archivo está directamente en public/
+        if (file_exists(public_path($this->pdf_path))) {
+            return true;
+        }
+        
+        return false;
+    }
+
+    /**
+     * Obtener la URL del PDF.
+     *
+     * @return string|null
+     */
+    public function getPdfUrl()
+    {
+        if (!$this->pdf_path) {
+            return null;
+        }
+        
+        // Si el archivo está en storage/app/public/, usar Storage
+        if (\Storage::disk('public')->exists($this->pdf_path)) {
+            return \Storage::disk('public')->url($this->pdf_path);
+        }
+        
+        // Si el archivo está en public/estudios/, usar asset
+        if (file_exists(public_path('estudios/' . basename($this->pdf_path)))) {
+            return asset('estudios/' . basename($this->pdf_path));
+        }
+        
+        // Si el archivo está directamente en public/, usar asset
+        if (file_exists(public_path($this->pdf_path))) {
+            return asset($this->pdf_path);
+        }
+        
+        return null;
+    }
 }

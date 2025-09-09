@@ -158,7 +158,7 @@ class ConservationStatusController extends Controller
                     $status->description,
                     $status->color,
                     $status->is_active ? 'Sí' : 'No',
-                    $status->created_at->format('d/m/Y H:i:s')
+                    $status->created_at ? \Carbon\Carbon::parse($status->created_at)->format('d/m/Y H:i:s') : 'N/A'
                 ]);
             }
             
