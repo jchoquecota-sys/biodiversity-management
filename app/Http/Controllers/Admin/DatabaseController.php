@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 class DatabaseController extends Controller
 {
@@ -43,16 +45,33 @@ class DatabaseController extends Controller
                 Storage::makeDirectory('backups');
             }
             
-            // Ejecutar el comando de respaldo usando mysqldump
-            $command = sprintf(
-                'mysqldump -u%s -p%s %s > %s',
-                config('database.connections.mysql.username'),
-                config('database.connections.mysql.password'),
-                config('database.connections.mysql.database'),
-                storage_path('app/backups/' . $filename)
-            );
-            
-            exec($command);
+            // Ejecutar el respaldo usando Symfony Process evitando exponer el password en la línea de comandos
+            $username = (string) config('database.connections.mysql.username');
+            $password = (string) config('database.connections.mysql.password');
+            $database = (string) config('database.connections.mysql.database');
+            $host = (string) (config('database.connections.mysql.host') ?? '127.0.0.1');
+            $port = (string) (config('database.connections.mysql.port') ?? '3306');
+
+            $process = new Process([
+                'mysqldump',
+                sprintf('--host=%s', $host),
+                sprintf('--port=%s', $port),
+                sprintf('--user=%s', $username),
+                '--skip-comments',
+                '--single-transaction',
+                $database,
+            ]);
+            // Evitar que la contraseña sea visible en el proceso
+            $process->setEnv(['MYSQL_PWD' => $password]);
+            $process->setTimeout(300);
+            $process->run();
+
+            if (!$process->isSuccessful()) {
+                throw new ProcessFailedException($process);
+            }
+
+            // Guardar el contenido del respaldo en el archivo de destino
+            Storage::put('backups/' . $filename, $process->getOutput());
             
             return redirect()->route('admin.database.index')
                 ->with('success', 'Respaldo creado exitosamente');
@@ -79,16 +98,28 @@ class DatabaseController extends Controller
             $path = $file->storeAs('backups', $filename);
             $fullPath = storage_path('app/' . $path);
             
-            // Ejecutar el comando de restauración
-            $command = sprintf(
-                'mysql -u%s -p%s %s < %s',
-                config('database.connections.mysql.username'),
-                config('database.connections.mysql.password'),
-                config('database.connections.mysql.database'),
-                $fullPath
-            );
-            
-            exec($command);
+            // Restaurar usando Symfony Process y pasando el archivo como input
+            $username = (string) config('database.connections.mysql.username');
+            $password = (string) config('database.connections.mysql.password');
+            $database = (string) config('database.connections.mysql.database');
+            $host = (string) (config('database.connections.mysql.host') ?? '127.0.0.1');
+            $port = (string) (config('database.connections.mysql.port') ?? '3306');
+
+            $process = new Process([
+                'mysql',
+                sprintf('--host=%s', $host),
+                sprintf('--port=%s', $port),
+                sprintf('--user=%s', $username),
+                $database,
+            ]);
+            $process->setEnv(['MYSQL_PWD' => $password]);
+            $process->setTimeout(300);
+            $process->setInput(file_get_contents($fullPath));
+            $process->run();
+
+            if (!$process->isSuccessful()) {
+                throw new ProcessFailedException($process);
+            }
             
             return redirect()->route('admin.database.index')
                 ->with('success', 'Base de datos restaurada exitosamente');
@@ -109,13 +140,29 @@ class DatabaseController extends Controller
         ]);
 
         try {
-            $tables = $request->input('tables');
-            $tableList = implode(',', $tables);
-            
-            DB::statement('OPTIMIZE TABLE ' . $tableList);
-            
+            $requestedTables = $request->input('tables');
+
+            // Validar los nombres de tablas contra las tablas existentes
+            $allTables = array_map(function ($row) {
+                $rowArray = (array) $row;
+                return array_values($rowArray)[0] ?? null;
+            }, DB::select('SHOW TABLES'));
+            $validTables = array_values(array_intersect($allTables, $requestedTables));
+
+            if (empty($validTables)) {
+                return redirect()->route('admin.database.index')
+                    ->with('error', 'No se seleccionaron tablas válidas para optimizar.');
+            }
+
+            // Citar correctamente los nombres de las tablas para evitar inyección
+            $wrappedTables = array_map(function ($table) {
+                return '`' . str_replace('`', '``', $table) . '`';
+            }, $validTables);
+
+            DB::statement('OPTIMIZE TABLE ' . implode(', ', $wrappedTables));
+
             return redirect()->route('admin.database.index')
-                ->with('success', 'Tablas optimizadas exitosamente: ' . implode(', ', $tables));
+                ->with('success', 'Tablas optimizadas exitosamente: ' . implode(', ', $validTables));
         } catch (\Exception $e) {
             return redirect()->route('admin.database.index')
                 ->with('error', 'Error al optimizar las tablas: ' . $e->getMessage());

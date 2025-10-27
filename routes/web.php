@@ -160,6 +160,5 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
 // Authentication Routes
 require __DIR__.'/auth.php';
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('frontend.home');
+// Nota: Se elimina Auth::routes() para evitar duplicación de rutas con routes/auth.php
+// y se evita la ruta /home duplicada. La ruta principal ya está definida arriba.
